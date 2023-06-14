@@ -10,7 +10,7 @@ function App() {
         fov: 60,
         near: 0.1,
         far: 400,
-        position: [0, 10, 200],
+        position: [0, 50, 200],
       }}>
       <Background />
     </Canvas>
