@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Home.css";
 import { useSpring } from "@react-spring/core";
+import { a } from "@react-spring/web";
+import Scene from "../../components/Scene";
 
 function Home() {
   const [toggle, set] = useState(0);
