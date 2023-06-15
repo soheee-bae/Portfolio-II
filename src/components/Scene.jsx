@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { a } from "@react-spring/three";
 import Switch from "./Switch";
 
 function Scene({ x, set }) {
-  const color = x.to([0, 1], ["#ffffff", "#000000"]);
+  const color = x.to([0, 1], ["#7fffd4", "#c72f46"]);
 
   return (
     <Canvas
@@ -36,16 +36,15 @@ function Scene({ x, set }) {
         castShadow
       />
       <Suspense fallback={null}>
-        <Switch />
+        <Switch x={x} set={set} />
       </Suspense>
       <mesh
         receiveShadow
-        // renderOrder={1000}
+        renderOrder={1000}
         position={[0, 0, 0]}
-        // rotation={[-Math.PI / 2, 0, 0]}
-      >
+        rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[10, 10]} />
-        <a.shadowMaterial />
+        <a.shadowMaterial transparent opacity={x.to((x) => 0.1 + x * 0.2)} />
       </mesh>
     </Canvas>
   );

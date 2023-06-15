@@ -10,17 +10,17 @@ function Home() {
   const [{ x }] = useSpring(
     {
       x: toggle,
-      config: { mass: 5, tension: 1000, friction: 50, precision: 0.0001 },
+      config: { mass: 5, tension: 400, friction: 100, precision: 0.0001 },
     },
     [toggle]
   );
 
   return (
     <a.div
-    //   style={{
-    //     backgroundColor: x.to([0, 1], ["#c9ffed", "#ff2558"]),
-    //       }}
-    >
+      className="homeContainer"
+      style={{
+        backgroundColor: x.to([0, 1], ["#c9ffed", "#ff2558"]),
+      }}>
       <Scene x={x} set={set} />
     </a.div>
   );
