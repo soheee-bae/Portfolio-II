@@ -1,13 +1,15 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { a } from "@react-spring/three";
-import Switch from "./Switch";
+import Switch from "../Switch/Switch";
+import "./Scene.css";
 
 function Scene({ x, set }) {
   const color = x.to([0, 1], ["#7fffd4", "#c72f46"]);
 
   return (
     <Canvas
+      className="canvas"
       orthographic
       shadows
       dpr={[1, 2]}

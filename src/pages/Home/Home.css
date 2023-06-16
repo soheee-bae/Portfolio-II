@@ -5,6 +5,12 @@
   width: 100%;
 }
 
+@media only screen and (max-aspect-ratio: 8/7) {
+  .homeContainer {
+    flex-direction: column;
+  }
+}
+
 /* body {
   position: fixed;
   overflow: hidden;
@@ -17,28 +23,3 @@
   background: #c9ffed;
   color: aquamarine;
 } */
-
-p {
-  position: absolute;
-  display: inline-block;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0) rotate3d(1, 0, 0, 55deg)
-    rotate3d(0, 0, 1, 45deg);
-}
-
-.homeContainer > .close {
-  margin-top: 120px;
-}
-
-.homeContainer > .open {
-  margin-left: -200px;
-  margin-top: 0px;
-}
-
-svg {
-  height: 80px;
-  width: 80px;
-  color: gray;
-}

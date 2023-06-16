@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import "./Home.css";
 import { useSpring } from "@react-spring/core";
 import { a } from "@react-spring/web";
-import Scene from "../../components/Scene";
-import { Moon, Sun } from "../../icons";
+
+import Scene from "../../components/Scene/Scene";
+import Overlay from "../../components/Overlay/Overlay";
+import Icons from "../../components/Icons/Icons";
+
+import "./Home.css";
 
 function Home() {
   const [toggle, set] = useState(0);
@@ -22,9 +25,9 @@ function Home() {
       style={{
         backgroundColor: x.to([0, 1], ["#c9ffed", "#ff2558"]),
       }}>
-      <p class="open" children={<Sun />} />
-      <p class="close" children={<Moon />} />
+      <Icons />
       <Scene x={x} set={set} />
+      <Overlay />
     </a.div>
   );
 }
