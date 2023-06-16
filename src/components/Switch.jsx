@@ -27,7 +27,7 @@ function Switch({ x, set }) {
         castShadow
         material={materials.track}
         geometry={nodes.Circle.geometry}
-        material-color={color}
+        material-color={"#000000"}
         material-roughness={0.5}
         material-metalness={0.8}
         scale={[1.1, 1.0, 1.2]}
