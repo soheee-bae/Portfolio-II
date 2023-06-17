@@ -23,7 +23,7 @@ function Home() {
     <a.div
       className="homeContainer"
       style={{
-        backgroundColor: x.to([0, 1], ["#c9ffed", "#ff2558"]),
+        backgroundColor: x.to([0, 1], ["#DEE2E6", "#343A40"]),
       }}>
       <Icons />
       <Scene x={x} set={set} />

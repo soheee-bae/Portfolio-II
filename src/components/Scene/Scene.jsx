@@ -5,7 +5,7 @@ import Switch from "../Switch/Switch";
 import "./Scene.css";
 
 function Scene({ x, set }) {
-  const color = x.to([0, 1], ["#7fffd4", "#c72f46"]);
+  const color = x.to([0, 1], ["#F1F3F5", "#3F454C"]);
 
   return (
     <Canvas

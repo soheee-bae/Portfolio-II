@@ -18,9 +18,15 @@
   margin-top: 0px;
 }
 
-svg {
-  height: 80px;
-  width: 80px;
+.open svg {
+  height: 70px;
+  width: 70px;
+  color: gray;
+}
+
+.close svg {
+  height: 50px;
+  width: 50px;
   color: gray;
 }
 
