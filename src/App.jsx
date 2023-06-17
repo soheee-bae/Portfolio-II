@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import "./App.css";
+import './App.css';
 
-import Navbar from "./components/Navbar/Navbar";
-import About from "./pages/About/About";
-import Home from "./pages/Home/Home";
-import Project from "./pages/Project/Project";
+import Navbar from './components/Navbar/Navbar';
+import About from './pages/About/About';
+import Home from './pages/Home/Home';
+import Project from './pages/Project/Project';
 
 function App() {
   return (

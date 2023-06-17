@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import LanguageIcon from "@mui/icons-material/Language";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+import LanguageIcon from '@mui/icons-material/Language';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 function LanguageBtn() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,9 +24,10 @@ function LanguageBtn() {
         onClick={handleClick}
         size="small"
         sx={{ ml: 2 }}
-        aria-controls={open ? "account-menu" : undefined}
+        aria-controls={open ? 'account-menu' : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}>
+        aria-expanded={open ? 'true' : undefined}
+      >
         <LanguageIcon />
       </IconButton>
       <Menu
@@ -61,8 +62,9 @@ function LanguageBtn() {
         //     },
         //   },
         // }}
-        transformOrigin={{ horizontal: "right", vertical: "top" }}
-        anchorOrigin={{ horizontal: "right", vertical: "bottom" }}>
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      >
         <MenuItem onClick={handleClose}>Eng</MenuItem>
         <MenuItem onClick={handleClose}>Kor</MenuItem>
       </Menu>

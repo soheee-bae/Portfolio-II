@@ -1,4 +1,4 @@
-import "./ScrollMouse.css";
+import './ScrollMouse.css';
 
 function ScrollMouse() {
   return (

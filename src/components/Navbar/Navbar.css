@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-div.navbar[data-scroll="true"] {
+div.navbar[data-scroll='true'] {
   background: white;
   opacity: 1;
   transition: all 0.3s;
@@ -35,7 +35,7 @@ div.navbar[data-scroll="true"] {
   color: black;
 }
 
-div.navbar[data-scrollDarkMode="true"] {
+div.navbar[data-scrollDarkMode='true'] {
   background: black;
   color: white;
   opacity: 1;

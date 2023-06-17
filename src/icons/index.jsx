@@ -1,1 +1,1 @@
-export { ReactComponent as Highlight } from "./highlight.svg";
+export { ReactComponent as Highlight } from './highlight.svg';

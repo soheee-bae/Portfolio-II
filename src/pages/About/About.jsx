@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from 'react';
 
-import "./About.css";
+import styles from './About.modules.scss';
 
 function About() {
   return (
-    <div id="about" className="about">
+    <div id="about" className={styles.about}>
       About
     </div>
   );

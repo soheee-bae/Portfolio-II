@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import "./Project.css";
+import styles from './Project.modules.scss';
 
 function Project() {
   return (
-    <div id="project" className="project">
+    <div id="project" className={styles.project}>
       Project
     </div>
   );
