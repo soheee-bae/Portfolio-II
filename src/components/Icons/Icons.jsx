@@ -1,6 +1,7 @@
+import { a } from "@react-spring/web";
+
 import { Sun, Moon } from "../../icons";
 import "./Icons.css";
-import { a } from "@react-spring/web";
 
 function Icons({ toggle }) {
   const color = toggle === 1 ? "#ADB5BD" : "#343A40";

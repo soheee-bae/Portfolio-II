@@ -25,7 +25,7 @@ function Home() {
       style={{
         backgroundColor: x.to([0, 1], ["#DEE2E6", "#343A40"]),
       }}>
-      <Overlay />
+      <Overlay toggle={toggle} />
       <a.div className="homeContent">
         <Scene x={x} set={set} />
         <Icons toggle={toggle} />

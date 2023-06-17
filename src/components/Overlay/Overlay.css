@@ -18,7 +18,7 @@
 .bio span {
   font-size: 40px;
   font-weight: bold;
-  padding: 0 5px;
+  padding: 1px 5px;
 }
 
 .contacts {
@@ -33,7 +33,16 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
-  color: black;
+}
+
+.contacts a {
+  opacity: 0.5;
+}
+
+.contacts a:hover {
+  transition: all 0.4s;
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 img {
@@ -49,6 +58,20 @@ img {
   .overlay {
     height: 50%;
     width: 100%;
+    justify-content: flex-start;
+  }
+
+  .bio {
+    font-size: 15px;
+  }
+
+  .bio span {
+    font-size: 30px;
+  }
+
+  .contacts svg {
+    width: 25px;
+    height: 25px;
   }
 }
 
