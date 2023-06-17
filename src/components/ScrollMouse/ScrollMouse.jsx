@@ -1,11 +1,11 @@
-import './ScrollMouse.css';
+import styles from './ScrollMouse.module.scss';
 
 function ScrollMouse() {
   return (
-    <div className="scrollContainer">
-      <div className="scrollDowns">
-        <div className="mouse">
-          <div className="scroller"></div>
+    <div className={styles.scrollContainer}>
+      <div className={styles.scrollDowns}>
+        <div className={styles.mouse}>
+          <div className={styles.scroller}></div>
         </div>
       </div>
     </div>

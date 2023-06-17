@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll';
-import './Navbar.css';
+import styles from './Navbar.module.scss';
 
 import { useScroll as hookScroll } from '../../hooks/useScroll';
 import { useToggle } from '../../hooks/useToggle';
@@ -17,13 +17,18 @@ function Navbar() {
 
   return (
     <div
-      className="navbar"
+      className={styles.navbar}
       data-scrollDarkMode={scrollTriggered && toggle === 1}
-      data-scroll={scrollTriggered}
-    >
-      <div className="navbarContent">
+      data-scroll={scrollTriggered}>
+      <div className={styles.navbarContent}>
         {navItems.map((nav) => (
-          <Link activeClass="active" to={nav.value} spy={true} smooth={true} duration={500}>
+          <Link
+            key={nav.label}
+            activeClass="active"
+            to={nav.value}
+            spy={true}
+            smooth={true}
+            duration={500}>
             {nav.label}
           </Link>
         ))}

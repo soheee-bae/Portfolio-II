@@ -8,7 +8,7 @@ import BookIcon from '@mui/icons-material/Book';
 import EmailIcon from '@mui/icons-material/Email';
 import Tooltip from '@mui/material/Tooltip';
 
-import './Overlay.css';
+import styles from './Overlay.module.scss';
 
 function Overlay() {
   const { toggle } = useToggle();
@@ -45,15 +45,15 @@ function Overlay() {
   ];
 
   return (
-    <div className="overlay" style={{ color: `${color}` }}>
-      <div className="imageContainer">
-        <div className="arrows">
-          <img className="arrow1" src={arrowSrc} alt="arrow" />
-          <img className="arrow2" src={arrowSrc} alt="arrow" />
+    <div className={styles.overlay} style={{ color: `${color}` }}>
+      <div className={styles.imageContainer}>
+        <div className={styles.arrows}>
+          <img className={styles.arrow1} src={arrowSrc} alt="arrow" />
+          <img className={styles.arrow2} src={arrowSrc} alt="arrow" />
         </div>
-        <img className="profile" src="./image/profile.jpg" alt="profile" />
+        <img className={styles.profile} src="./image/profile.jpg" alt="profile" />
       </div>
-      <div className="bio">
+      <div className={styles.bio}>
         <p>
           남다른 도전정신을 가진 개발자,{' '}
           <span>
@@ -67,10 +67,10 @@ function Overlay() {
           만들어 가고 있습니다.
         </p>
       </div>
-      <div className="contacts">
+      <div className={styles.contacts}>
         {contacts.map((contact) => (
-          <Tooltip title={contact.label}>
-            <a target="_blank" href={contact.href}>
+          <Tooltip key={contact.label} title={contact.label}>
+            <a target="_blank" rel="noreferrer" href={contact.href}>
               {contact.icon}
             </a>
           </Tooltip>

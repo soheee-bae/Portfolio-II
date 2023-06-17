@@ -4,7 +4,8 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
 import { useToggle } from '../../hooks/useToggle';
 
-import './ThemeIcons.css';
+import styles from './ThemeIcons.module.scss';
+import clsx from 'clsx';
 
 function Icons() {
   const { toggle } = useToggle();
@@ -12,9 +13,13 @@ function Icons() {
   const color = toggle === 1 ? '#ADB5BD' : '#343A40';
 
   return (
-    <a.div className="icons">
-      <p class="open" children={<LightModeOutlinedIcon sx={{ color: color }} />} />
-      <p class="close" children={<DarkModeOutlinedIcon sx={{ color: color }} />} />
+    <a.div className={styles.icons}>
+      <p className={clsx(styles.icon, styles.light)}>
+        <LightModeOutlinedIcon sx={{ color: color }} />
+      </p>
+      <p className={clsx(styles.icon, styles.dark)}>
+        <DarkModeOutlinedIcon sx={{ color: color }} />
+      </p>
     </a.div>
   );
 }

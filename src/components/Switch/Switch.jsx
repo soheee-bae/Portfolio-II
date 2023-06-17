@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useCallback, Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import React, { useCallback } from 'react';
 import { a } from '@react-spring/three';
-import { useGLTF, useTexture, Shadow, meshBounds, OrbitControls } from '@react-three/drei';
-import { Light } from '../../icons';
+import { useGLTF, useTexture, Shadow } from '@react-three/drei';
 import { useToggle } from '../../hooks/useToggle';
 
 function Switch() {

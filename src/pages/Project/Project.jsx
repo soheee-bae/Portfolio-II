@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import styles from './Project.modules.scss';
+import styles from './Project.module.scss';
 
 function Project() {
   return (

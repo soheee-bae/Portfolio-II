@@ -6,10 +6,10 @@ import Overlay from '../../components/Overlay/Overlay';
 import Icons from '../../components/ThemeIcons/ThemeIcons';
 import { useToggle } from '../../hooks/useToggle';
 
-import styles from './Home.modules.scss';
+import styles from './Home.module.scss';
 
 function Home() {
-  const { x, toggle } = useToggle();
+  const { x } = useToggle();
 
   return (
     <a.div
@@ -17,8 +17,7 @@ function Home() {
       className={styles.homeContainer}
       style={{
         backgroundColor: x.to([0, 1], ['#DEE2E6', '#343A40'])
-      }}
-    >
+      }}>
       <Overlay />
       <a.div className={styles.homeContent}>
         <Scene />
