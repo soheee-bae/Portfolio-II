@@ -1,11 +1,10 @@
-import {
-  Blog,
-  Email,
-  Github,
-  Highlight,
-  Instagram,
-  Linkedin,
-} from "../../icons";
+import { Highlight } from "../../icons";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import BookIcon from "@mui/icons-material/Book";
+import EmailIcon from "@mui/icons-material/Email";
+
 import "./Overlay.css";
 
 function Overlay({ toggle }) {
@@ -15,19 +14,22 @@ function Overlay({ toggle }) {
 
   const contacts = [
     {
-      icon: <Github color={color} />,
+      icon: <GitHubIcon sx={{ color: color }} />,
       href: "https://github.com/soheee-bae",
     },
-    { icon: <Email color={color} />, href: "baesoheee@gmail.com" },
+    { icon: <EmailIcon sx={{ color: color }} />, href: "baesoheee@gmail.com" },
     {
-      icon: <Linkedin color={color} />,
+      icon: <LinkedInIcon sx={{ color: color }} />,
       href: "https://www.linkedin.com/in/sohee-bae-b37a9a166/",
     },
     {
-      icon: <Instagram color={color} />,
+      icon: <InstagramIcon sx={{ color: color }} />,
       href: "https://www.instagram.com/50h333ba3/",
     },
-    { icon: <Blog color={color} />, href: "https://soheee-bae.github.io/" },
+    {
+      icon: <BookIcon sx={{ color: color }} />,
+      href: "https://soheee-bae.github.io/",
+    },
   ];
 
   return (
@@ -49,8 +51,8 @@ function Overlay({ toggle }) {
           입니다.
         </p>
         <p>
-          새로운 환경이나 영역에 긍정적으로 도전하는것을 즐기며 <br />
-          꾸준히 성장하는 습관을 만들어 가고 있습니다.
+          새로운 환경이나 영역에 긍정적으로 도전하는 것을 즐기며 <br /> 꾸준히
+          성장하는 습관을 만들어 가고 있습니다.
         </p>
       </div>
       <div className="contacts">

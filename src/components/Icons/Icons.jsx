@@ -1,14 +1,22 @@
 import { a } from "@react-spring/web";
 
-import { Sun, Moon } from "../../icons";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+
 import "./Icons.css";
 
 function Icons({ toggle }) {
   const color = toggle === 1 ? "#ADB5BD" : "#343A40";
   return (
     <a.div className="icons">
-      <p class="open" children={<Sun color={color} />} />
-      <p class="close" children={<Moon color={color} />} />
+      <p
+        class="open"
+        children={<LightModeOutlinedIcon sx={{ color: color }} />}
+      />
+      <p
+        class="close"
+        children={<DarkModeOutlinedIcon sx={{ color: color }} />}
+      />
     </a.div>
   );
 }

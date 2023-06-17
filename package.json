@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.5",
     "@react-spring/core": "^9.7.2",
     "@react-spring/three": "^9.7.2",
     "@react-spring/web": "^9.7.2",
@@ -15,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.12.1",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
     "react-three-fiber": "^6.0.13",
     "three": "^0.148.0",
     "web-vitals": "^2.1.4"

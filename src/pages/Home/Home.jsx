@@ -22,6 +22,7 @@ function Home() {
 
   return (
     <a.div
+      id="home"
       className="homeContainer"
       style={{
         backgroundColor: x.to([0, 1], ["#DEE2E6", "#343A40"]),
@@ -31,7 +32,7 @@ function Home() {
         <Scene x={x} set={set} />
         <Icons toggle={toggle} />
       </a.div>
-      <ScrollMouse />
+      {/* <ScrollMouse /> */}
     </a.div>
   );
 }
