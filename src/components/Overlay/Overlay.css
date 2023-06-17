@@ -1,6 +1,12 @@
 .overlay {
-  position: relative;
-  order: 1;
-  flex: 1;
+  height: 100%;
+  width: 50%;
   pointer-events: none;
+}
+
+@media only screen and (max-aspect-ratio: 8/7) {
+  .overlay {
+    height: 50%;
+    width: 100%;
+  }
 }

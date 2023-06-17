@@ -1,10 +1,4 @@
 .canvas {
-  order: 2;
-  flex: 1;
   height: 100%;
-}
-@media only screen and (max-aspect-ratio: 8/7) {
-  .canvas {
-    order: 1;
-  }
+  width: 100%;
 }
