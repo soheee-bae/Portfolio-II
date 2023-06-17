@@ -7,11 +7,14 @@
   padding: 0;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .homeContent {
   height: 100%;
   width: 50%;
+  max-width: 700px;
   position: relative;
 }
 
@@ -22,5 +25,7 @@
   .homeContent {
     height: 50%;
     width: 100%;
+
+    max-width: none;
   }
 }

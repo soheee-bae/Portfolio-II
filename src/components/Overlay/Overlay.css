@@ -6,17 +6,18 @@
   gap: 30px;
   justify-content: center;
   align-items: center;
+  max-width: 700px;
 }
 
 .bio {
-  font-size: 22px;
+  font-size: 25px;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
 .bio span {
-  font-size: 40px;
+  font-size: 45px;
   font-weight: bold;
   padding: 1px 5px;
 }
@@ -45,7 +46,7 @@
   opacity: 1;
 }
 
-img {
+.profile {
   border-radius: 50%;
   height: 250px;
   width: 250px;
@@ -54,15 +55,42 @@ img {
   border: 3px solid black;
 }
 
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 30px;
+  position: relative;
+}
+
+.arrow1 {
+  position: absolute;
+  left: -40px;
+  top: 50px;
+  transform: rotate(20deg);
+}
+
+.arrow2 {
+  left: -10px;
+  top: 5px;
+  position: absolute;
+  transform: rotate(50deg);
+}
+
 @media only screen and (max-aspect-ratio: 8/7) {
   .overlay {
     height: 50%;
     width: 100%;
     justify-content: flex-start;
+    max-width: none;
   }
 
   .bio {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .bio span {
