@@ -3,7 +3,7 @@ import { a } from "@react-spring/web";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
-import "./Icons.css";
+import "./ThemeIcons.css";
 
 function Icons({ toggle }) {
   const color = toggle === 1 ? "#ADB5BD" : "#343A40";

@@ -1,4 +1,9 @@
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
+import "./Navbar.css";
+
+import { useScroll as hookScroll } from "../../hooks/useScroll";
+import { useToggle } from "../../hooks/useToggle";
+// import LanguageBtn from "../LanguageBtn/LanugageBtn";
 
 const navItems = [
   { label: "Home", value: "home" },
@@ -7,8 +12,14 @@ const navItems = [
 ];
 
 function Navbar() {
+  const { scrollTriggered } = hookScroll();
+  const { toggle } = useToggle();
+
   return (
-    <div className="navbar">
+    <div
+      className="navbar"
+      data-scrollDarkMode={scrollTriggered && toggle === 1}
+      data-scroll={scrollTriggered}>
       <div className="navbarContent">
         {navItems.map((nav) => (
           <Link
@@ -20,6 +31,7 @@ function Navbar() {
             {nav.label}
           </Link>
         ))}
+        {/* <LanguageBtn /> */}
       </div>
     </div>
   );

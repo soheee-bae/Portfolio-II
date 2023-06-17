@@ -4,6 +4,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import BookIcon from "@mui/icons-material/Book";
 import EmailIcon from "@mui/icons-material/Email";
+import Tooltip from "@mui/material/Tooltip";
 
 import "./Overlay.css";
 
@@ -16,19 +17,27 @@ function Overlay({ toggle }) {
     {
       icon: <GitHubIcon sx={{ color: color }} />,
       href: "https://github.com/soheee-bae",
+      label: "Github",
     },
-    { icon: <EmailIcon sx={{ color: color }} />, href: "baesoheee@gmail.com" },
+    {
+      icon: <EmailIcon sx={{ color: color }} />,
+      href: "baesoheee@gmail.com",
+      label: "Email",
+    },
     {
       icon: <LinkedInIcon sx={{ color: color }} />,
       href: "https://www.linkedin.com/in/sohee-bae-b37a9a166/",
+      label: "Linkedin",
     },
     {
       icon: <InstagramIcon sx={{ color: color }} />,
       href: "https://www.instagram.com/50h333ba3/",
+      label: "Instagram",
     },
     {
       icon: <BookIcon sx={{ color: color }} />,
       href: "https://soheee-bae.github.io/",
+      label: "Blog",
     },
   ];
 
@@ -57,9 +66,11 @@ function Overlay({ toggle }) {
       </div>
       <div className="contacts">
         {contacts.map((contact) => (
-          <a target="_blank" href={contact.href}>
-            {contact.icon}
-          </a>
+          <Tooltip title={contact.label}>
+            <a target="_blank" href={contact.href}>
+              {contact.icon}
+            </a>
+          </Tooltip>
         ))}
       </div>
     </div>

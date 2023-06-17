@@ -1,24 +1,15 @@
-import React, { useState } from "react";
-import { useSpring } from "@react-spring/core";
+import React from "react";
 import { a } from "@react-spring/web";
 
 import Scene from "../../components/Scene/Scene";
 import Overlay from "../../components/Overlay/Overlay";
-import Icons from "../../components/Icons/Icons";
+import Icons from "../../components/ThemeIcons/ThemeIcons";
 
 import "./Home.css";
-import ScrollMouse from "../../components/ScrollMouse/ScrollMouse";
+import { useToggle } from "../../hooks/useToggle";
 
 function Home() {
-  const [toggle, set] = useState(0);
-
-  const [{ x }] = useSpring(
-    {
-      x: toggle,
-      config: { mass: 5, tension: 400, friction: 100, precision: 0.0001 },
-    },
-    [toggle]
-  );
+  const { toggle, set, x } = useToggle();
 
   return (
     <a.div
@@ -32,7 +23,6 @@ function Home() {
         <Scene x={x} set={set} />
         <Icons toggle={toggle} />
       </a.div>
-      {/* <ScrollMouse /> */}
     </a.div>
   );
 }
