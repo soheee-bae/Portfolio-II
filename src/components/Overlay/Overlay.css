@@ -10,7 +10,7 @@
 }
 
 .bio {
-  font-size: 25px;
+  font-size: 23px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -19,7 +19,15 @@
 .bio span {
   font-size: 45px;
   font-weight: bold;
-  padding: 1px 5px;
+  padding: 0 5px;
+  position: relative;
+}
+
+.bio span svg {
+  position: absolute;
+  width: 170px;
+  margin-top: 50px;
+  margin-left: -140px;
 }
 
 .contacts {

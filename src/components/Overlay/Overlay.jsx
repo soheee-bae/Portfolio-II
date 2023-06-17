@@ -1,8 +1,17 @@
-import { Blog, Email, Github, Instagram, Linkedin } from "../../icons";
+import {
+  Blog,
+  Email,
+  Github,
+  Highlight,
+  Instagram,
+  Linkedin,
+} from "../../icons";
 import "./Overlay.css";
 
 function Overlay({ toggle }) {
   const color = toggle === 0 ? "#000000" : "#ffffff";
+  const arrowSrc =
+    toggle === 0 ? "./image/arrow.png" : "./image/arrowWhite.png";
 
   const contacts = [
     {
@@ -25,15 +34,18 @@ function Overlay({ toggle }) {
     <div className="overlay" style={{ color: `${color}` }}>
       <div className="imageContainer">
         <div className="arrows">
-          <img className="arrow1" src="./image/arrow.png" alt="arrow" />
-          <img className="arrow2" src="./image/arrow.png" alt="arrow" />
+          <img className="arrow1" src={arrowSrc} alt="arrow" />
+          <img className="arrow2" src={arrowSrc} alt="arrow" />
         </div>
         <img className="profile" src="./image/profile.jpg" alt="profile" />
       </div>
       <div className="bio">
         <p>
           남다른 도전정신을 가진 개발자,{" "}
-          <span style={{ borderBottom: `3px solid ${color}` }}>배소희</span>
+          <span>
+            배소희
+            <Highlight />
+          </span>
           입니다.
         </p>
         <p>

@@ -7,6 +7,7 @@ import Overlay from "../../components/Overlay/Overlay";
 import Icons from "../../components/Icons/Icons";
 
 import "./Home.css";
+import ScrollMouse from "../../components/ScrollMouse/ScrollMouse";
 
 function Home() {
   const [toggle, set] = useState(0);
@@ -30,6 +31,7 @@ function Home() {
         <Scene x={x} set={set} />
         <Icons toggle={toggle} />
       </a.div>
+      <ScrollMouse />
     </a.div>
   );
 }
