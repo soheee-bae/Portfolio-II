@@ -1,4 +1,16 @@
+import { Blog, Email, Github, Instagram, Linkedin } from "../../icons";
 import "./Overlay.css";
+
+const contacts = [
+  { icon: <Github />, href: "https://github.com/soheee-bae" },
+  { icon: <Email />, href: "baesoheee@gmail.com" },
+  {
+    icon: <Linkedin />,
+    href: "https://www.linkedin.com/in/sohee-bae-b37a9a166/",
+  },
+  { icon: <Instagram />, href: "https://www.instagram.com/50h333ba3/" },
+  { icon: <Blog />, href: "https://soheee-bae.github.io/" },
+];
 
 function Overlay() {
   return (
@@ -14,7 +26,9 @@ function Overlay() {
         </p>
       </div>
       <div className="contacts">
-        
+        {contacts.map((contact) => (
+          <a href={contact.href}>{contact.icon}</a>
+        ))}
       </div>
     </div>
   );

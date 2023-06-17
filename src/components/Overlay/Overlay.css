@@ -1,7 +1,6 @@
 .overlay {
   height: 100%;
   width: 50%;
-  pointer-events: none;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -10,15 +9,14 @@
 }
 
 .bio {
-  border: 1px solid red;
-  font-size: 20px;
+  font-size: 22px;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
 .bio span {
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bold;
   padding: 0 5px;
 }
@@ -26,9 +24,16 @@
 .contacts {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
+}
+
+.contacts svg {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: black;
 }
 
 img {
