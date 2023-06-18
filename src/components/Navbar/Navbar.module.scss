@@ -5,6 +5,7 @@
   height: 70px;
   z-index: 10;
   position: fixed;
+  overflow-x: hidden;
   top: 0;
 
   display: flex;
@@ -13,6 +14,47 @@
   align-items: center;
 
   background: transparent;
+
+  a {
+    opacity: 0.9;
+    color: var(--blackColor100);
+    font-weight: var(--font-normal);
+
+    &:hover {
+      transition: all 0.4s;
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  &[data-darkmode='true'] {
+    a {
+      opacity: 0.9;
+      color: var(--whiteColor100);
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &[data-scroll='true'] {
+    background: var(--whiteColor300);
+    opacity: 0.9;
+    transition: all 0.4s;
+    box-shadow: rgba(149, 157, 165, 0.05) 0px 8px 24px;
+    a {
+      opacity: 1;
+      color: var(--blackColor100);
+    }
+    &[data-darkmode='true'] {
+      background: var(--blackColor200);
+      opacity: 0.9;
+      a {
+        opacity: 1;
+        color: var(--whiteColor100);
+      }
+    }
+  }
 }
 
 .navbarContent {
@@ -20,26 +62,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 35px;
   padding: 0 40px;
 
   a {
     cursor: pointer;
-  }
-
-  &[data-scroll='true'] {
-    background: var(--whiteColor100);
-    opacity: 1;
-    transition: all 0.3s;
-    box-shadow: rgba(149, 157, 165, 0.2) 0 4px 2px -2px;
-    color: var(--blackColor100);
-  }
-
-  &[data-scrollDarkMode='true'] {
-    background: var(--blackColor100);
-    color: var(--whiteColor100);
-    opacity: 1;
-    transition: all 0.3s;
-    box-shadow: rgba(149, 157, 165, 0.2) 0 4px 2px -2px;
   }
 }

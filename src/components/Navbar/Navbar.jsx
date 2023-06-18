@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Link } from 'react-scroll';
 import styles from './Navbar.module.scss';
 
-import { useScroll as hookScroll } from '../../hooks/useScroll';
+import { useScroll } from '../../hooks/useScroll';
 import ToggleContext from '../../context/toggleContext';
 // import LanguageBtn from "../LanguageBtn/LanugageBtn";
 
@@ -13,14 +13,15 @@ const navItems = [
 ];
 
 function Navbar() {
-  const { scrollTriggered } = hookScroll();
-  const { toggle } = useContext(ToggleContext);
+  const { scrollTriggered } = useScroll();
+  const { isLightMode } = useContext(ToggleContext);
 
   return (
     <div
+      id="scroller"
       className={styles.navbar}
-      data-scrollDarkMode={scrollTriggered && toggle === 1}
-      data-scroll={scrollTriggered}>
+      data-scroll={scrollTriggered}
+      data-darkmode={!isLightMode}>
       <div className={styles.navbarContent}>
         {navItems.map((nav) => (
           <Link

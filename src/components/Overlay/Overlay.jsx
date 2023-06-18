@@ -14,7 +14,7 @@ import styles from './Overlay.module.scss';
 function Overlay() {
   const { isLightMode } = useContext(ToggleContext);
 
-  const color = isLightMode ? 'var(--blackColor100)' : 'var(--whiteColor100)';
+  const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
   const arrowSrc = isLightMode ? './image/arrow.png' : './image/arrowWhite.png';
 
   const contacts = [
