@@ -1,6 +1,12 @@
 .scrollContainer {
   position: absolute;
   bottom: 0;
+  padding-bottom: 20px;
+  opacity: 1;
+  transition: opacity 0.8s;
+  &[data-scroll='true'] {
+    opacity: 0;
+  }
 }
 
 .scrollDowns {
@@ -14,20 +20,27 @@
   width: 3px;
   padding: 10px 14px;
   height: 30px;
-  border: 2px solid #fff;
+  border: 2px solid var(--whiteColor100);
   border-radius: 25px;
-  opacity: 0.75;
+  opacity: 1;
   box-sizing: content-box;
+  &[data-lightmode='true'] {
+    border: 2px solid var(--blackColor100);
+  }
 }
+
 .scroller {
-  width: 3px;
+  width: 2.5px;
   height: 10px;
   border-radius: 25%;
-  background-color: #fff;
+  background-color: var(--whiteColor100);
   animation-name: scroll;
   animation-duration: 2.5s;
   animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
+  &[data-lightmode='true'] {
+    background-color: var(--blackColor100);
+  }
 }
 @keyframes scroll {
   0% {

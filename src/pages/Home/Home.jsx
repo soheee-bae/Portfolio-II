@@ -5,6 +5,7 @@ import Scene from '../../components/Scene/Scene';
 import Overlay from '../../components/Overlay/Overlay';
 import Icons from '../../components/ThemeIcons/ThemeIcons';
 import ToggleContext from '../../context/toggleContext';
+import ScrollMouse from '../../components/ScrollMouse/ScrollMouse';
 
 import styles from './Home.module.scss';
 
@@ -23,6 +24,7 @@ function Home() {
         <Scene />
         <Icons />
       </a.div>
+      <ScrollMouse />
     </a.div>
   );
 }
