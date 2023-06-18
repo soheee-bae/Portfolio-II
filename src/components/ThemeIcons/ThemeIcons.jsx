@@ -1,20 +1,20 @@
 import { useContext } from 'react';
 import { a } from '@react-spring/web';
+import clsx from 'clsx';
+
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
 import styles from './ThemeIcons.module.scss';
 import ToggleContext from '../../context/toggleContext';
-import clsx from 'clsx';
 
 function Icons() {
-  const { toggle } = useContext(ToggleContext);
-
-  const color = toggle === 1 ? '#ADB5BD' : '#343A40';
+  const { isLightMode } = useContext(ToggleContext);
+  const color = isLightMode ? 'var(--blackColor300)' : 'var(--whiteColor600)';
 
   return (
     <a.div className={styles.icons}>
-      <p className={clsx(styles.icon, styles.light)}>
+      <p className={styles.icon}>
         <LightModeOutlinedIcon sx={{ color: color }} />
       </p>
       <p className={clsx(styles.icon, styles.dark)}>

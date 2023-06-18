@@ -5,6 +5,7 @@ import ToggleContext from '../../context/toggleContext';
 
 function Switch() {
   const { x, setToggle } = useContext(ToggleContext);
+
   const { nodes, materials } = useGLTF('./model/metal.glb');
   const texture = useTexture('./model/onoff.jpg');
 
@@ -13,11 +14,10 @@ function Switch() {
   const pZ = x.to([0, 1], [-1.2, 1.2]);
   const rX = x.to([0, 1], [0, Math.PI * 1.3]);
   const color = x.to([0, 1], ['#212529', '#212529']);
-  const ballColor = x.to([0, 1], ['#E9ECEF', '#343A40']);
+  const ballColor = x.to([0, 1], ['#e9ecef', '#343a40']);
 
   return (
     <group scale={[1.25, 1.25, 1.25]} dispose={null}>
-      {/* <OrbitControls /> */}
       <a.mesh
         receiveShadow
         castShadow

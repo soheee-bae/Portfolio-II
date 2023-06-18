@@ -13,6 +13,8 @@ body,
   padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Custom Scrollbar */

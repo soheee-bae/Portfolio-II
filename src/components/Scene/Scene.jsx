@@ -10,7 +10,7 @@ import styles from './Scene.module.scss';
 function Scene() {
   const { x } = useContext(ToggleContext);
 
-  const color = x.to([0, 1], ['#F1F3F5', '#3F454C']);
+  const color = x.to([0, 1], ['#f8f9fa', '#343a40']);
 
   return (
     <Canvas

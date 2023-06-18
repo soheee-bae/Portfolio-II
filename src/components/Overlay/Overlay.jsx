@@ -12,10 +12,10 @@ import Tooltip from '@mui/material/Tooltip';
 import styles from './Overlay.module.scss';
 
 function Overlay() {
-  const { toggle } = useContext(ToggleContext);
+  const { isLightMode } = useContext(ToggleContext);
 
-  const color = toggle === 0 ? '#000000' : '#ffffff';
-  const arrowSrc = toggle === 0 ? './image/arrow.png' : './image/arrowWhite.png';
+  const color = isLightMode ? 'var(--blackColor100)' : 'var(--whiteColor100)';
+  const arrowSrc = isLightMode ? './image/arrow.png' : './image/arrowWhite.png';
 
   const contacts = [
     {
