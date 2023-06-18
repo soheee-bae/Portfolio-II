@@ -1,5 +1,6 @@
+import { useContext } from 'react';
 import { Highlight } from '../../icons';
-import { useToggle } from '../../hooks/useToggle';
+import ToggleContext from '../../context/toggleContext';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -11,7 +12,7 @@ import Tooltip from '@mui/material/Tooltip';
 import styles from './Overlay.module.scss';
 
 function Overlay() {
-  const { toggle } = useToggle();
+  const { toggle } = useContext(ToggleContext);
 
   const color = toggle === 0 ? '#000000' : '#ffffff';
   const arrowSrc = toggle === 0 ? './image/arrow.png' : './image/arrowWhite.png';

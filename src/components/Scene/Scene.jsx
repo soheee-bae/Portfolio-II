@@ -1,14 +1,14 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { a } from '@react-spring/three';
 
-import { useToggle } from '../../hooks/useToggle';
 import Switch from '../Switch/Switch';
+import ToggleContext from '../../context/toggleContext';
 
 import styles from './Scene.module.scss';
 
 function Scene() {
-  const { x } = useToggle();
+  const { x } = useContext(ToggleContext);
 
   const color = x.to([0, 1], ['#F1F3F5', '#3F454C']);
 

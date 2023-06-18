@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { a } from '@react-spring/web';
 
 import Scene from '../../components/Scene/Scene';
 import Overlay from '../../components/Overlay/Overlay';
 import Icons from '../../components/ThemeIcons/ThemeIcons';
-import { useToggle } from '../../hooks/useToggle';
 
 import styles from './Home.module.scss';
+import ToggleContext from '../../context/toggleContext';
 
 function Home() {
-  const { x } = useToggle();
+  const { x } = useContext(ToggleContext);
 
   return (
     <a.div

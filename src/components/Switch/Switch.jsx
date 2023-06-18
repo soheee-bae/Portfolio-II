@@ -1,10 +1,10 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { a } from '@react-spring/three';
 import { useGLTF, useTexture, Shadow } from '@react-three/drei';
-import { useToggle } from '../../hooks/useToggle';
+import ToggleContext from '../../context/toggleContext';
 
 function Switch() {
-  const { x, setToggle } = useToggle();
+  const { x, setToggle } = useContext(ToggleContext);
   const { nodes, materials } = useGLTF('./model/metal.glb');
   const texture = useTexture('./model/onoff.jpg');
 

@@ -1,3 +1,5 @@
+@import '../../styles/color';
+
 .navbar {
   width: 100%;
   height: 70px;
@@ -26,16 +28,16 @@
   }
 
   &[data-scroll='true'] {
-    background: white;
+    background: var(--whiteColor100);
     opacity: 1;
     transition: all 0.3s;
     box-shadow: rgba(149, 157, 165, 0.2) 0 4px 2px -2px;
-    color: black;
+    color: var(--blackColor100);
   }
 
   &[data-scrollDarkMode='true'] {
-    background: black;
-    color: white;
+    background: var(--blackColor100);
+    color: var(--whiteColor100);
     opacity: 1;
     transition: all 0.3s;
     box-shadow: rgba(149, 157, 165, 0.2) 0 4px 2px -2px;

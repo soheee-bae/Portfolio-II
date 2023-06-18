@@ -1,14 +1,14 @@
+import { useContext } from 'react';
 import { a } from '@react-spring/web';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
-import { useToggle } from '../../hooks/useToggle';
-
 import styles from './ThemeIcons.module.scss';
+import ToggleContext from '../../context/toggleContext';
 import clsx from 'clsx';
 
 function Icons() {
-  const { toggle } = useToggle();
+  const { toggle } = useContext(ToggleContext);
 
   const color = toggle === 1 ? '#ADB5BD' : '#343A40';
 

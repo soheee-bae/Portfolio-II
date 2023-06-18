@@ -11,6 +11,7 @@
   "plugins": ["react"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "react/no-unknown-property": "warn"
+    "react/no-unknown-property": "warn",
+    "react/prop-types": "off"
   }
 }

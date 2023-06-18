@@ -1,8 +1,9 @@
+import { useContext } from 'react';
 import { Link } from 'react-scroll';
 import styles from './Navbar.module.scss';
 
 import { useScroll as hookScroll } from '../../hooks/useScroll';
-import { useToggle } from '../../hooks/useToggle';
+import ToggleContext from '../../context/toggleContext';
 // import LanguageBtn from "../LanguageBtn/LanugageBtn";
 
 const navItems = [
@@ -13,7 +14,7 @@ const navItems = [
 
 function Navbar() {
   const { scrollTriggered } = hookScroll();
-  const { toggle } = useToggle();
+  const { toggle } = useContext(ToggleContext);
 
   return (
     <div
