@@ -1,11 +1,17 @@
+@import '../../styles/mixin';
+
 .scrollContainer {
   position: absolute;
   bottom: 0;
   padding-bottom: 20px;
-  opacity: 1;
+  opacity: 0;
+
   transition: opacity 0.8s;
   &[data-scroll='true'] {
     opacity: 0;
+  }
+  @include xl {
+    opacity: 1;
   }
 }
 

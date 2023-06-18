@@ -15,6 +15,11 @@ body,
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;

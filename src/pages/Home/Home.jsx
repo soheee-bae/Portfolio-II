@@ -9,7 +9,7 @@ import ScrollMouse from '../../components/ScrollMouse/ScrollMouse';
 
 import styles from './Home.module.scss';
 
-function Home() {
+function Home({ scroll }) {
   const { x } = useContext(ToggleContext);
 
   return (
@@ -24,7 +24,7 @@ function Home() {
         <Scene />
         <Icons />
       </a.div>
-      <ScrollMouse />
+      <ScrollMouse scroll={scroll} />
     </a.div>
   );
 }

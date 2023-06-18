@@ -5,14 +5,12 @@
   height: 70px;
   z-index: 10;
   position: fixed;
-  overflow-x: hidden;
   top: 0;
-
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-
+  overflow: hidden;
   background: transparent;
 
   a {
