@@ -1,31 +1,57 @@
+@import '../../styles/mixin';
+@import '../../styles/typography';
+
 .overlay {
-  height: 100%;
-  width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  max-width: 700px;
+  gap: 30px;
+
+  height: 50%;
+  width: 100%;
+  max-width: none;
+
+  @include xl {
+    justify-content: center;
+    max-width: 700px;
+    height: 100%;
+    width: 50%;
+  }
 }
 
 .bio {
-  font-size: 23px;
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-size: var(--text-md);
+  padding: 0 20px;
   span {
-    font-size: 45px;
-    font-weight: bold;
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
     padding: 0 5px;
     position: relative;
   }
 
   svg {
     position: absolute;
-    width: 170px;
-    margin-top: 50px;
-    margin-left: -140px;
+    width: 120px;
+    margin-top: 30px;
+    margin-left: -95px;
+  }
+
+  @include xl {
+    font-size: var(--text-lg);
+
+    span {
+      font-size: var(--text-xxl);
+    }
+
+    svg {
+      width: 160px;
+      margin-top: 35px;
+      margin-left: -125px;
+    }
   }
 }
 
@@ -37,10 +63,11 @@
   justify-content: center;
 
   svg {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
   }
+
   a {
     opacity: 0.5;
 
@@ -48,6 +75,14 @@
       transition: all 0.4s;
       transform: scale(1.1);
       opacity: 1;
+    }
+  }
+
+  @include xl {
+    svg {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
     }
   }
 }
@@ -84,28 +119,6 @@
     top: 5px;
     position: absolute;
     transform: rotate(50deg);
-  }
-}
-
-@media only screen and (max-aspect-ratio: 8/7) {
-  .overlay {
-    height: 50%;
-    width: 100%;
-    justify-content: flex-start;
-    max-width: none;
-  }
-
-  .bio {
-    font-size: 20px;
-  }
-
-  .bio span {
-    font-size: 30px;
-  }
-
-  .contacts svg {
-    width: 25px;
-    height: 25px;
   }
 }
 

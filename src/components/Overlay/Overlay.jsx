@@ -55,7 +55,7 @@ function Overlay() {
       </div>
       <div className={styles.bio}>
         <p>
-          남다른 도전정신을 가진 개발자,{' '}
+          남다른 도전정신을 가진 개발자,
           <span>
             배소희
             <Highlight />
