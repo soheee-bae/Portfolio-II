@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
-import MobileStepper from '@mui/material/MobileStepper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-// import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-// import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import { projects } from '../../datas/Projects';
-// import SwipeableViews from 'react-swipeable-views';
-// import { autoPlay } from 'react-swipeable-views-utils';
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+import { projects } from '../../datas/Projects';
+import styles from './ProjectStepper.module.scss';
+import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 
 function ProjectStepper() {
   const [activeStep, setActiveStep] = useState(0);
-  const maxSteps = projects.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -27,28 +23,24 @@ function ProjectStepper() {
   //   };
 
   return (
-    <div>
-      <div>
-        <Typography>{projects[activeStep].name}</Typography>
+    <div className={styles.projectStepper}>
+      <div className={styles.stepperContent}>
+        <IconButton
+          onClick={handleBack}
+          disabled={activeStep === 0}
+          className={styles.backIconButton}
+          sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
+          <ArrowBackIosIcon />
+        </IconButton>
+        <ProjectCarousel project={projects[activeStep]} />
+        <IconButton
+          onClick={handleNext}
+          disabled={activeStep === 2}
+          className={styles.nextIconButton}
+          sx={{ '&:hover, &:active': { backgroundColor: 'transparent' } }}>
+          <ArrowForwardIosIcon />
+        </IconButton>
       </div>
-
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-            Next
-            {/* {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />} */}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {/* {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />} */}
-            Back
-          </Button>
-        }
-      />
     </div>
   );
 }
