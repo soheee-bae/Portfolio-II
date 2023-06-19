@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { a } from '@react-spring/web';
 
+import ToggleContext from '../../context/toggleContext';
 import styles from './Project.module.scss';
+import ProjectStepper from '../../components/ProjectStepper/ProjectStepper';
 
 function Project() {
+  const { x } = useContext(ToggleContext);
+
   return (
-    <div id="project" className={styles.project}>
-      Project
-    </div>
+    <a.div
+      id="project"
+      className={styles.project}
+      style={{
+        backgroundColor: x.to([0, 1], ['var(--whiteColor450)', 'var(--blackColor150)'])
+      }}>
+      <ProjectStepper />
+    </a.div>
   );
 }
 
