@@ -1,21 +1,19 @@
+.projectCarousel {
+  border: 1px solid red;
+  max-width: 630px;
+}
+
 .carousel {
   background-color: transparent;
-  height: 500px;
+  height: 400px;
   width: 630px;
-  border: 1px solid red;
   figure {
-    height: 500px;
-    width: 630px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid blue;
-
+    height: 345px;
+    width: 628px;
+    border-radius: 8px;
     img {
-      height: 500px;
-      object-fit: cover;
-      width: 630px !important;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      object-fit: cover;
     }
   }
 }
