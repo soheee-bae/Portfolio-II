@@ -32,7 +32,20 @@ export const projects = [
       '영화의 자세한 정보를 제공하는 서비스, 회원가입과 로그인을 통해서 watchlist를 사용해 유저들이 원하는 영화 리스트를 보관하고 저장할수 있는 서비스',
     github: 'https://github.com/soheee-bae/Gatsby-Image-Blog-Starter',
     demo: 'https://filmacorn.vercel.app/',
-    skills: ['React', 'Javascript', 'Typescript', 'HTML', 'SCSS', 'NextJs', 'tmdb-api']
+    skills: [
+      'React',
+      'Javascript',
+      'Typescript',
+      'HTML',
+      'SCSS',
+      'React',
+      'Javascript',
+      'Typescript',
+      'HTML',
+      'SCSS',
+      'NextJs',
+      'tmdb-api'
+    ]
   },
   {
     name: 'Tasting Table',

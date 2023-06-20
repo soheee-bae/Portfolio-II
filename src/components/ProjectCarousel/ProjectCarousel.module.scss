@@ -1,18 +1,106 @@
 .projectCarousel {
-  max-width: 630px;
+  max-width: 730px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &[data-animation='true'] {
+    animation: fadeIn 1.5s;
+  }
 }
 
 .carousel {
   background-color: transparent;
-  height: 400px;
-  width: 630px;
+  height: 470px;
+  width: 730px;
+  margin-bottom: 5px;
+
   figure {
-    height: 345px;
-    width: 628px;
+    height: 400px;
+    width: 730px;
     border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    animation: fadeIn 0.5s inherit;
+
     img {
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       object-fit: cover;
     }
+  }
+}
+
+.header {
+  .type {
+    margin: 0;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--blackColor500);
+  }
+  .name {
+    margin: 0;
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    letter-spacing: 1.2px;
+  }
+}
+
+.description {
+  font-size: var(--text-sm);
+  line-height: 22px;
+  margin: 0;
+}
+
+.skills {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+
+  .skill {
+    font-size: var(--text-xs);
+    padding: 5px 8px;
+    font-weight: var(--font-medium);
+    border: 1.5px solid var(--blackColor500);
+    color: var(--blackColor200);
+    border-radius: 5px;
+    transition: all 0.3s;
+    cursor: default;
+    &:hover {
+      background-color: var(--whiteColor600);
+      color: var(--blackColor100);
+      transform: scale(1.1);
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  svg {
+    height: 25px;
+    width: 25px;
+  }
+  a {
+    opacity: 0.8;
+
+    &:hover {
+      transition: all 0.4s;
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+}
+//400 630
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
