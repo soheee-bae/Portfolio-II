@@ -33,8 +33,8 @@ function ProjectStepper() {
 
   return (
     <div className={styles.projectStepper}>
-      <div className={styles.stepperTitle}>
-        <h1>Project</h1>
+      <div className={styles.stepperTitle} data-isLightMode={isLightMode}>
+        <h1>PROJECT</h1>
       </div>
       <div className={styles.stepperContent}>
         <IconButton

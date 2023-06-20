@@ -20,6 +20,7 @@ function ProjectCarousel({ project, animation, setAnimation, direction }) {
       className={styles.projectCarousel}
       data-animation={animation}
       data-direction={direction}
+      data-darkmode={!isLightMode}
       onAnimationEnd={() => setAnimation(false)}>
       <Carousel
         images={project.images}

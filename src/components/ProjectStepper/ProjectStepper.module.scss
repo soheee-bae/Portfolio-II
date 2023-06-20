@@ -14,6 +14,11 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  letter-spacing: 1.2px;
+  color: var(--whiteColor100);
+  &[data-isLightMode='true'] {
+    color: var(--blackColor100);
+  }
 }
 
 .stepperContent {

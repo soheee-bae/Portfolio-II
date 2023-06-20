@@ -13,7 +13,7 @@ function Project() {
       id="project"
       className={styles.project}
       style={{
-        backgroundColor: x.to([0, 1], ['var(--whiteColor450)', 'var(--blackColor150)'])
+        backgroundColor: x.to([0, 1], ['var(--whiteColor350)', 'var(--blackColor350)'])
       }}>
       <ProjectStepper />
     </a.div>
