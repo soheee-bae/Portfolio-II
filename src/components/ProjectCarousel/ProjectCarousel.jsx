@@ -15,6 +15,7 @@ function ProjectCarousel({ project, animation, setAnimation, direction }) {
 
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
 
+  const description = project.description.replace(/\\n/g, '\n');
   return (
     <div
       className={styles.projectCarousel}
@@ -33,10 +34,29 @@ function ProjectCarousel({ project, animation, setAnimation, direction }) {
         className={styles.carousel}
       />
       <div className={styles.header}>
-        <p className={styles.type}>{project.type}</p>
-        <p className={styles.name}>{project.name.toUpperCase()}</p>
+        <div className={styles.headerContent}>
+          <p className={styles.type}>{project.type}</p>
+          <p className={styles.name}>{project.name.toUpperCase()}</p>
+        </div>
+        <div className={styles.links}>
+          <Tooltip title="Github">
+            <a target="_blank" rel="noreferrer" href={project.github}>
+              <GitHubIcon sx={{ color: color }} />
+            </a>
+          </Tooltip>
+          <Tooltip title="사이트 바로가기">
+            <a target="_blank" rel="noreferrer" href={project.demo}>
+              <LaunchIcon sx={{ color: color }} />
+            </a>
+          </Tooltip>
+          <Tooltip title="자세한 프로젝트 설명보기">
+            <a target="_blank" rel="noreferrer" href={project.demo}>
+              <DescriptionOutlinedIcon sx={{ color: color }} />
+            </a>
+          </Tooltip>
+        </div>
       </div>
-      <p className={styles.description}>{project.description}</p>
+      <p className={styles.description}>{description}</p>
       <ul className={styles.skills}>
         {project.skills.map((skill) => (
           <li className={styles.skill} key={skill}>
@@ -44,23 +64,6 @@ function ProjectCarousel({ project, animation, setAnimation, direction }) {
           </li>
         ))}
       </ul>
-      <div className={styles.links}>
-        <Tooltip title="Github">
-          <a target="_blank" rel="noreferrer" href={project.github}>
-            <GitHubIcon sx={{ color: color }} />
-          </a>
-        </Tooltip>
-        <Tooltip title="사이트 바로가기">
-          <a target="_blank" rel="noreferrer" href={project.demo}>
-            <LaunchIcon sx={{ color: color }} />
-          </a>
-        </Tooltip>
-        <Tooltip title="자세한 프로젝트 설명보기">
-          <a target="_blank" rel="noreferrer" href={project.demo}>
-            <DescriptionOutlinedIcon sx={{ color: color }} />
-          </a>
-        </Tooltip>
-      </div>
     </div>
   );
 }
