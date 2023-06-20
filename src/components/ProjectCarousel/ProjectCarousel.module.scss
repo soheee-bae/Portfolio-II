@@ -5,7 +5,11 @@
   gap: 20px;
 
   &[data-animation='true'] {
-    animation: fadeIn 1.5s;
+    animation: fadeInNext 1s;
+
+    &[data-direction='prev'] {
+      animation: fadeInPrev 1s;
+    }
   }
 }
 
@@ -96,11 +100,32 @@
 }
 //400 630
 
-@keyframes fadeIn {
+@keyframes fadeInNext {
   0% {
     opacity: 0;
   }
+  15% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
   100% {
     opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeInPrev {
+  0% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }

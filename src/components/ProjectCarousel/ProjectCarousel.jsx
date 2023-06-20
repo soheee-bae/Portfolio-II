@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import Carousel from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
 
@@ -10,18 +10,16 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import styles from './ProjectCarousel.module.scss';
 import ToggleContext from '../../context/toggleContext';
 
-function ProjectCarousel({ project }) {
+function ProjectCarousel({ project, animation, setAnimation, direction }) {
   const { isLightMode } = useContext(ToggleContext);
-  const [animation, setAnimation] = useState(true);
 
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
-
-  useEffect(() => {}, [project]);
 
   return (
     <div
       className={styles.projectCarousel}
       data-animation={animation}
+      data-direction={direction}
       onAnimationEnd={() => setAnimation(false)}>
       <Carousel
         images={project.images}
