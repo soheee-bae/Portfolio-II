@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import styles from './Navbar.module.scss';
 
 import ToggleContext from '../../context/toggleContext';
+import clsx from 'clsx';
 // import LanguageBtn from '../LanguageBtn/LanugageBtn';
 
 const navItems = [
@@ -11,7 +12,7 @@ const navItems = [
   { label: 'About', value: 'about' }
 ];
 
-function Navbar({ scroll }) {
+function Navbar({ scroll, navSection, setNavSection }) {
   const { isLightMode } = useContext(ToggleContext);
 
   return (
@@ -24,7 +25,9 @@ function Navbar({ scroll }) {
             to={nav.value}
             spy={true}
             smooth={true}
-            duration={500}>
+            duration={500}
+            className={clsx(styles.nav, { [styles.selectedNav]: nav.value === navSection })}
+            onClick={() => setNavSection(nav.value)}>
             {nav.label}
           </Link>
         ))}

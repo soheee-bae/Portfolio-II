@@ -5,8 +5,9 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import { projects } from '../../datas/Projects';
-import styles from './ProjectStepper.module.scss';
 import ToggleContext from '../../context/toggleContext';
+
+import styles from './ProjectStepper.module.scss';
 
 function ProjectStepper() {
   const [activeStep, setActiveStep] = useState(0);
@@ -27,15 +28,8 @@ function ProjectStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  //   const handleStepChange = (step) => {
-  //     setActiveStep(step);
-  //   };
-
   return (
     <div className={styles.projectStepper}>
-      <div className={styles.stepperTitle} data-isLightMode={isLightMode}>
-        <h1>PROJECT</h1>
-      </div>
       <div className={styles.stepperContent}>
         <IconButton
           onClick={handleBack}
