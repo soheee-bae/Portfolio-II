@@ -26,7 +26,10 @@ function Navbar({ scroll, navSection, setNavSection }) {
             spy={true}
             smooth={true}
             duration={500}
-            className={clsx(styles.nav, { [styles.selectedNav]: nav.value === navSection })}
+            className={clsx(styles.nav, {
+              [styles.selectedNavDark]: nav.value === navSection && !isLightMode,
+              [styles.selectedNav]: nav.value === navSection
+            })}
             onClick={() => setNavSection(nav.value)}>
             {nav.label}
           </Link>

@@ -6,12 +6,39 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  gap: 10px;
+
+  padding-right: 25px;
   overflow: hidden;
   background: transparent;
   width: 100px;
+}
+
+.darkModeDotNav {
+  .tooltip {
+    color: var(--whiteColor300);
+  }
+  svg {
+    color: var(--whiteColor500);
+  }
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+
+.tooltip {
+  opacity: 0;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.selectedTooltip {
+  opacity: 1;
 }
 
 .dotIcon {
@@ -24,6 +51,7 @@
     width: 10px;
     cursor: pointer;
     transition: all 0.3s;
+    margin-right: 3px;
 
     &:hover {
       height: 13px;
@@ -34,7 +62,13 @@
 
 .selectedDotIcon {
   svg {
+    margin-right: 0;
     height: 15px;
     width: 15px;
+
+    &:hover {
+      height: 15px;
+      width: 15px;
+    }
   }
 }
