@@ -49,7 +49,7 @@ function ProjectStepper() {
         />
         <IconButton
           onClick={handleNext}
-          disabled={activeStep === 2 || animation}
+          disabled={activeStep === 3 || animation}
           className={styles.nextIconButton}
           sx={{
             color: isLightMode ? 'var(--blackColor400)' : 'var(--whiteColor600)',
