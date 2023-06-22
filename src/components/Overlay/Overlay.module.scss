@@ -89,6 +89,10 @@
   }
 }
 
+.profileArea {
+  position: relative;
+}
+
 .profile {
   border-radius: 50%;
   height: 250px;
@@ -96,6 +100,11 @@
   object-fit: cover;
   animation: morph 8s ease-in-out infinite;
   border: 3px solid var(--blackColor100);
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .imageContainer {

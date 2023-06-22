@@ -22,11 +22,11 @@ function VerticalDotNav({ navSection, setNavSection }) {
     {
       tooltip: 'About',
       id: 'about'
+    },
+    {
+      tooltip: 'Contact',
+      id: 'contact'
     }
-    // {
-    //   tooltip: 'Contact',
-    //   id: ''
-    // }
   ];
 
   return (

@@ -1,18 +1,20 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Highlight } from '../../icons';
 import ToggleContext from '../../context/toggleContext';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import BookIcon from '@mui/icons-material/Book';
 import EmailIcon from '@mui/icons-material/Email';
 import Tooltip from '@mui/material/Tooltip';
 
 import styles from './Overlay.module.scss';
+import MiniAbout from '../MiniAbout/MiniAbout';
 
 function Overlay() {
   const { isLightMode } = useContext(ToggleContext);
+
+  const [display, setDisplay] = useState(false);
 
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
   const arrowSrc = isLightMode ? './image/arrow.png' : './image/arrowWhite.png';
@@ -34,11 +36,6 @@ function Overlay() {
       label: 'Linkedin'
     },
     {
-      icon: <InstagramIcon sx={{ color: color }} />,
-      href: 'https://www.instagram.com/50h333ba3/',
-      label: 'Instagram'
-    },
-    {
       icon: <BookIcon sx={{ color: color }} />,
       href: 'https://soheee-bae.github.io/',
       label: 'Blog'
@@ -52,7 +49,13 @@ function Overlay() {
           <img className={styles.arrow1} src={arrowSrc} alt="arrow" />
           <img className={styles.arrow2} src={arrowSrc} alt="arrow" />
         </div>
-        <img className={styles.profile} src="./image/profile.jpg" alt="profile" />
+        <div
+          className={styles.profileArea}
+          onMouseEnter={() => setDisplay(true)}
+          onMouseLeave={() => setDisplay(false)}>
+          <img className={styles.profile} src="./image/profile.jpg" alt="profile" />
+          {display && <MiniAbout />}
+        </div>
       </div>
       <div className={styles.bio}>
         <p>

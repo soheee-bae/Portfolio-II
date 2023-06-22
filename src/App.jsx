@@ -9,6 +9,7 @@ import Project from './pages/Project/Project';
 import { useScroll } from './hooks/useScroll';
 import VerticalDotNav from './components/VerticalDotNav/VerticalDotNav';
 import { useNav } from './hooks/useNav';
+import Contact from './pages/Contact/Contact';
 
 function App() {
   const { scrollTriggered } = useScroll();
@@ -21,6 +22,7 @@ function App() {
       <Home scroll={scrollTriggered} />
       <Project />
       <About />
+      <Contact />
     </div>
   );
 }

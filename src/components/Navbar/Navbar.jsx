@@ -9,7 +9,8 @@ import clsx from 'clsx';
 const navItems = [
   { label: 'Home', value: 'home' },
   { label: 'Project', value: 'project' },
-  { label: 'About', value: 'about' }
+  { label: 'About', value: 'about' },
+  { label: 'Contact', value: 'contact' }
 ];
 
 function Navbar({ scroll, navSection, setNavSection }) {

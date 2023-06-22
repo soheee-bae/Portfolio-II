@@ -1,0 +1,54 @@
+@import '../../styles/mixin';
+
+.miniAbout {
+  position: absolute;
+  top: -130%;
+  left: -35%;
+  padding: 20px;
+
+  background-color: var(--whiteColor300);
+  opacity: 0.9;
+  z-index: 10;
+  min-width: 400px;
+  width: 100%;
+
+  animation: fadeInXl 1s;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  @include xl {
+    top: 0;
+    left: 120%;
+    min-width: 450px;
+    animation: fadeIn 1s;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInXl {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
