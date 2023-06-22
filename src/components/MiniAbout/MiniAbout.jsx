@@ -1,8 +1,12 @@
+import { useContext } from 'react';
 import styles from './MiniAbout.module.scss';
+import ToggleContext from '../../context/toggleContext';
 
 function MiniAbout() {
+  const { isLightMode } = useContext(ToggleContext);
+
   return (
-    <div className={styles.miniAbout}>
+    <div className={styles.miniAbout} data-darkMode={!isLightMode}>
       <ul>
         <li>
           오랜 유학생활을 통해 쌓아올린 경험을 토대로 남다른 도전정신을 가지고 새로운 환경이나
