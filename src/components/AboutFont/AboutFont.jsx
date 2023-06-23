@@ -1,6 +1,6 @@
 import React from 'react';
 import { OrbitControls, Text3D, useMatcapTexture, useGLTF } from '@react-three/drei';
-import { a } from '@react-spring/three';
+// import { a } from '@react-spring/three';
 
 function AboutFont() {
   const geometries = [
@@ -47,7 +47,7 @@ function AboutFont() {
         ))}
       </group>
       <Book />
-      <HeadPhone />
+      {/* <HeadPhone /> */}
     </group>
   );
 }
@@ -57,16 +57,22 @@ function Book(props) {
   const { scene } = useGLTF(
     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/open-book/model.gltf'
   );
+  scene.traverse(function (node) {
+    if (node.isMesh) {
+      node.castShadow = true;
+      node.receiveShadow = true;
+    }
+  });
   return <primitive object={scene} scale={1} {...props} />;
 }
 
-function HeadPhone(props) {
-  const { scene } = useGLTF(
-    'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/headphones/model.gltf'
-  );
-  return (
-    <a.mesh receiveShadow castShadow>
-      <primitive object={scene} scale={0.3} position={[0, 0, 2]} {...props} />
-    </a.mesh>
-  );
-}
+// function HeadPhone(props) {
+//   const { scene } = useGLTF(
+//     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/headphones/model.gltf'
+//   );
+//   return (
+//     <group receiveShadow castShadow>
+//       <primitive object={scene} castShadow scale={0.3} position={[0, 0, 2]} {...props} />
+//     </group>
+//   );
+// }
