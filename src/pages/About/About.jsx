@@ -3,6 +3,7 @@ import { a } from '@react-spring/web';
 
 import ToggleContext from '../../context/toggleContext';
 import styles from './About.module.scss';
+import AboutScene from '../../components/AboutScene/AboutScene';
 
 function About() {
   const { x } = useContext(ToggleContext);
@@ -14,7 +15,9 @@ function About() {
       style={{
         backgroundColor: x.to([0, 1], ['var(--whiteColor400)', 'var(--blackColor300)'])
       }}>
-      About
+      <a.div className={styles.aboutContent}>
+        <AboutScene />
+      </a.div>
     </a.div>
   );
 }
