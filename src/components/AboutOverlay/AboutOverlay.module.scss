@@ -1,0 +1,23 @@
+@import '../../styles/mixin';
+@import '../../styles/typography';
+@import '../../styles/color';
+
+.aboutOverlay {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+
+  height: 50%;
+  width: 100%;
+  max-width: none;
+
+  @include xl {
+    justify-content: center;
+    max-width: 700px;
+    height: 100%;
+    width: 50%;
+  }
+}
