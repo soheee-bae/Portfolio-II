@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { a } from '@react-spring/web';
 
-import Scene from '../../components/Scene/Scene';
-import Overlay from '../../components/Overlay/Overlay';
-import Icons from '../../components/ThemeIcons/ThemeIcons';
-import ToggleContext from '../../context/toggleContext';
+import Scene from '../../components/HomeScene/HomeScene';
+import Overlay from '../../components/HomeOverlay/HomeOverlay';
+import Icons from '../../components/SwitchIcons/SwitchIcons';
 import ScrollMouse from '../../components/ScrollMouse/ScrollMouse';
+import ToggleContext from '../../context/toggleContext';
 
 import styles from './Home.module.scss';
 

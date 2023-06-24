@@ -7,7 +7,11 @@ function AboutOverlay() {
 
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
 
-  return <div className={styles.aboutOverlay} style={{ color: `${color}` }}></div>;
+  return (
+    <div className={styles.aboutOverlay} style={{ color: `${color}` }}>
+      hello
+    </div>
+  );
 }
 
 export default AboutOverlay;

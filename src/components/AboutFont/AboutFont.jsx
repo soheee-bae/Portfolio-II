@@ -1,5 +1,5 @@
 import React from 'react';
-import { OrbitControls, Text3D, useMatcapTexture, useGLTF } from '@react-three/drei';
+import { OrbitControls, Text3D, useMatcapTexture } from '@react-three/drei';
 // import { a } from '@react-spring/three';
 
 function AboutFont() {
@@ -19,60 +19,31 @@ function AboutFont() {
   //D1AC04_F8E50A_EDD004_B38D04
   const [matcapTexture] = useMatcapTexture('D1AC04_F8E50A_EDD004_B38D04', 256);
 
-  console.log(useMatcapTexture);
   return (
     <group scale={[1.5, 1.5, 1.5]} dispose={null}>
       <OrbitControls />
-      <group>
-        {geometries.map((geo) => (
-          <Text3D
-            key={geo.name}
-            curveSegments={12}
-            bevelEnabled
-            bevelSize={0.07}
-            bevelThickness={0.1}
-            bevelOffset={0}
-            bevelSegments={6}
-            height={0.27}
-            position={geo.position}
-            receiveShadow
-            castShadow
-            material-roughness={0.8}
-            material-metalness={0.8}
-            rotation={geo.rotation}
-            font="./fonts/Inter.json">
-            {geo.name}
-            <meshMatcapMaterial matcap={matcapTexture} />
-          </Text3D>
-        ))}
-      </group>
-      <Book />
-      {/* <HeadPhone /> */}
+      {geometries.map((geo) => (
+        <Text3D
+          key={geo.name}
+          curveSegments={12}
+          bevelEnabled
+          bevelSize={0.07}
+          bevelThickness={0.1}
+          bevelOffset={0}
+          bevelSegments={6}
+          height={0.27}
+          position={geo.position}
+          receiveShadow
+          castShadow
+          material-roughness={0.8}
+          material-metalness={0.8}
+          rotation={geo.rotation}
+          font="./fonts/Inter.json">
+          {geo.name}
+          <meshMatcapMaterial matcap={matcapTexture} />
+        </Text3D>
+      ))}
     </group>
   );
 }
 export default AboutFont;
-
-function Book(props) {
-  const { scene } = useGLTF(
-    'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/open-book/model.gltf'
-  );
-  scene.traverse(function (node) {
-    if (node.isMesh) {
-      node.castShadow = true;
-      node.receiveShadow = true;
-    }
-  });
-  return <primitive object={scene} scale={1} {...props} />;
-}
-
-// function HeadPhone(props) {
-//   const { scene } = useGLTF(
-//     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/headphones/model.gltf'
-//   );
-//   return (
-//     <group receiveShadow castShadow>
-//       <primitive object={scene} castShadow scale={0.3} position={[0, 0, 2]} {...props} />
-//     </group>
-//   );
-// }
