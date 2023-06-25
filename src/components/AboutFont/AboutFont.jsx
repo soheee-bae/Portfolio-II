@@ -1,5 +1,5 @@
 import React from 'react';
-import { OrbitControls, Text3D, useMatcapTexture } from '@react-three/drei';
+import { Text3D, useMatcapTexture } from '@react-three/drei';
 import { a } from '@react-spring/three';
 
 function AboutFont() {
@@ -21,7 +21,7 @@ function AboutFont() {
 
   return (
     <group scale={[2, 2, 2]} dispose={null}>
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       {geometries.map((geo) => (
         <a.group key={geo.name} receiveShadow castShadow>
           <Text3D

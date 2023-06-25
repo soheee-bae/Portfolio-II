@@ -9,7 +9,9 @@ function AboutOverlay() {
 
   return (
     <div className={styles.aboutOverlay} style={{ color: `${color}` }}>
-      hello
+      <p>SKILL</p>
+      <p>CAREER</p>
+      <p>EDUCATION</p>
     </div>
   );
 }
