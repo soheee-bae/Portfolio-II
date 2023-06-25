@@ -2,16 +2,17 @@
 
 .homeContainer {
   position: relative;
-  min-height: 100vh;
+  // min-height: 100vh;
+  min-height: max-content;
   min-width: 100vw;
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
+  flex-direction: column-reverse;
 
   @include xl {
     flex-direction: row;
