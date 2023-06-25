@@ -31,7 +31,17 @@ function Switch() {
         position={[0, 0, 0.05]}
       />
       <a.group position-y={0.85} position-z={pZ}>
-        <a.mesh receiveShadow castShadow rotation-x={rX} onClick={onClick}>
+        <a.mesh
+          receiveShadow
+          castShadow
+          rotation-x={rX}
+          onClick={onClick}
+          onPointerEnter={() => {
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerLeave={() => {
+            document.body.style.cursor = 'default';
+          }}>
           <sphereGeometry args={[0.8, 64, 64]} />
           <a.meshStandardMaterial color={ballColor} map={texture} />
         </a.mesh>

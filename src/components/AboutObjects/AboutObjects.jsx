@@ -6,14 +6,20 @@ import { a } from '@react-spring/three';
 
 function AboutObjects() {
   const { setAboutSection } = useAbout();
-  const [hover, setHover] = useState(0);
+  const [bookHover, setBookHover] = useState(0);
+  const [macHover, setMacHover] = useState(0);
+  const [targetHover, setTargetHover] = useState(0);
 
-  const { x } = useSpring({
-    x: hover,
+  const { book, mac, target } = useSpring({
+    book: bookHover,
+    mac: macHover,
+    target: targetHover,
     config: { mass: 5, tension: 400, friction: 100, precision: 0.0001 }
   });
 
-  const py = x.to([0, 1], [0.07, 0.3]);
+  const bookY = book.to([0, 1], [0.07, 0.3]);
+  const macY = mac.to([0, 1], [-0.12, 0.15]);
+  const targetY = target.to([0, 1], [-0.01, 0.2]);
 
   return (
     <a.group scale={[1.5, 1.5, 1.5]} castShadow receiveShadow dispose={null}>
@@ -22,33 +28,37 @@ function AboutObjects() {
         scale={1.6}
         rotation={[-1.57, 0, 2.2]}
         position-x={0.5}
-        py={py}
         position-z={3}
+        py={bookY}
         onClick={() => {
           setAboutSection('education');
         }}
         onPointerEnter={() => {
           document.body.style.cursor = 'pointer';
-          setHover(1);
+          setBookHover(1);
         }}
         onPointerLeave={() => {
           document.body.style.cursor = 'default';
-          setHover(0);
+          setBookHover(0);
         }}
       />
       <Objects
         url="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf"
         scale={0.45}
         rotation={[0, -0.4, 0]}
-        position={[1, -0.01, -2.6]}
+        position-x={1}
+        position-z={-2.6}
+        py={targetY}
         onClick={() => {
           setAboutSection('skill');
         }}
         onPointerEnter={() => {
           document.body.style.cursor = 'pointer';
+          setTargetHover(1);
         }}
         onPointerLeave={() => {
           document.body.style.cursor = 'default';
+          setTargetHover(0);
         }}
       />
       <Objects
@@ -67,15 +77,19 @@ function AboutObjects() {
         url="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
         scale={0.26}
         rotation={[0, 0.5, 0]}
-        position={[-1.5, -0.12, 0]}
+        position-x={-1.5}
+        position-z={0}
+        py={macY}
         onClick={() => {
           setAboutSection('career');
         }}
         onPointerEnter={() => {
           document.body.style.cursor = 'pointer';
+          setMacHover(1);
         }}
         onPointerLeave={() => {
           document.body.style.cursor = 'default';
+          setMacHover(0);
         }}
       />
       <Objects
