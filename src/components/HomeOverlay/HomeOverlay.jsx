@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { Highlight } from '../../icons';
 import ToggleContext from '../../context/toggleContext';
-import MiniAbout from '../MiniAbout/MiniAbout';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -10,6 +9,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import Tooltip from '@mui/material/Tooltip';
 
 import styles from './HomeOverlay.module.scss';
+import MiniAbout from '../MiniAbout/MiniAbout';
 
 function Overlay() {
   const { isLightMode } = useContext(ToggleContext);

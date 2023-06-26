@@ -1,4 +1,5 @@
 import { FESkills, ToolsSkill } from '../../datas/Skills';
+import Tooltip from '../Tooltip/Tooltip';
 import styles from './AboutContent.module.scss';
 
 function Skill() {
@@ -9,9 +10,18 @@ function Skill() {
           <p className={styles.subtitle}>Frontend</p>
           <ul className={styles.skills}>
             {FESkills.map((skill) => (
-              <li key={skill.label} className={styles.skill} data-skill={skill.label}>
-                {skill.icon}
-              </li>
+              <Tooltip
+                key={skill.label}
+                trigger={
+                  <li className={styles.skill} data-skill={skill.label}>
+                    {skill.icon}
+                  </li>
+                }>
+                <div>
+                  <p>{skill.label}</p>
+                  <p>{skill.description}</p>
+                </div>
+              </Tooltip>
             ))}
           </ul>
         </div>
