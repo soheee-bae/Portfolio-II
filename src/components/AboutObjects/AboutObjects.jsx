@@ -2,12 +2,9 @@ import { useContext, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useSpring } from '@react-spring/core';
 import { a } from '@react-spring/three';
-
-import { useAbout } from '../../hooks/useAbout';
 import CursorContext from '../../context/cursorContext';
 
-function AboutObjects() {
-  const { setAboutSection } = useAbout();
+function AboutObjects({ setAboutSection }) {
   const [bookHover, setBookHover] = useState(0);
   const [macHover, setMacHover] = useState(0);
   const [targetHover, setTargetHover] = useState(0);

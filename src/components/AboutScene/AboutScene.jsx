@@ -7,7 +7,7 @@ import AboutFont from '../AboutFont/AboutFont';
 import AboutObjects from '../AboutObjects/AboutObjects';
 import styles from './AboutScene.module.scss';
 
-function AboutScene() {
+function AboutScene({ setAboutSection }) {
   const { x } = useContext(ToggleContext);
   const color = x.to([0, 1], ['#ffffff', '#ffffff']);
 
@@ -32,7 +32,7 @@ function AboutScene() {
       />
       <Suspense fallback={null}>
         <AboutFont />
-        <AboutObjects />
+        <AboutObjects setAboutSection={setAboutSection} />
       </Suspense>
       <mesh receiveShadow renderOrder={1000} position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[20, 20]} />

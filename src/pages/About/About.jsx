@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { a } from '@react-spring/web';
 
 import ToggleContext from '../../context/toggleContext';
@@ -8,6 +8,7 @@ import styles from './About.module.scss';
 
 function About() {
   const { x } = useContext(ToggleContext);
+  const [aboutSection, setAboutSection] = useState(null);
 
   return (
     <a.div
@@ -17,9 +18,9 @@ function About() {
         backgroundColor: x.to([0, 1], ['var(--whiteColor400)', 'var(--blackColor300)'])
       }}>
       <a.div className={styles.aboutContent}>
-        <AboutScene />
+        <AboutScene setAboutSection={setAboutSection} />
       </a.div>
-      <AboutOverlay />
+      <AboutOverlay aboutSection={aboutSection} />
     </a.div>
   );
 }
