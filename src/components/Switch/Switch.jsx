@@ -1,6 +1,7 @@
 import React, { useCallback, useContext } from 'react';
 import { a } from '@react-spring/three';
 import { useGLTF, useTexture, Shadow } from '@react-three/drei';
+
 import ToggleContext from '../../context/toggleContext';
 import CursorContext from '../../context/cursorContext';
 

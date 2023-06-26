@@ -4,6 +4,8 @@ import styles from './App.module.scss';
 
 import VerticalDotNav from './components/VerticalDotNav/VerticalDotNav';
 import Navbar from './components/Navbar/Navbar';
+import Cursor from './components/Cursor/Cursor';
+
 import About from './pages/About/About';
 import Home from './pages/Home/Home';
 import Contact from './pages/Contact/Contact';
@@ -11,8 +13,6 @@ import Project from './pages/Project/Project';
 
 import { useScroll } from './hooks/useScroll';
 import { useNav } from './hooks/useNav';
-
-import Cursor from './components/Cursor/Cursor';
 
 function App() {
   const { scrollTriggered } = useScroll();

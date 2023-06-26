@@ -5,7 +5,7 @@ function Skill() {
   return (
     <div className={styles.content}>
       <div className={styles.skillsContent}>
-        <div className={styles.skillContent}>
+        <div>
           <p className={styles.subtitle}>Frontend</p>
           <ul className={styles.skills}>
             {FESkills.map((skill) => (
@@ -15,7 +15,7 @@ function Skill() {
             ))}
           </ul>
         </div>
-        <div className={styles.skillContent}>
+        <div>
           <p className={styles.subtitle}>Tools & Collaboration</p>
           <ul className={styles.skills}>
             {ToolsSkill.map((skill) => (
