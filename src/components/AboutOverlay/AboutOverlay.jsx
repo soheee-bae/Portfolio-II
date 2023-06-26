@@ -27,7 +27,10 @@ function AboutOverlay({ aboutSection, animation, setAnimation }) {
       data-animation={animation}
       onAnimationEnd={() => setAnimation(false)}>
       <div className={styles.container}>
-        <p className={styles.title}>{aboutSection?.toUpperCase()}</p>
+        <div className={styles.titleArea}>
+          <p className={styles.title}>{aboutSection?.toUpperCase()}</p>
+          <p className={styles.hint}>아이콘에 마우스를 올리면 자세한 설명이 나옵니다.</p>
+        </div>
         {content}
       </div>
     </div>
