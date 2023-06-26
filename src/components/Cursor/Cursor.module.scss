@@ -1,0 +1,21 @@
+.cursor {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  height: 20px;
+  p {
+    font-weight: var(--font-semibold);
+  }
+}
+
+.cursorDot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}

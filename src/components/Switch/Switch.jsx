@@ -2,9 +2,11 @@ import React, { useCallback, useContext } from 'react';
 import { a } from '@react-spring/three';
 import { useGLTF, useTexture, Shadow } from '@react-three/drei';
 import ToggleContext from '../../context/toggleContext';
+import CursorContext from '../../context/cursorContext';
 
 function Switch() {
   const { x, setToggle } = useContext(ToggleContext);
+  const { textEnter, textLeave } = useContext(CursorContext);
 
   const { nodes, materials } = useGLTF('./model/metal.glb');
   const texture = useTexture('./model/onoff.jpg');
@@ -37,10 +39,10 @@ function Switch() {
           rotation-x={rX}
           onClick={onClick}
           onPointerEnter={() => {
-            document.body.style.cursor = 'pointer';
+            textEnter('click');
           }}
           onPointerLeave={() => {
-            document.body.style.cursor = 'default';
+            textLeave();
           }}>
           <sphereGeometry args={[0.8, 64, 64]} />
           <a.meshStandardMaterial color={ballColor} map={texture} />

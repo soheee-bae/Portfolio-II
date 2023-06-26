@@ -68,7 +68,6 @@
   svg {
     width: 25px;
     height: 25px;
-    cursor: pointer;
   }
 
   a {
@@ -100,7 +99,6 @@
   object-fit: cover;
   animation: morph 8s ease-in-out infinite;
   border: 3px solid var(--blackColor100);
-  cursor: pointer;
   transition: transform 0.3s;
   &:hover {
     transform: scale(1.05);
@@ -113,23 +111,21 @@
 }
 
 .arrows {
-  display: flex;
-  flex-direction: row;
   padding: 10px 30px;
   position: relative;
-
-  .arrow1 {
+  animation: upAndDown 3s ease-in-out infinite;
+  p {
     position: absolute;
-    left: -40px;
-    top: 50px;
-    animation: upAndDown2 3s ease-in-out infinite;
+    left: 30px;
+    top: 115px;
+    transform: rotate(-70deg);
   }
 
-  .arrow2 {
-    left: -10px;
-    top: 5px;
+  .arrow {
+    left: 85px;
+    top: 145px;
     position: absolute;
-    animation: upAndDown 3s ease-in-out infinite;
+    transform: rotate(250deg);
   }
 }
 
@@ -147,24 +143,12 @@
 
 @keyframes upAndDown {
   0% {
-    transform: translateX(0px) translateY(0px) rotate(50deg);
+    transform: translateX(0px) translateY(0px) rotate(60deg);
   }
   50% {
-    transform: translateX(-5px) translateY(-5px) rotate(50deg);
+    transform: translateX(-5px) translateY(-5px) rotate(60deg);
   }
   100% {
-    transform: translateX(0px) translateY(0px) rotate(50deg);
-  }
-}
-
-@keyframes upAndDown2 {
-  0% {
-    transform: translateX(0px) translateY(0px) rotate(20deg);
-  }
-  50% {
-    transform: translateX(-8px) translateY(-5px) rotate(20deg);
-  }
-  100% {
-    transform: translateX(0px) translateY(0px) rotate(20deg);
+    transform: translateX(0px) translateY(0px) rotate(60deg);
   }
 }

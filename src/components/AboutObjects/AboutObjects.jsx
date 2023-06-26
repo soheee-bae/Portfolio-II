@@ -1,14 +1,17 @@
+import { useContext, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
-import { useAbout } from '../../hooks/useAbout';
-import { useState } from 'react';
 import { useSpring } from '@react-spring/core';
 import { a } from '@react-spring/three';
+
+import { useAbout } from '../../hooks/useAbout';
+import CursorContext from '../../context/cursorContext';
 
 function AboutObjects() {
   const { setAboutSection } = useAbout();
   const [bookHover, setBookHover] = useState(0);
   const [macHover, setMacHover] = useState(0);
   const [targetHover, setTargetHover] = useState(0);
+  const { textEnter, textLeave } = useContext(CursorContext);
 
   const { book, mac, target } = useSpring({
     book: bookHover,
@@ -34,12 +37,12 @@ function AboutObjects() {
           setAboutSection('education');
         }}
         onPointerEnter={() => {
-          document.body.style.cursor = 'pointer';
           setBookHover(1);
+          textEnter('click');
         }}
         onPointerLeave={() => {
-          document.body.style.cursor = 'default';
           setBookHover(0);
+          textLeave();
         }}
       />
       <Objects
@@ -53,12 +56,12 @@ function AboutObjects() {
           setAboutSection('skill');
         }}
         onPointerEnter={() => {
-          document.body.style.cursor = 'pointer';
           setTargetHover(1);
+          textEnter('click');
         }}
         onPointerLeave={() => {
-          document.body.style.cursor = 'default';
           setTargetHover(0);
+          textLeave();
         }}
       />
       <Objects
@@ -84,12 +87,12 @@ function AboutObjects() {
           setAboutSection('career');
         }}
         onPointerEnter={() => {
-          document.body.style.cursor = 'pointer';
           setMacHover(1);
+          textEnter('click');
         }}
         onPointerLeave={() => {
-          document.body.style.cursor = 'default';
           setMacHover(0);
+          textLeave();
         }}
       />
       <Objects

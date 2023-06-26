@@ -17,7 +17,7 @@ function Overlay() {
   const [display, setDisplay] = useState(false);
 
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
-  const arrowSrc = isLightMode ? './image/arrow.png' : './image/arrowWhite.png';
+  const arrowSrc = isLightMode ? './image/curly-arrow.png' : './image/curly-arrowWhite.png';
 
   const contacts = [
     {
@@ -46,13 +46,17 @@ function Overlay() {
     <div className={styles.overlay} style={{ color: `${color}` }}>
       <div className={styles.imageContainer}>
         <div className={styles.arrows}>
-          <img className={styles.arrow1} src={arrowSrc} alt="arrow" />
-          <img className={styles.arrow2} src={arrowSrc} alt="arrow" />
+          <p>Hover me!</p>
+          <img className={styles.arrow} src={arrowSrc} alt="arrow" />
         </div>
         <div
           className={styles.profileArea}
-          onMouseEnter={() => setDisplay(true)}
-          onMouseLeave={() => setDisplay(false)}>
+          onMouseEnter={() => {
+            setDisplay(true);
+          }}
+          onMouseLeave={() => {
+            setDisplay(false);
+          }}>
           <img className={styles.profile} src="./image/profile.jpg" alt="profile" />
           {display && <MiniAbout />}
         </div>
