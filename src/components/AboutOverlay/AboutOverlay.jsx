@@ -2,6 +2,9 @@ import { useContext } from 'react';
 import styles from './AboutOverlay.module.scss';
 import ToggleContext from '../../context/toggleContext';
 import clsx from 'clsx';
+import Education from '../AboutContent/Education';
+import Skill from '../AboutContent/Skill';
+import Career from '../AboutContent/Career';
 
 function AboutOverlay({ aboutSection, animation, setAnimation }) {
   const { isLightMode } = useContext(ToggleContext);
@@ -32,19 +35,3 @@ function AboutOverlay({ aboutSection, animation, setAnimation }) {
 }
 
 export default AboutOverlay;
-
-function Skill() {
-  return (
-    <div className={styles.content}>
-      <p>skill heasdfsdfasldkfjasdlfkjasdfkj kdjadskjf</p>
-    </div>
-  );
-}
-
-function Education() {
-  return <div className={styles.content}></div>;
-}
-
-function Career() {
-  return <div className={styles.content}></div>;
-}
