@@ -39,6 +39,11 @@ function CursorContextProvider({ children }) {
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
       text: 'Click me!'
+    },
+    about: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+      text: '🎯, 📓, 💻 중 하나를 클릭해주세요!'
     }
   };
 

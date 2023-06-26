@@ -4,7 +4,7 @@ import { useSpring } from '@react-spring/core';
 import { a } from '@react-spring/three';
 import CursorContext from '../../context/cursorContext';
 
-function AboutObjects({ setAboutSection, setAnimation }) {
+function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
   const [bookHover, setBookHover] = useState(0);
   const [macHover, setMacHover] = useState(0);
   const [targetHover, setTargetHover] = useState(0);
@@ -40,7 +40,11 @@ function AboutObjects({ setAboutSection, setAnimation }) {
         }}
         onPointerLeave={() => {
           setBookHover(0);
-          textLeave();
+          if (!aboutSection) {
+            textEnter('about');
+          } else {
+            textLeave();
+          }
         }}
       />
       <Objects
@@ -60,7 +64,11 @@ function AboutObjects({ setAboutSection, setAnimation }) {
         }}
         onPointerLeave={() => {
           setTargetHover(0);
-          textLeave();
+          if (!aboutSection) {
+            textEnter('about');
+          } else {
+            textLeave();
+          }
         }}
       />
       <Objects
@@ -92,7 +100,11 @@ function AboutObjects({ setAboutSection, setAnimation }) {
         }}
         onPointerLeave={() => {
           setMacHover(0);
-          textLeave();
+          if (!aboutSection) {
+            textEnter('about');
+          } else {
+            textLeave();
+          }
         }}
       />
       <Objects
