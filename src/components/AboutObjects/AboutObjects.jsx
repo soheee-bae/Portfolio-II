@@ -4,7 +4,7 @@ import { useSpring } from '@react-spring/core';
 import { a } from '@react-spring/three';
 import CursorContext from '../../context/cursorContext';
 
-function AboutObjects({ setAboutSection }) {
+function AboutObjects({ setAboutSection, setAnimation }) {
   const [bookHover, setBookHover] = useState(0);
   const [macHover, setMacHover] = useState(0);
   const [targetHover, setTargetHover] = useState(0);
@@ -32,6 +32,7 @@ function AboutObjects({ setAboutSection }) {
         py={bookY}
         onClick={() => {
           setAboutSection('education');
+          setAnimation(true);
         }}
         onPointerEnter={() => {
           setBookHover(1);
@@ -51,6 +52,7 @@ function AboutObjects({ setAboutSection }) {
         py={targetY}
         onClick={() => {
           setAboutSection('skill');
+          setAnimation(true);
         }}
         onPointerEnter={() => {
           setTargetHover(1);
@@ -82,6 +84,7 @@ function AboutObjects({ setAboutSection }) {
         py={macY}
         onClick={() => {
           setAboutSection('career');
+          setAnimation(true);
         }}
         onPointerEnter={() => {
           setMacHover(1);
