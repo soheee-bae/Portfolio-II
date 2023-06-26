@@ -29,9 +29,18 @@ function Skill() {
           <p className={styles.subtitle}>Tools & Collaboration</p>
           <ul className={styles.skills}>
             {ToolsSkill.map((skill) => (
-              <li key={skill.label} className={styles.skill} data-skill={skill.label}>
-                {skill.icon}
-              </li>
+              <Tooltip
+                key={skill.label}
+                trigger={
+                  <li key={skill.label} className={styles.skill} data-skill={skill.label}>
+                    {skill.icon}
+                  </li>
+                }>
+                <div>
+                  <p>{skill.label}</p>
+                  <p>{skill.description}</p>
+                </div>
+              </Tooltip>
             ))}
           </ul>
         </div>
