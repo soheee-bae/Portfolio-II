@@ -72,18 +72,6 @@ function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
         }}
       />
       <Objects
-        url="./model/flag.gltf"
-        scale={0.3}
-        rotation={[0, -0.6, 0]}
-        position={[2.1, -0.01, 0.8]}
-      />
-      <Objects
-        url="./model/arrow.gltf"
-        scale={0.75}
-        rotation={[1.55, 0, 3.5]}
-        position={[-1.2, 0.65, 1.85]}
-      />
-      <Objects
         url="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
         scale={0.26}
         rotation={[0, 0.5, 0]}
@@ -107,6 +95,20 @@ function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
           }
         }}
       />
+
+      <Objects
+        url="./model/flag.gltf"
+        scale={0.3}
+        rotation={[0, -0.6, 0]}
+        position={[2.1, -0.01, 0.8]}
+      />
+      <Objects
+        url="./model/arrow.gltf"
+        scale={0.75}
+        rotation={[1.55, 0, 3.5]}
+        position={[-1.2, 0.65, 1.85]}
+      />
+
       <Objects
         url="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/cup-saucer/model.gltf"
         scale={1.2}

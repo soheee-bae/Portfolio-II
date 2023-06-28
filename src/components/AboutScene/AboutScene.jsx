@@ -17,7 +17,7 @@ function AboutScene({ aboutSection, setAboutSection, setAnimation }) {
       orthographic
       shadows
       dpr={[1, 2]}
-      camera={{ zoom: 50, position: [-14, 13, 12], fov: 35 }}>
+      camera={{ zoom: 60, position: [-14, 13, 12], fov: 35 }}>
       <ambientLight intensity={0.1} />
       <directionalLight position={[-20, 20, 20]} intensity={1} />
       <a.directionalLight position={[-20, -20, -20]} intensity={0.5} color={color} />
@@ -30,6 +30,7 @@ function AboutScene({ aboutSection, setAboutSection, setAnimation }) {
         shadow-bias={-0.00001}
         castShadow
       />
+
       <Suspense fallback={null}>
         <AboutFont />
         <AboutObjects
