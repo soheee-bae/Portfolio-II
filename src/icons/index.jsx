@@ -21,3 +21,4 @@ export { ReactComponent as Storybook } from './storybook.svg';
 export { ReactComponent as Typescript } from './typescript.svg';
 export { ReactComponent as Vscode } from './vscode.svg';
 export { ReactComponent as UAALogo } from './uaa_logo.svg';
+export { ReactComponent as Sagetap } from './sagetaplogo.svg';

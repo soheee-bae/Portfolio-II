@@ -40,6 +40,7 @@
 }
 
 .subtitle {
+  text-decoration: none;
   font-size: var(--text-md);
   font-weight: var(--font-medium);
   margin-bottom: 30px;
@@ -75,5 +76,30 @@
   svg {
     height: 45px;
     width: 45px;
+  }
+}
+
+.careerContent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 63px;
+
+  &:first-child div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    a {
+      align-self: center;
+      margin: 0;
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 0.5s;
+      }
+    }
+    svg {
+      height: 40px;
+      aspect-ratio: 1/1;
+    }
   }
 }
