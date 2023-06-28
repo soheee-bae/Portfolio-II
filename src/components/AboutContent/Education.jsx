@@ -1,28 +1,33 @@
+import clsx from 'clsx';
+import { school, studies } from '../../datas/Educations';
 import styles from './AboutContent.module.scss';
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
-import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
-import ComputerOutlinedIcon from '@mui/icons-material/ComputerOutlined';
-import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
 
 function Education() {
   return (
     <div className={styles.content}>
       <div className={styles.educationContent}>
         <div>
-          <SchoolOutlinedIcon />
           <p className={styles.subtitle}>University of Alaska Anchorage</p>
+          <div className={styles.hr} />
+          <ul>
+            {school.map((sc) => (
+              <li className={styles.educationList} key={sc.label}>
+                {sc.icon}
+                {sc.label}
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
-          <ComputerOutlinedIcon />
-          <p>Bachelor of Science, Computer Science </p>{' '}
-        </div>
-        <div>
-          <EventNoteOutlinedIcon />
-          <p>Aug 2015 - Dec 2020</p>
-        </div>
-        <div>
-          <EmojiEventsOutlinedIcon />
-          <p>Honors : cum laude (GPA : 3.66 / 4)</p>
+          <p className={clsx(styles.subtitle, styles.subtitleKor)}>컴퓨터공학 수강과목</p>
+          <div className={styles.hr} />
+          <ul>
+            {studies.map((sc) => (
+              <li key={sc.label} className={styles.educationList}>
+                {sc.label}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
