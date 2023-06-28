@@ -17,6 +17,7 @@ function Cursor() {
       <div
         className={styles.cursorDot}
         style={{
+          display: 'hidden',
           backgroundColor: isLightMode ? '#000000' : '#ffffff'
         }}
       />
