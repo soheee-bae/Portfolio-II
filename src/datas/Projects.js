@@ -95,13 +95,13 @@ export const projects = [
     demo: 'https://tasting-table.netlify.app/',
     skills: ['React Native', 'Expo', 'Firebase', 'TypeScript', 'SCSS']
   }
-  // {
-  //   name: 'Portfolio',
-  //   type: '개인 프로젝트',
-  //   images: ['', ''],
-  //   description: '',
-  //   github: '',
-  //   demo: '',
-  //   skills: ['', '']
-  // }
+  {
+    name: 'Portfolio',
+    type: '개인 프로젝트',
+    images: ['', ''],
+    description: '개인 포트폴리오로 제 소개 및 개인 프로젝트의 자세한 내용들이 정리 되어있습니다.',
+    github: 'https://github.com/soheee-bae/Portfolio23',
+    demo: '',
+    skills: ['React Three Fiber', 'SCSS', 'React', 'Javascript', 'Three.js', 'Blender']
+  }
 ];
