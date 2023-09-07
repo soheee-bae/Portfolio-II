@@ -120,12 +120,12 @@ function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
         position={[-2.5, 0.04, 0]}
       />
       <Objects url="./model/plant.gltf" scale={0.3} position={[0.1, 0.01, -0.5]} />
-      <Objects
+      {/* <Objects
         url="./model/headphone.gltf"
         scale={0.2}
         rotation={[1.57, 0, 0]}
         position={[-2.3, 0.2, -1.6]}
-      />
+      /> */}
     </a.group>
   );
 }

@@ -3,7 +3,7 @@ import { a } from '@react-spring/web';
 
 import ToggleContext from '../../context/toggleContext';
 import styles from './Project.module.scss';
-import ProjectStepper from '../../components/ProjectStepper/ProjectStepper';
+// import ProjectStepper from '../../components/ProjectStepper/ProjectStepper';
 
 function Project() {
   const { x } = useContext(ToggleContext);
@@ -15,7 +15,8 @@ function Project() {
       style={{
         backgroundColor: x.to([0, 1], ['var(--whiteColor350)', 'var(--blackColor350)'])
       }}>
-      <ProjectStepper />
+      <h1>PROJECT</h1>
+      {/* <ProjectStepper /> */}
     </a.div>
   );
 }
