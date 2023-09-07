@@ -94,7 +94,7 @@ export const projects = [
     github: 'https://github.com/soheee-bae/Moodie',
     demo: 'https://tasting-table.netlify.app/',
     skills: ['React Native', 'Expo', 'Firebase', 'TypeScript', 'SCSS']
-  }
+  },
   {
     name: 'Portfolio',
     type: '개인 프로젝트',
