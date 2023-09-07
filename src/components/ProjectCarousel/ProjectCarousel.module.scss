@@ -1,11 +1,8 @@
 .projectCarousel {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  max-height: 470px;
-  max-width: 40%;
-  border: 2px solid green;
-  gap: 50px;
+  justify-content: center;
+  max-width: 50%;
   font-family: var(--font-roboto);
 
   &[data-animation='true'] {
@@ -39,19 +36,14 @@
 
 .carousel {
   background-color: transparent;
-  width: 730px;
-  margin-bottom: 5px;
-  border: 1px solid blue;
+  border: 1px solid red;
+  
 
   figure {
-    height: 400px;
-    width: 730px;
     border-radius: 8px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     animation: fadeIn 0.5s inherit;
 
     img {
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       object-fit: cover;
     }
   }

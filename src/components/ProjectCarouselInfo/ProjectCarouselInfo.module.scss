@@ -1,14 +1,14 @@
-.carouselInfo {
+.projectCarouselInfo {
   display: flex;
-  border: 1px solid red;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 50%;
   margin: 0;
+  padding: 50px;
 }
 
 .header {
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -36,7 +36,6 @@
   margin: 0;
   white-space: pre-wrap;
   color: var(--blackColor400);
-  max-width: 300px;
 }
 
 .skills {

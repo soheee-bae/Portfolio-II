@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 // import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 // import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
+// import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import { projects } from '../../datas/Projects';
 // import ToggleContext from '../../context/toggleContext';
 
 import styles from './ProjectStepper.module.scss';
 import ProjectCarouselInfo from '../ProjectCarouselInfo/ProjectCarouselInfo';
+import ProjectStepperHeader from '../ProjectStepperHeader/ProjectStepperHeader';
 
 function ProjectStepper() {
   const [activeStep, setActiveStep] = useState(0);
@@ -30,12 +31,34 @@ function ProjectStepper() {
   //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
   // };
   console.log(setImgDirection, setInfoDirection);
-  console.log(setActiveStep);
+  console.log(setActiveStep, imgDirection);
 
   return (
     <div className={styles.projectStepper}>
+      <ProjectStepperHeader activeStep={activeStep} setActiveStep={setActiveStep} />
       <div className={styles.stepperContent}>
-        {/* <IconButton
+        {/* <ProjectCarousel
+          project={projects[activeStep]}
+          animation={animation}
+          setAnimation={setAnimation}
+          direction={imgDirection}
+        /> */}
+        <ProjectCarouselInfo
+          project={projects[activeStep]}
+          animation={animation}
+          setAnimation={setAnimation}
+          direction={infoDirection}
+          activeStep={activeStep}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default ProjectStepper;
+
+{
+  /* <IconButton
           onClick={handleBack}
           disabled={activeStep === 0 || animation}
           className={styles.backIconButton}
@@ -44,32 +67,19 @@ function ProjectStepper() {
             '&:hover': { backgroundColor: 'transparent' }
           }}>
           <ArrowBackIosNewIcon />
-        </IconButton> */}
-        <ProjectCarousel
-          project={projects[activeStep]}
-          animation={animation}
-          setAnimation={setAnimation}
-          direction={imgDirection}
-        />
-        <ProjectCarouselInfo
-          project={projects[activeStep]}
-          animation={animation}
-          setAnimation={setAnimation}
-          direction={infoDirection}
-        />
-        {/* <IconButton
+        </IconButton> */
+}
+{
+  /* <IconButton
           onClick={handleNext}
           disabled={activeStep === 3 || animation}
           className={styles.nextIconButton}
           sx={{
             color: isLightMode ? 'var(--blackColor400)' : 'var(--whiteColor600)',
             '&:hover': { backgroundColor: 'transparent' }
-          }}> */}
-        {/* <ArrowForwardIosIcon />
-        </IconButton> */}
-      </div>
-    </div>
-  );
+          }}> */
 }
-
-export default ProjectStepper;
+{
+  /* <ArrowForwardIosIcon />
+        </IconButton> */
+}

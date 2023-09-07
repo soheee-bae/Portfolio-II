@@ -1,17 +1,14 @@
 .project {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  position: relative;
   min-height: 100vh;
   min-width: 100vw;
   height: auto;
   width: 100%;
   margin: 0;
-  padding: 0;
-
   h1 {
+    margin-top: 40px;
     font-family: var(--font-roboto);
   }
 }
