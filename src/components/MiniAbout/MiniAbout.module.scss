@@ -1,4 +1,5 @@
 @import '../../styles/mixin';
+@import '../../styles//typography';
 
 .miniAbout {
   position: absolute;
@@ -12,6 +13,7 @@
   z-index: 10;
   min-width: 400px;
   width: 100%;
+  font-family: var(--font-notoSans);
 
   animation: fadeInXl 1s;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

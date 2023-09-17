@@ -14,6 +14,7 @@ function ProjectCarouselInfo({ project, animation, setAnimation, direction, acti
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
 
   console.log(animation, setAnimation, direction);
+
   const description = project.description.replace(/\\n/g, '\n');
   return (
     <div className={styles.projectCarouselInfo}>

@@ -5,9 +5,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
+
     li {
       list-style-type: none;
+      display: inline-block;
+      position: relative;
+      padding: 15px;
+      width: 100px;
+      text-align: center;
+
+      svg {
+        fill: none;
+        stroke: black;
+        position: absolute;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 338;
+        stroke-dashoffset: 338;
+        width: 100% !important;
+        height: 100%;
+        left: 0;
+        top: -2px;
+        opacity: 0;
+        transition: stroke-dashoffset 0s 0.2s, opacity 0.2s;
+      }
+      &:hover {
+        svg {
+          stroke-dashoffset: 0;
+          opacity: 1;
+          transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+      }
     }
   }
 }

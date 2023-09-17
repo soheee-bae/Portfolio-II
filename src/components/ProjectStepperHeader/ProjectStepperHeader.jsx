@@ -1,7 +1,9 @@
 import { projects } from '../../datas/Projects';
+import { HandDrawnCircle } from '../../icons';
 import styles from './ProjectStepperHeader.module.scss';
 
 function ProjectStepperHeader({ activeStep, setActiveStep }) {
+  console.log(activeStep);
   return (
     <div className={styles.projectStepperHeader}>
       <ul>
@@ -12,6 +14,7 @@ function ProjectStepperHeader({ activeStep, setActiveStep }) {
               setActiveStep(index);
             }}>
             {project.name}
+            <HandDrawnCircle />
           </li>
         ))}
       </ul>

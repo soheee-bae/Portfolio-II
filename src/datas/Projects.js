@@ -19,7 +19,7 @@ export const projects = [
     // testAccount: { id: '', password: '' }
   },
   {
-    name: 'Gatsby Blog Starter',
+    name: 'Blog Starter',
     type: '개인 프로젝트',
     images: [
       { src: './image/Blog/Blog_MainLight.png' },
