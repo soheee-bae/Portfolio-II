@@ -33,6 +33,8 @@ function ProjectStepper() {
   console.log(setImgDirection, setInfoDirection);
   console.log(setActiveStep, imgDirection);
 
+  console.log(projects);
+  console.log(projects[activeStep]);
   return (
     <div className={styles.projectStepper}>
       <ProjectStepperHeader activeStep={activeStep} setActiveStep={setActiveStep} />

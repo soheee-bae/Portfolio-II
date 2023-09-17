@@ -1,9 +1,9 @@
 import { projects } from '../../datas/Projects';
 import { HandDrawnCircle } from '../../icons';
+import clsx from 'clsx';
 import styles from './ProjectStepperHeader.module.scss';
 
 function ProjectStepperHeader({ activeStep, setActiveStep }) {
-  console.log(activeStep);
   return (
     <div className={styles.projectStepperHeader}>
       <ul>
@@ -12,7 +12,10 @@ function ProjectStepperHeader({ activeStep, setActiveStep }) {
             key={index}
             onClick={() => {
               setActiveStep(index);
-            }}>
+            }}
+            className={clsx(styles.projectStepper, {
+              [styles.activeProjectStepper]: activeStep === index
+            })}>
             {project.name}
             <HandDrawnCircle />
           </li>

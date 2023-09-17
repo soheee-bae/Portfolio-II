@@ -28,8 +28,8 @@ function ProjectCarouselInfo({ project, animation, setAnimation, direction, acti
       </div>
       <p className={styles.description}>{description}</p>
       <ul className={styles.skills}>
-        {project.skills.map((skill) => (
-          <li className={styles.skill} key={skill}>
+        {project.skills.map((skill, index) => (
+          <li className={styles.skill} key={index}>
             {skill}
           </li>
         ))}

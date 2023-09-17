@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  width: 50%;
+  max-width: 40%;
   margin: 0;
   padding: 50px;
   gap: 20px;
@@ -17,6 +17,7 @@
 }
 
 .headerContent {
+  width: 100%;
   .type {
     margin: 0;
     font-size: var(--text-sm);
@@ -83,4 +84,8 @@
       opacity: 1;
     }
   }
+}
+
+hr {
+  width: 100%;
 }
