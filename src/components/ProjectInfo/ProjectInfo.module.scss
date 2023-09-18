@@ -1,13 +1,16 @@
-.projectCarouselInfo {
+@import '../../styles/mixin';
+
+.ProjectInfo {
   font-family: var(--font-roboto);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  max-width: 40%;
+  flex: 1;
   margin: 0;
-  padding: 50px;
+  // padding: 50px;
   gap: 20px;
+  border: 1px solid red;
 }
 
 .header {
@@ -88,4 +91,5 @@
 
 hr {
   width: 100%;
+  margin-bottom: 20px;
 }

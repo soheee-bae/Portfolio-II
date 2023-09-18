@@ -7,8 +7,9 @@
   height: auto;
   width: 100%;
   margin: 0;
+  border: 1px solid black;
   h1 {
-    margin-top: 40px;
+    padding-top: 100px;
     font-family: var(--font-roboto);
   }
 }

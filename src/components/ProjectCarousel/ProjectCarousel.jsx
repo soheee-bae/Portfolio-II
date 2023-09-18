@@ -18,11 +18,12 @@ function ProjectCarousel({ project, animation, setAnimation, direction }) {
       <Carousel
         images={project.images}
         objectFit="contain"
-        hasLeftButton={false}
-        hasRightButton={false}
         hasMediaButton={false}
         hasSizeButton={false}
         hasIndexBoard={false}
+        hasThumbnails={false}
+        hasLeftButton={false}
+        hasRightButton={false}
         className={styles.carousel}
       />
     </div>

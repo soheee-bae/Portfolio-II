@@ -6,9 +6,9 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Tooltip from '@mui/material/Tooltip';
 import LaunchIcon from '@mui/icons-material/Launch';
 
-import styles from './ProjectCarouselInfo.module.scss';
+import styles from './ProjectInfo.module.scss';
 
-function ProjectCarouselInfo({ project, animation, setAnimation, direction, activeStep }) {
+function ProjectInfo({ project, animation, setAnimation, direction, activeStep }) {
   const { isLightMode } = useContext(ToggleContext);
 
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
@@ -17,7 +17,7 @@ function ProjectCarouselInfo({ project, animation, setAnimation, direction, acti
 
   const description = project.description.replace(/\\n/g, '\n');
   return (
-    <div className={styles.projectCarouselInfo}>
+    <div className={styles.ProjectInfo}>
       <div className={styles.header}>
         <div className={styles.headerContent}>
           <p>0 {activeStep + 1} - 0 5</p>
@@ -55,4 +55,4 @@ function ProjectCarouselInfo({ project, animation, setAnimation, direction, acti
   );
 }
 
-export default ProjectCarouselInfo;
+export default ProjectInfo;

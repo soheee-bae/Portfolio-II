@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 // import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 // import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-// import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
+import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import { projects } from '../../datas/Projects';
 // import ToggleContext from '../../context/toggleContext';
 
 import styles from './ProjectStepper.module.scss';
-import ProjectCarouselInfo from '../ProjectCarouselInfo/ProjectCarouselInfo';
+import ProjectInfo from '../ProjectInfo/ProjectInfo';
 import ProjectStepperHeader from '../ProjectStepperHeader/ProjectStepperHeader';
 
 function ProjectStepper() {
@@ -39,18 +39,18 @@ function ProjectStepper() {
     <div className={styles.projectStepper}>
       <ProjectStepperHeader activeStep={activeStep} setActiveStep={setActiveStep} />
       <div className={styles.stepperContent}>
-        {/* <ProjectCarousel
-          project={projects[activeStep]}
-          animation={animation}
-          setAnimation={setAnimation}
-          direction={imgDirection}
-        /> */}
-        <ProjectCarouselInfo
+        <ProjectInfo
           project={projects[activeStep]}
           animation={animation}
           setAnimation={setAnimation}
           direction={infoDirection}
           activeStep={activeStep}
+        />
+        <ProjectCarousel
+          project={projects[activeStep]}
+          animation={animation}
+          setAnimation={setAnimation}
+          direction={imgDirection}
         />
       </div>
     </div>
