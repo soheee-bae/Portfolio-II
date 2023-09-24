@@ -17,13 +17,13 @@ function ProjectCarousel({ project, animation, setAnimation, direction }) {
       onAnimationEnd={() => setAnimation(false)}>
       <Carousel
         images={project.images}
-        objectFit="contain"
         hasMediaButton={false}
         hasSizeButton={false}
         hasIndexBoard={false}
-        hasThumbnails={false}
+        hasThumbnails={true}
         hasLeftButton={false}
         hasRightButton={false}
+        isAutoPlaying={true}
         className={styles.carousel}
       />
     </div>

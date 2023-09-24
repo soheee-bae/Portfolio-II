@@ -1,15 +1,11 @@
 @import '../../styles/mixin';
 
 .projectCarousel {
-  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100%;
-  padding: 20px;
+  flex-direction: column;
+  gap: 0 !important;
+  width: 100%;
   font-family: var(--font-roboto);
-  // border: 1px solid red;
 
   &[data-animation='true'] {
     animation: fadeInPrev 1s;
@@ -38,12 +34,6 @@
       }
     }
   }
-
-  @include xl {
-    flex-direction: row;
-    justify-content: center;
-    gap: 0px;
-  }
 }
 
 .carousel {
@@ -54,10 +44,6 @@
   figure {
     border-radius: 8px;
     animation: fadeIn 0.5s inherit;
-
-    img {
-      object-fit: contain;
-    }
   }
 }
 

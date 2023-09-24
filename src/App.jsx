@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './App.module.scss';
 
-import VerticalDotNav from './components/VerticalDotNav/VerticalDotNav';
+// import VerticalDotNav from './components/VerticalDotNav/VerticalDotNav';
 import Navbar from './components/Navbar/Navbar';
 import Cursor from './components/Cursor/Cursor';
 
@@ -23,7 +23,7 @@ function App() {
     <div className={styles.app}>
       <Cursor />
       <Navbar scroll={scrollTriggered} setNavSection={setNavSection} navSection={navSection} />
-      <VerticalDotNav setNavSection={setNavSection} navSection={navSection} />
+      {/* <VerticalDotNav setNavSection={setNavSection} navSection={navSection} /> */}
       <Home scroll={scrollTriggered} />
       <Project />
       {/* <About /> */}

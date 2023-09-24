@@ -39,18 +39,18 @@ function ProjectStepper() {
     <div className={styles.projectStepper}>
       <ProjectStepperHeader activeStep={activeStep} setActiveStep={setActiveStep} />
       <div className={styles.stepperContent}>
+        <ProjectCarousel
+          project={projects[activeStep]}
+          animation={animation}
+          setAnimation={setAnimation}
+          direction={imgDirection}
+        />
         <ProjectInfo
           project={projects[activeStep]}
           animation={animation}
           setAnimation={setAnimation}
           direction={infoDirection}
           activeStep={activeStep}
-        />
-        <ProjectCarousel
-          project={projects[activeStep]}
-          animation={animation}
-          setAnimation={setAnimation}
-          direction={imgDirection}
         />
       </div>
     </div>

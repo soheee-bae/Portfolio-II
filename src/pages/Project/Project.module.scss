@@ -4,11 +4,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   min-height: 100vh;
   min-width: 100vw;
   height: auto;
   width: 100%;
+
   margin: 0;
+  padding-bottom: 50px;
 
   h1 {
     padding-top: 50px;
@@ -16,6 +19,8 @@
   }
 
   @include xl {
+    padding-bottom: 100px;
+
     h1 {
       padding-top: 100px;
     }
