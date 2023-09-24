@@ -25,12 +25,11 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: var(--text-md);
+  font-size: var(--text-sm);
   padding: 0 20px;
-  line-height: 30px;
 
   span {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
     font-weight: var(--font-bold);
     padding: 0 8px;
     position: relative;
@@ -38,13 +37,14 @@
 
   svg {
     position: absolute;
-    width: 120px;
-    margin-top: 30px;
-    margin-left: -95px;
+    width: 80px;
+    margin-top: 25px;
+    margin-left: -65px;
   }
 
   @include xl {
     font-size: var(--text-lg);
+    line-height: 30px;
 
     span {
       font-size: var(--text-xxl);
@@ -55,6 +55,10 @@
       margin-top: 35px;
       margin-left: -125px;
     }
+  }
+
+  @include sm {
+    font-size: var(--text-md);
   }
 }
 

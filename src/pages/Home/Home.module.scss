@@ -12,9 +12,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column-reverse;
-
+  padding-bottom: 100px;
   @include xl {
     flex-direction: row;
+    padding-bottom: 0;
   }
 }
 

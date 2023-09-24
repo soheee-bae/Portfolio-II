@@ -3,7 +3,7 @@
 
 .miniAbout {
   position: absolute;
-  top: -130%;
+  top: -160%;
   left: -35%;
   padding: 20px;
 
@@ -14,6 +14,7 @@
   min-width: 400px;
   width: 100%;
   font-family: var(--font-notoSans);
+  font-size: var(--text-sm);
 
   animation: fadeInXl 1s;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
