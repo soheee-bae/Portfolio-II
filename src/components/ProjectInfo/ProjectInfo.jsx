@@ -8,19 +8,17 @@ import LaunchIcon from '@mui/icons-material/Launch';
 
 import styles from './ProjectInfo.module.scss';
 
-function ProjectInfo({ project, animation, setAnimation, direction, activeStep }) {
+function ProjectInfo({ project, activeStep }) {
   const { isLightMode } = useContext(ToggleContext);
 
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
-
-  console.log(animation, setAnimation, direction);
 
   const description = project.description.replace(/\\n/g, '\n');
   return (
     <div className={styles.ProjectInfo}>
       <div className={styles.header}>
         <div className={styles.headerContent}>
-          <p>0 {activeStep + 1} - 0 5</p>
+          <p className={styles.activeStep}>0 {activeStep + 1} - 0 5</p>
           <hr />
           <p className={styles.type}>{project.type}</p>
           <p className={styles.name}>{project.name.toUpperCase()}</p>
