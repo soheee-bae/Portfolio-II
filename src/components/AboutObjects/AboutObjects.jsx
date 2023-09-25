@@ -132,7 +132,7 @@ function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
 
 export default AboutObjects;
 
-function Objects(props) {
+export function Objects(props) {
   const { scene } = useGLTF(props.url);
   scene.traverse(function (node) {
     if (node.isMesh) {

@@ -1,6 +1,7 @@
 export const projects = [
   {
     name: 'Filmacorn',
+    iconName: '🍿 Filmacorn',
     type: '개인 프로젝트',
     images: [
       { src: './image/Filmacorn/Filmacorn_main.png' },
@@ -20,6 +21,7 @@ export const projects = [
   },
   {
     name: 'Blog Starter',
+    iconName: '✍🏻 Blog Starter',
     type: '개인 프로젝트',
     images: [
       { src: './image/Blog/Blog_MainLight.png' },
@@ -54,6 +56,7 @@ export const projects = [
   },
   {
     name: 'Tasting Table',
+    iconName: '🥚 Tasting Table',
     type: '개인 프로젝트',
     images: [
       { src: './image/TT/TT_Main.png' },
@@ -77,6 +80,7 @@ export const projects = [
   },
   {
     name: 'Moodie',
+    iconName: '😊 Moodie',
     type: '개인 프로젝트',
     images: [
       { src: './image/Moodie/Moodie_Main.png' },
@@ -97,6 +101,7 @@ export const projects = [
   },
   {
     name: 'Portfolio',
+    iconName: '🙋🏻‍♀️ Portfolio',
     type: '개인 프로젝트',
     images: ['', ''],
     description: '개인 포트폴리오로 제 소개 및 개인 프로젝트의 자세한 내용들이 정리 되어있습니다.',

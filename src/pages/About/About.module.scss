@@ -1,20 +1,29 @@
 @import '../../styles/mixin';
 
 .about {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+
+  min-height: 100vh;
+  min-width: 100vw;
+  height: auto;
+  width: 100%;
+
+  margin: 0;
+  padding-bottom: 50px;
+
+  h1 {
+    padding-top: 50px;
+    font-family: var(--font-roboto);
+  }
 
   @include xl {
-    position: relative;
-    min-height: 100vh;
-    min-width: 100vw;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    padding-bottom: 100px;
+
+    h1 {
+      padding-top: 100px;
+    }
   }
 }
 

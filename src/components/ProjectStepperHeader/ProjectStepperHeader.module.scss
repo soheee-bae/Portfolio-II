@@ -1,4 +1,5 @@
 @import '../../styles/mixin';
+@import '../../styles//color';
 
 .projectStepperHeader {
   font-family: var(--font-roboto);
@@ -9,12 +10,26 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 0 20px;
+    padding: 0 30px;
+
+    li {
+      width: auto;
+    }
   }
 
-  @include md {
+  @include xl {
+    border: 2px dotted var(--blackColor500);
+    border-radius: 8px;
+
     ul {
-      padding: 0;
+      flex-wrap: nowrap;
+      flex-direction: column;
+
+      gap: 30px;
+      li {
+        width: 100%;
+        padding: 5px;
+      }
     }
   }
 }
@@ -61,4 +76,42 @@
 
 .activeProjectStepper {
   @include active-stepper;
+}
+
+.arrows {
+  display: none;
+
+  @include xl {
+    display: flex;
+    padding: 10px 30px;
+    position: absolute;
+    animation: upAndDown 3s ease-in-out infinite;
+    p {
+      position: absolute;
+      left: -290px;
+      top: 405px;
+      font-size: var(--text-lg);
+      transform: rotate(-80deg);
+      font-family: 'Annie Use Your Telescope', cursive;
+    }
+
+    .arrow {
+      left: -230px;
+      top: 430px;
+      position: absolute;
+      transform: rotate(230deg);
+    }
+  }
+}
+
+@keyframes upAndDown {
+  0% {
+    transform: translateX(0px) translateY(0px) rotate(60deg);
+  }
+  50% {
+    transform: translateX(-5px) translateY(-5px) rotate(60deg);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px) rotate(60deg);
+  }
 }

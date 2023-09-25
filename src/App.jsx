@@ -6,7 +6,7 @@ import styles from './App.module.scss';
 import Navbar from './components/Navbar/Navbar';
 import Cursor from './components/Cursor/Cursor';
 
-// import About from './pages/About/About';
+import About from './pages/About/About';
 import Home from './pages/Home/Home';
 // import Contact from './pages/Contact/Contact';
 import Project from './pages/Project/Project';
@@ -26,7 +26,7 @@ function App() {
       {/* <VerticalDotNav setNavSection={setNavSection} navSection={navSection} /> */}
       <Home scroll={scrollTriggered} />
       <Project />
-      {/* <About /> */}
+      <About />
       {/* <Contact /> */}
     </div>
   );
