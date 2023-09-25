@@ -7,12 +7,16 @@ import styles from './Project.module.scss';
 
 function Project() {
   const { x } = useContext(ToggleContext);
+  const { isLightMode } = useContext(ToggleContext);
+
+  const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
 
   return (
     <a.div
       id="project"
       className={styles.project}
       style={{
+        color: `${color}`,
         backgroundColor: x.to([0, 1], ['var(--whiteColor350)', 'var(--blackColor350)'])
       }}>
       <h1>PROJECT</h1>

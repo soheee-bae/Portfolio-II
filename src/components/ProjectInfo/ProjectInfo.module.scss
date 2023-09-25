@@ -22,20 +22,35 @@
 
   .activeStep {
     font-weight: var(--font-semibold);
-    color: var(--blackColor400);
+    color: var(--whiteColor500);
   }
   .type {
     margin: 0;
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
-    color: var(--blackColor500);
+    color: var(--whiteColor500);
   }
   .name {
     margin: 0;
     font-size: var(--text-xl);
     font-weight: var(--font-bold);
     letter-spacing: 1.2px;
+    color: var(--whiteColor100);
+  }
+}
+
+.projectInfoLight {
+  .activeStep {
+    color: var(--blackColor400);
+  }
+  .type {
+    color: var(--blackColor500);
+  }
+  .name {
     color: var(--blackColor100);
+  }
+  .description {
+    color: var(--blackColor400);
   }
 }
 
@@ -44,7 +59,7 @@
   line-height: 22px;
   margin: 0;
   white-space: pre-wrap;
-  color: var(--blackColor400);
+  color: var(--whiteColor500);
 }
 
 .skills {

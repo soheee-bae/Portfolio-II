@@ -11,9 +11,10 @@ function ProjectStepperHeader({ activeStep, setActiveStep, handleNext, handleBac
   const { isLightMode } = useContext(ToggleContext);
 
   const arrowSrc = isLightMode ? './image/curly-arrow.png' : './image/curly-arrowWhite.png';
+  const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
 
   return (
-    <>
+    <div style={{ color: `${color}` }}>
       <div className={styles.arrows}>
         <p>Select one!</p>
         <img className={styles.arrow} src={arrowSrc} alt="arrow" />
@@ -36,12 +37,12 @@ function ProjectStepperHeader({ activeStep, setActiveStep, handleNext, handleBac
                 [styles.activeProjectStepper]: activeStep === index
               })}>
               {project.iconName}
-              <HandDrawnCircle />
+              <HandDrawnCircle color={color} />
             </li>
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 

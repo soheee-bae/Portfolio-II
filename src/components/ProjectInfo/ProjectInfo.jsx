@@ -7,15 +7,16 @@ import Tooltip from '@mui/material/Tooltip';
 import LaunchIcon from '@mui/icons-material/Launch';
 
 import styles from './ProjectInfo.module.scss';
+import clsx from 'clsx';
 
 function ProjectInfo({ project, activeStep }) {
   const { isLightMode } = useContext(ToggleContext);
 
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
-
   const description = project.description.replace(/\\n/g, '\n');
+
   return (
-    <div className={styles.ProjectInfo}>
+    <div className={clsx(styles.ProjectInfo, { [styles.projectInfoLight]: isLightMode })}>
       <div className={styles.header}>
         <div className={styles.headerContent}>
           <p className={styles.activeStep}>0 {activeStep + 1} - 0 5</p>

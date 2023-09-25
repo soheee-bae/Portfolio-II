@@ -82,22 +82,23 @@
   display: none;
 
   @include xl {
-    display: flex;
+    display: block;
     padding: 10px 30px;
     position: absolute;
     animation: upAndDown 3s ease-in-out infinite;
+
     p {
       position: absolute;
-      left: -290px;
-      top: 405px;
+      left: -60px;
+      top: 30px;
       font-size: var(--text-lg);
       transform: rotate(-80deg);
       font-family: 'Annie Use Your Telescope', cursive;
     }
 
     .arrow {
-      left: -230px;
-      top: 430px;
+      left: 0px;
+      top: 58px;
       position: absolute;
       transform: rotate(230deg);
     }
