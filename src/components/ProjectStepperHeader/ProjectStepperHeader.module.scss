@@ -20,6 +20,7 @@
   @include xl {
     border: 2px dotted var(--blackColor500);
     border-radius: 8px;
+    height: 100%;
 
     ul {
       flex-wrap: nowrap;
