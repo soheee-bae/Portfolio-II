@@ -3,7 +3,6 @@ import { Canvas } from '@react-three/fiber';
 import { a } from '@react-spring/three';
 
 import ToggleContext from '../../context/toggleContext';
-import AboutFont from '../AboutFont/AboutFont';
 import AboutObjects from '../AboutObjects/AboutObjects';
 import styles from './AboutScene.module.scss';
 
@@ -17,7 +16,7 @@ function AboutScene({ aboutSection, setAboutSection, setAnimation }) {
       orthographic
       shadows
       dpr={[1, 2]}
-      camera={{ zoom: 60, position: [-14, 13, 12], fov: 35 }}>
+      camera={{ zoom: 70, position: [-14, 13, 12], fov: 35 }}>
       <ambientLight intensity={0.1} />
       <directionalLight position={[-20, 20, 20]} intensity={1} />
       <a.directionalLight position={[-20, -20, -20]} intensity={0.5} color={color} />
@@ -32,7 +31,6 @@ function AboutScene({ aboutSection, setAboutSection, setAnimation }) {
       />
 
       <Suspense fallback={null}>
-        <AboutFont />
         <AboutObjects
           aboutSection={aboutSection}
           setAboutSection={setAboutSection}

@@ -7,18 +7,16 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 50%;
+  height: auto;
   width: 100%;
   max-width: none;
   transition: all 1s;
-  opacity: 1;
 
   @include xl {
     justify-content: center;
     max-width: 700px;
-    height: 100%;
+    height: calc(100vh - 109px);
     width: 50%;
-    opacity: 1;
   }
 
   &[data-animation='true'] {

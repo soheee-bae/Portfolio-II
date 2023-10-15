@@ -20,11 +20,13 @@ function AboutOverlay({ aboutSection, animation, setAnimation }) {
       <Education />
     ) : aboutSection === 'career' ? (
       <Career />
-    ) : null;
+    ) : (
+      <Skill />
+    );
 
   return (
     <div
-      className={clsx(styles.aboutOverlay, { [styles.hide]: !aboutSection })}
+      className={clsx(styles.aboutOverlay)}
       style={{ color: `${color}` }}
       data-animation={animation}
       onAnimationEnd={() => setAnimation(false)}>
