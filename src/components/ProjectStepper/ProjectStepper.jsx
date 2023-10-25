@@ -54,10 +54,7 @@ function ProjectStepper() {
     );
     setImages(urlLists);
     setIsFetching(false);
-    console.log(urlLists);
   };
-
-  console.log(images);
 
   useEffect(() => {
     setIsFetching(true);
