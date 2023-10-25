@@ -2,12 +2,15 @@ import Carousel from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
 
 import styles from './ProjectCarousel.module.scss';
+import { Loader } from '../Loader/Loader';
 
 function ProjectCarousel({ images, isFetching }) {
   return (
     <div className={styles.projectCarousel}>
       {isFetching ? (
-        <div className={styles.empty}>Loading... </div>
+        <div className={styles.empty}>
+          <Loader />
+        </div>
       ) : (
         <Carousel
           images={images}

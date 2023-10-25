@@ -1,4 +1,6 @@
 @import '../../styles/mixin';
+@import 'loaders.css/src/animations/cube-transition.scss';
+$primary-color: #000000;
 
 .projectCarousel {
   display: flex;
@@ -28,4 +30,11 @@
   justify-content: center;
   align-items: center;
   min-height: 400px;
+}
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
 }
