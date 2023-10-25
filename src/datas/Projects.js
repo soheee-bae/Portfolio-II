@@ -15,7 +15,6 @@ export const projects = [
     github: 'https://github.com/soheee-bae/Filmacorn',
     demo: 'https://filmacorn.vercel.app/',
     skills: ['React', 'Next.js', 'SCSS', 'TypeScript', 'TMBD API', 'Lazy loading']
-
     // blog: ['', ''], // 소개, 개발과 리팩토링, 프로젝트 회고
     // testAccount: { id: '', password: '' }
   },
@@ -102,7 +101,8 @@ export const projects = [
     iconName: '🙋🏻‍♀️ Portfolio',
     type: '개인 프로젝트',
     images: ['', ''],
-    description: '개인 포트폴리오로 제 소개 및 개인 프로젝트의 자세한 내용들이 정리 되어있습니다. React three fiber을 이용해 단순히 2D 웹사이트가 아닌 3D개발을 포함시켜 포트폴리오를 조금 더 부간시키는데에 집중해 개발하였고 ',
+    description:
+      '개인 포트폴리오로 제 소개 및 개인 프로젝트의 자세한 내용들이 정리 되어있습니다. React three fiber을 이용해 단순히 2D 웹사이트가 아닌 3D개발을 포함시켜 포트폴리오를 조금 더 부간시키는데에 집중해 개발하였고 ',
     github: 'https://github.com/soheee-bae/Portfolio23',
     demo: '',
     skills: ['React Three Fiber', 'SCSS', 'React', 'Javascript', 'Three.js', 'Blender']

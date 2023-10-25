@@ -12,6 +12,8 @@ import clsx from 'clsx';
 function ProjectInfo({ project, activeStep }) {
   const { isLightMode } = useContext(ToggleContext);
 
+  if (!project) return null;
+
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
   const description = project.description.replace(/\\n/g, '\n');
 

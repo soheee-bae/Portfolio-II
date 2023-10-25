@@ -16,7 +16,6 @@ import { useNav } from './hooks/useNav';
 
 function App() {
   const { scrollTriggered } = useScroll();
-
   const { navSection, setNavSection } = useNav();
 
   return (
