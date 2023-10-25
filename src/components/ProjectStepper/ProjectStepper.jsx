@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-// import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
+import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import ToggleContext from '../../context/toggleContext';
 
 import styles from './ProjectStepper.module.scss';
@@ -7,7 +7,7 @@ import ProjectInfo from '../ProjectInfo/ProjectInfo';
 import ProjectStepperHeader from '../ProjectStepperHeader/ProjectStepperHeader';
 
 import { collection, getDocs } from 'firebase/firestore';
-import { ref, list } from 'firebase/storage';
+import { ref, list, getDownloadURL } from 'firebase/storage';
 
 import { firestore, storage } from '../../firebase';
 
@@ -17,8 +17,8 @@ function ProjectStepper() {
   const [imgDirection, setImgDirection] = useState(null);
   const [projects, setProjects] = useState([]);
   const [images, setImages] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
 
-  console.log(images);
   const { isLightMode } = useContext(ToggleContext);
 
   const handleNext = () => {
@@ -42,15 +42,25 @@ function ProjectStepper() {
   };
 
   const fetchImages = async () => {
-    console.log(activeStep);
-    const link = `gs://portfolio23-84a31.appspot.com`;
+    const link = `gs://portfolio23-84a31.appspot.com/${projects[activeStep].name}`;
     const imageRef = ref(storage, link);
-    await list(imageRef, (images) => {
-      setImages(images);
-    });
+    const images = await list(imageRef);
+    const urlLists = await Promise.all(
+      images.items.map(async (img) => {
+        const imgRef = ref(storage, `gs://portfolio23-84a31.appspot.com/${img.fullPath}`);
+        const url = await getDownloadURL(imgRef);
+        return { src: url };
+      })
+    );
+    setImages(urlLists);
+    setIsFetching(false);
+    console.log(urlLists);
   };
 
+  console.log(images);
+
   useEffect(() => {
+    setIsFetching(true);
     fetchImages();
   }, [activeStep]);
 
@@ -65,6 +75,7 @@ function ProjectStepper() {
         setActiveStep={setActiveStep}
         handleNext={handleNext}
         handleBack={handleBack}
+        projects={projects}
       />
       <div
         className={styles.stepperContent}
@@ -72,7 +83,7 @@ function ProjectStepper() {
         data-direction={imgDirection}
         data-darkmode={!isLightMode}
         onAnimationEnd={() => setAnimation(false)}>
-        {/* <ProjectCarousel project={projects[activeStep]} /> */}
+        <ProjectCarousel images={images} isFetching={isFetching} />
         <ProjectInfo project={projects[activeStep]} activeStep={activeStep} />
       </div>
     </div>

@@ -1,13 +1,12 @@
 import { useContext } from 'react';
 
-import { projects } from '../../datas/Projects';
 import { HandDrawnCircle } from '../../icons';
 import ToggleContext from '../../context/toggleContext';
 
 import styles from './ProjectStepperHeader.module.scss';
 import clsx from 'clsx';
 
-function ProjectStepperHeader({ activeStep, setActiveStep, handleNext, handleBack }) {
+function ProjectStepperHeader({ activeStep, setActiveStep, handleNext, handleBack, projects }) {
   const { isLightMode } = useContext(ToggleContext);
 
   const arrowSrc = isLightMode ? './image/curly-arrow.png' : './image/curly-arrowWhite.png';
