@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
 // import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
-// import { projects } from '../../datas/Projects';
 import ToggleContext from '../../context/toggleContext';
 
 import styles from './ProjectStepper.module.scss';
