@@ -21,7 +21,7 @@ function AboutOverlay({ aboutSection, animation, setAnimation }) {
     ) : aboutSection === 'career' ? (
       <Career />
     ) : (
-      <Skill />
+      <div>Default</div>
     );
 
   return (
