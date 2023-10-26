@@ -9,7 +9,7 @@ function Switch() {
   const { x, setToggle } = useContext(ToggleContext);
   const { textEnter, textLeave } = useContext(CursorContext);
 
-  const { nodes, materials } = useGLTF('./model/metal.glb');
+  const { nodes } = useGLTF('./model/metal.glb');
   const texture = useTexture('./model/onoff.jpg');
 
   const onClick = useCallback(() => setToggle((toggle) => Number(!toggle)), [setToggle]);
@@ -24,12 +24,13 @@ function Switch() {
       <a.mesh
         receiveShadow
         castShadow
-        material={materials.track}
+        material={nodes.Circle.material}
         geometry={nodes.Circle.geometry}
-        material-color={'#000000'}
-        material-roughness={0.8}
-        material-metalness={0.8}
-        scale={[1.1, 1.0, 1.2]}
+        material-color={'#404040'}
+        material-receiveShadow="true"
+        material-roughness={1}
+        material-metalness={1}
+        scale={[1.1, 1.2, 1.2]}
         rotation={[0, 1.55, 0]}
         position={[0, 0, 0.05]}
       />
