@@ -42,18 +42,20 @@ function ProjectStepper() {
   };
 
   const fetchImages = async () => {
-    const link = `gs://portfolio23-84a31.appspot.com/${projects[activeStep].name}`;
-    const imageRef = ref(storage, link);
-    const images = await list(imageRef);
-    const urlLists = await Promise.all(
-      images.items.map(async (img) => {
-        const imgRef = ref(storage, `gs://portfolio23-84a31.appspot.com/${img.fullPath}`);
-        const url = await getDownloadURL(imgRef);
-        return { src: url };
-      })
-    );
-    setImages(urlLists);
-    setIsFetching(false);
+    if (projects[activeStep]?.name) {
+      const link = `gs://portfolio23-84a31.appspot.com/${projects[activeStep]?.name}`;
+      const imageRef = ref(storage, link);
+      const images = await list(imageRef);
+      const urlLists = await Promise.all(
+        images.items.map(async (img) => {
+          const imgRef = ref(storage, `gs://portfolio23-84a31.appspot.com/${img.fullPath}`);
+          const url = await getDownloadURL(imgRef);
+          return { src: url };
+        })
+      );
+      setImages(urlLists);
+      setIsFetching(false);
+    }
   };
 
   useEffect(() => {

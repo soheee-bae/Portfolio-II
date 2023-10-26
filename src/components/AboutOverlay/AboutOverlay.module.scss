@@ -15,7 +15,9 @@
   @include xl {
     justify-content: center;
     max-width: 700px;
-    height: calc(100vh - 109px);
+    height: 100%;
+
+    // height: calc(100vh - 109px);
     width: 50%;
   }
 

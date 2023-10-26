@@ -22,14 +22,7 @@ function About() {
       className={styles.about}
       style={{
         backgroundColor: x.to([0, 1], ['var(--whiteColor400)', 'var(--blackColor300)'])
-      }}
-      // onMouseEnter={() => {
-      //   if (!aboutSection) {
-      //     textEnter('about');
-      //   }
-      // }}
-      // onMouseLeave={() => textLeave()}
-    >
+      }}>
       <h1>ABOUT</h1>
       <div className={styles.aboutContainer}>
         <a.div className={styles.aboutContent}>

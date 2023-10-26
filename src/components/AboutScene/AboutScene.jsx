@@ -29,7 +29,6 @@ function AboutScene({ aboutSection, setAboutSection, setAnimation }) {
         shadow-bias={-0.00001}
         castShadow
       />
-
       <Suspense fallback={null}>
         <AboutObjects
           aboutSection={aboutSection}
