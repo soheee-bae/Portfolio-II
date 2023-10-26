@@ -3,10 +3,11 @@ import { useGLTF, OrbitControls } from '@react-three/drei';
 import { useSpring } from '@react-spring/core';
 import { a } from '@react-spring/three';
 
-// import CursorContext from '../../context/cursorContext';
+import CursorContext from '../../context/cursorContext';
 
 function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
   const { nodes } = useGLTF('./model/keyboard.glb');
+  const { textEnter, textLeave } = useContext(CursorContext);
 
   const [educationClick, setEducationClick] = useState(1);
   const [careersClick, setCareersClick] = useState(1);
@@ -36,7 +37,17 @@ function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
   }, [aboutSection]);
 
   return (
-    <a.group scale={[2.1, 2.1, 2.1]} castShadow receiveShadow dispose={null}>
+    <a.group
+      scale={[2.1, 2.1, 2.1]}
+      castShadow
+      receiveShadow
+      dispose={null}
+      onPointerEnter={() => {
+        textEnter('click');
+      }}
+      onPointerLeave={() => {
+        textLeave();
+      }}>
       <OrbitControls />
       <a.mesh
         receiveShadow
@@ -281,77 +292,3 @@ function CareersKey({
     </a.group>
   );
 }
-//  <Objects
-//         url="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf"
-//         scale={0.41}
-//         rotation={[0, -0.35, 0]}
-//         position-x={1.1}
-//         position-z={-2.5}
-//         py={targetY}
-//         onClick={() => {
-//           setAboutSection('skill');
-//           setAnimation(true);
-//         }}
-//         onPointerEnter={() => {
-//           setTargetHover(1);
-//           textEnter('click');
-//         }}
-//         onPointerLeave={() => {
-//           setTargetHover(0);
-//           if (!aboutSection) {
-//             textEnter('about');
-//           } else {
-//             textLeave();
-//           }
-//         }}
-//       />
-
-//       <Objects
-//         url="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/open-book/model.gltf"
-//         scale={0.77}
-//         rotation={[0, -0.2, 0]}
-//         position-x={0.55}
-//         position-z={0.48}
-//         py={bookY}
-//         onClick={() => {
-//           setAboutSection('education');
-//           setAnimation(true);
-//         }}
-//         onPointerEnter={() => {
-//           setBookHover(1);
-//           textEnter('click');
-//         }}
-//         onPointerLeave={() => {
-//           setBookHover(0);
-//           if (!aboutSection) {
-//             textEnter('about');
-//           } else {
-//             textLeave();
-//           }
-//         }}
-//       />
-//       {/* Laptop Model*/}
-//       <Objects
-//         url="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
-//         scale={0.26}
-//         rotation={[0, 0.5, 0]}
-//         position-x={-1.5}
-//         position-z={0}
-//         py={macY}
-//         onClick={() => {
-//           setAboutSection('career');
-//           setAnimation(true);
-//         }}
-//         onPointerEnter={() => {
-//           setMacHover(1);
-//           textEnter('click');
-//         }}
-//         onPointerLeave={() => {
-//           setMacHover(0);
-//           if (!aboutSection) {
-//             textEnter('about');
-//           } else {
-//             textLeave();
-//           }
-//         }}
-//       />

@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { a } from '@react-spring/web';
-// import clsx from 'clsx';
 
-// import CursorContext from '../../context/cursorContext';
 import ToggleContext from '../../context/toggleContext';
 import AboutScene from '../../components/AboutScene/AboutScene';
 import AboutOverlay from '../../components/AboutOverlay/AboutOverlay';
@@ -11,7 +9,6 @@ import styles from './About.module.scss';
 
 function About() {
   const { x } = useContext(ToggleContext);
-  // const { textEnter, textLeave } = useContext(CursorContext);
 
   const [aboutSection, setAboutSection] = useState(null);
   const [animation, setAnimation] = useState(true);
