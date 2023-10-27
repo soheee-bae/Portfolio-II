@@ -11,6 +11,7 @@
   width: 100%;
   max-width: none;
   transition: all 1s;
+  font-family: 'Roboto', sans-serif;
 
   @include xl {
     justify-content: center;
@@ -52,7 +53,7 @@
 }
 
 .title {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: var(--font-bold);
   margin-bottom: 0;
 }

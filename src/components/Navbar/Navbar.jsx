@@ -10,7 +10,8 @@ const navItems = [
   { label: 'Home', value: 'home' },
   { label: 'Project', value: 'project' },
   { label: 'About', value: 'about' },
-  { label: 'Contact', value: 'contact' }
+  { label: 'Contact', value: 'contact' },
+  { label: 'Resume', value: 'resume' }
 ];
 
 function Navbar({ scroll, navSection, setNavSection }) {
@@ -31,7 +32,16 @@ function Navbar({ scroll, navSection, setNavSection }) {
               [styles.selectedNavDark]: nav.value === navSection && !isLightMode,
               [styles.selectedNav]: nav.value === navSection
             })}
-            onClick={() => setNavSection(nav.value)}>
+            onClick={() => {
+              if (nav.value === 'resume') {
+                window.open(
+                  'https://soheedev.notion.site/2ef5ab86c81a4609b932a19126f0146f',
+                  '_blank'
+                );
+              } else {
+                setNavSection(nav.value);
+              }
+            }}>
             {nav.label}
           </Link>
         ))}
