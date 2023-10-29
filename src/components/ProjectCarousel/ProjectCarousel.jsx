@@ -3,9 +3,13 @@ import 'react-gallery-carousel/dist/index.css';
 
 import styles from './ProjectCarousel.module.scss';
 import { Loader } from '../Loader/Loader';
+import { useEffect } from 'react';
 
-function ProjectCarousel({ images, isFetching }) {
-  console.log(isFetching);
+function ProjectCarousel({ images, isFetching, activeStep }) {
+  useEffect(() => {
+    console.log(images);
+  }, [activeStep]);
+
   return (
     <div className={styles.projectCarousel}>
       {isFetching ? (

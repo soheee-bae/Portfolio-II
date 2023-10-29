@@ -33,41 +33,41 @@ function ProjectStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const fetchProject = async () => {
-    await getDocs(collection(firestore, 'Projects')).then((querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-      const sortedData = newData.sort((a, b) => a.order - b.order);
-      setProjects(sortedData);
-    });
-  };
-
-  const fetchImages = async () => {
-    if (projects[activeStep]?.name) {
-      const link = `gs://portfolio23-84a31.appspot.com/${projects[activeStep]?.name}`;
+  const fetchImages = async (name) => {
+    if (name) {
+      const link = `gs://portfolio23-84a31.appspot.com/${name}`;
       const imageRef = ref(storage, link);
       const images = await list(imageRef);
-      const urlLists = await Promise.all(
+      const imageLists = await Promise.all(
         images.items.map(async (img) => {
           const imgRef = ref(storage, `gs://portfolio23-84a31.appspot.com/${img.fullPath}`);
           const url = await getDownloadURL(imgRef);
           return { src: url };
         })
-      ).then(() => {
-        console.log('hereee');
-        setIsFetching(false);
-      });
-      setImages(urlLists);
+      );
+      return imageLists;
     }
+  };
+
+  const fetchProject = async () => {
+    await getDocs(collection(firestore, 'Projects')).then(async (querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      const sortedData = newData.sort((a, b) => a.order - b.order);
+      setProjects(sortedData);
+
+      const images = await Promise.all(
+        sortedData?.map(async (project) => {
+          const imageLists = await fetchImages(project.name);
+          return { imageLists };
+        })
+      );
+      setImages(images);
+      setIsFetching(false);
+    });
   };
 
   useEffect(() => {
     setIsFetching(true);
-    fetchImages();
-    console.log('useEffect');
-    console.log(isFetching);
-  }, [activeStep]);
-
-  useEffect(() => {
     fetchProject();
   }, []);
 
@@ -86,7 +86,11 @@ function ProjectStepper() {
         data-direction={imgDirection}
         data-darkmode={!isLightMode}
         onAnimationEnd={() => setAnimation(false)}>
-        <ProjectCarousel images={images} isFetching={isFetching} />
+        <ProjectCarousel
+          images={images[activeStep]?.imageLists || []}
+          isFetching={isFetching}
+          activeStep={activeStep}
+        />
         <ProjectInfo project={projects[activeStep]} activeStep={activeStep} />
       </div>
     </div>

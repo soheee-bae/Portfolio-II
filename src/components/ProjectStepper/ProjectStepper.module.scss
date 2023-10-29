@@ -38,13 +38,13 @@
   }
 
   &[data-animation='true'] {
-    animation: fadeInPrev 1s;
+    animation: fadeInPrev 1.5s;
 
     &[data-direction='prev'] {
-      animation: fadeInNext 1s;
+      animation: fadeInNext 1.5s;
 
       @include xl {
-        animation: fadeInPrev 1s;
+        animation: fadeInPrev 1.5s;
       }
     }
   }
