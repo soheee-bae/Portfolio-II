@@ -5,6 +5,7 @@ import styles from './ProjectCarousel.module.scss';
 import { Loader } from '../Loader/Loader';
 
 function ProjectCarousel({ images, isFetching }) {
+  console.log(isFetching);
   return (
     <div className={styles.projectCarousel}>
       {isFetching ? (

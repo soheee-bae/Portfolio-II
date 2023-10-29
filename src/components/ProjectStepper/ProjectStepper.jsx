@@ -52,15 +52,19 @@ function ProjectStepper() {
           const url = await getDownloadURL(imgRef);
           return { src: url };
         })
-      );
+      ).then(() => {
+        console.log('hereee');
+        setIsFetching(false);
+      });
       setImages(urlLists);
-      setIsFetching(false);
     }
   };
 
   useEffect(() => {
     setIsFetching(true);
     fetchImages();
+    console.log('useEffect');
+    console.log(isFetching);
   }, [activeStep]);
 
   useEffect(() => {
