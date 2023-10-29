@@ -1,5 +1,43 @@
+@import '../../styles/mixin';
+@import '../../styles/typography';
+@import '../../styles/color';
+
 .contact {
-  min-height: 50vh;
+  min-height: 30vh;
   max-width: 100vw;
   width: 100vw;
+  font-family: var(--font-roboto);
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  gap: 0;
+
+  @include xl {
+    flex-direction: row;
+    gap: 50px;
+    padding: 20px;
+  }
+}
+
+.titleContent {
+  p {
+    font-size: var(--text-xs);
+    color: var(--blackColor500);
+  }
+  border-bottom: 1px solid var(--whiteColor600);
+  border-right: none;
+
+  padding-bottom: 10px;
+  padding-right: 0;
+  width: 85%;
+
+  @include xl {
+    padding-right: 100px;
+    border-bottom: none;
+    border-right: 1px solid var(--whiteColor600);
+    width: auto;
+  }
 }

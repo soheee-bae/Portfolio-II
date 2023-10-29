@@ -1,0 +1,49 @@
+@import '../../styles/mixin';
+@import '../../styles/typography';
+@import '../../styles/color';
+
+.contactContent {
+  list-style-type: none;
+  max-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 85%;
+  gap: 25px;
+  padding-left: 0;
+  padding-top: 10px;
+
+  @include xl {
+    max-height: 150px;
+    width: auto;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 18px;
+  }
+}
+
+.contactList {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  opacity: 0.5;
+
+  a {
+    color: var(--blackColor300);
+    text-decoration: none;
+    font-size: var(--text-sm);
+  }
+
+  svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  &:hover {
+    transition: all 0.4s;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}

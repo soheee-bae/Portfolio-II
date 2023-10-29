@@ -9,6 +9,9 @@ import styles from './About.module.scss';
 
 function About() {
   const { x } = useContext(ToggleContext);
+  const { isLightMode } = useContext(ToggleContext);
+
+  const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
 
   const [aboutSection, setAboutSection] = useState(null);
   const [animation, setAnimation] = useState(true);
@@ -18,6 +21,7 @@ function About() {
       id="about"
       className={styles.about}
       style={{
+        color: `${color}`,
         backgroundColor: x.to([0, 1], ['var(--whiteColor400)', 'var(--blackColor300)'])
       }}>
       <h1>ABOUT</h1>
