@@ -9,9 +9,12 @@ export const useScroll = () => {
   useEffect(() => {
     if (typeof window !== `undefined`) {
       window.onscroll = async () => {
-        let position = await scrollHandler();
-        console.log('position : ' + position);
-        if (position) setCurrentPosition(position);
+        try {
+          let position = await scrollHandler();
+          if (position) setCurrentPosition(position);
+        } catch {
+          console.log('errere');
+        }
         setScroll(window.pageYOffset);
       };
     }
@@ -22,23 +25,22 @@ export const useScroll = () => {
   return { scrollTriggered, scroll, currentPosition };
 };
 
-async function scrollHandler() {
-  const app = document.getElementById('app');
-  const appPosition = window.pageYOffset + app?.offsetHeight;
-  let components = ids.map((id) => {
-    let component = document.getElementById(id);
-    let position = component?.offsetTop + component?.offsetHeight;
-    return position - appPosition;
-  });
-  console.log(components);
+function scrollHandler() {
+  return new Promise((res) => {
+    const app = document.getElementById('app');
+    const appPosition = window.pageYOffset + app?.offsetHeight;
+    let components = ids.map((id) => {
+      let component = document.getElementById(id);
+      let position = component?.offsetTop + component?.offsetHeight;
+      return position - appPosition;
+    });
 
-  const min = Math.min(...components.filter((num) => num > 0));
+    const min = Math.min(...components.filter((num) => num > 0));
 
-  console.log(min);
-  components.forEach((comp, indx) => {
-    if (min === comp) {
-      console.log('result :' + ids[indx]);
-      return ids[indx];
-    }
+    components.forEach((comp, indx) => {
+      if (min === comp) {
+        return res(ids[indx]);
+      }
+    });
   });
 }
