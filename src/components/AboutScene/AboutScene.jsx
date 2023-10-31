@@ -16,14 +16,13 @@ function AboutScene({ aboutSection, setAboutSection, setAnimation }) {
       orthographic
       shadows
       dpr={[1, 2]}
-      camera={{ zoom: 70, position: [-14, 13, 12], fov: 35 }}>
-      <ambientLight intensity={0.1} />
-      <directionalLight position={[-20, 20, 20]} intensity={1} />
-      <a.directionalLight position={[-20, -20, -20]} intensity={0.5} color={color} />
-      <a.pointLight position={[0, 0, 5]} distance={5} intensity={5} color={color} />
+      camera={{ zoom: 80, position: [-14, 25, 18], fov: 35 }}>
+      <ambientLight intensity={0.5} />
+      <a.directionalLight position={[-10, 20, 10]} intensity={0.6} color={color} />
+      <a.pointLight position={[1, 3, 5]} distance={5} intensity={5} color={color} />
       <a.spotLight
         color={color}
-        position={[13, 25, 12]}
+        position={[15, 25, 14]}
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
         shadow-bias={-0.00001}

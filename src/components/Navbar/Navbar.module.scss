@@ -69,8 +69,10 @@
   border-bottom: 3px solid transparent;
 }
 .selectedNav {
+  transition: all 0.8s;
   border-bottom: 3px solid var(--blackColor100);
 }
 .selectedNavDark {
+  transition: all 0.8s;
   border-bottom: 3px solid var(--whiteColor100);
 }

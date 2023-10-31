@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import { useGLTF, OrbitControls } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 import { useSpring } from '@react-spring/core';
 import { a } from '@react-spring/three';
 
@@ -48,7 +48,7 @@ function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
       onPointerLeave={() => {
         textLeave();
       }}>
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       <a.mesh
         receiveShadow
         castShadow
