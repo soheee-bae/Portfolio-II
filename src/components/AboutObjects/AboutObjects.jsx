@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import { useGLTF } from '@react-three/drei';
+import { useGLTF, OrbitControls } from '@react-three/drei';
 import { useSpring } from '@react-spring/core';
 import { a } from '@react-spring/three';
 
@@ -48,7 +48,13 @@ function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
       onPointerLeave={() => {
         textLeave();
       }}>
-      {/* <OrbitControls /> */}
+      <OrbitControls
+        minAzimuthAngle={-0.6}
+        maxAzimuthAngle={0.5}
+        minPolarAngle={-0.5}
+        maxPolarAngle={0.8}
+        enableZoom={false}
+      />
       <a.mesh
         receiveShadow
         castShadow
