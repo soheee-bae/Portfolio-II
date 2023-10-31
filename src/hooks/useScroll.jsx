@@ -12,8 +12,8 @@ export const useScroll = () => {
         try {
           let position = await scrollHandler();
           if (position) setCurrentPosition(position);
-        } catch {
-          console.log('errere');
+        } catch (err) {
+          console.log(err);
         }
         setScroll(window.pageYOffset);
       };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import styles from './App.module.scss';
 
@@ -18,15 +18,14 @@ function App() {
   const { scrollTriggered, currentPosition } = useScroll();
   const { navSection, setNavSection } = useNav();
 
+  useEffect(() => {
+    setNavSection(currentPosition);
+  }, [currentPosition]);
+
   return (
     <div className={styles.app} id="app">
       <Cursor />
-      <Navbar
-        scroll={scrollTriggered}
-        currentPosition={currentPosition}
-        setNavSection={setNavSection}
-        navSection={navSection}
-      />
+      <Navbar scroll={scrollTriggered} setNavSection={setNavSection} navSection={navSection} />
       {/* <VerticalDotNav setNavSection={setNavSection} navSection={navSection} /> */}
       <Home scroll={scrollTriggered} />
       <Project />

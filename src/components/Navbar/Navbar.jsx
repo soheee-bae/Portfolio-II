@@ -14,10 +14,9 @@ const navItems = [
   { label: 'Resume', value: 'resume' }
 ];
 
-function Navbar({ scroll, currentPosition, navSection, setNavSection }) {
+function Navbar({ scroll, navSection, setNavSection }) {
   const { isLightMode } = useContext(ToggleContext);
 
-  console.log(currentPosition);
   return (
     <div className={styles.navbar} data-scroll={scroll} data-darkmode={!isLightMode}>
       <div className={styles.navbarContent}>
