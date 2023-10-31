@@ -15,13 +15,18 @@ import { useScroll } from './hooks/useScroll';
 import { useNav } from './hooks/useNav';
 
 function App() {
-  const { scrollTriggered } = useScroll();
+  const { scrollTriggered, currentPosition } = useScroll();
   const { navSection, setNavSection } = useNav();
 
   return (
-    <div className={styles.app}>
+    <div className={styles.app} id="app">
       <Cursor />
-      <Navbar scroll={scrollTriggered} setNavSection={setNavSection} navSection={navSection} />
+      <Navbar
+        scroll={scrollTriggered}
+        currentPosition={currentPosition}
+        setNavSection={setNavSection}
+        navSection={navSection}
+      />
       {/* <VerticalDotNav setNavSection={setNavSection} navSection={navSection} /> */}
       <Home scroll={scrollTriggered} />
       <Project />
