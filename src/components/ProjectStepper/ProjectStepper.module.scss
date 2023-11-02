@@ -37,11 +37,6 @@
 
     &[data-direction='prev'] {
       animation: fadeInNext 1.5s;
-
-      @include xl {
-        padding: 0;
-        animation: fadeInPrev 1.5s;
-      }
     }
   }
 
