@@ -33,11 +33,6 @@
     }
   }
 
-  svg {
-    // height: 10px;
-    // width: 100%;
-  }
-
   @include xl {
     font-size: var(--text-lg);
     line-height: 30px;
