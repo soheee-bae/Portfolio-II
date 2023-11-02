@@ -7,6 +7,7 @@ import Skill from '../AboutContent/Skill';
 import Career from '../AboutContent/Career';
 
 import styles from './AboutOverlay.module.scss';
+import Default from '../AboutContent/Default';
 
 function AboutOverlay({ aboutSection, animation, setAnimation }) {
   const { isLightMode } = useContext(ToggleContext);
@@ -21,7 +22,7 @@ function AboutOverlay({ aboutSection, animation, setAnimation }) {
     ) : aboutSection === 'career' ? (
       <Career />
     ) : (
-      <div>Default</div>
+      <Default />
     );
 
   return (

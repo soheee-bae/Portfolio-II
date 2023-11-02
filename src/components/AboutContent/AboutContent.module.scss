@@ -1,8 +1,56 @@
+@import '../../styles/mixin';
+@import '../../styles/typography';
+@import '../../styles/color';
+
 .content {
   height: 100%;
   font-family: 'Roboto', sans-serif;
 }
 
+.defaultContainer {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+
+  > :last-child {
+    text-align: end;
+  }
+
+  .defaultContent {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  span {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    position: relative;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.5s;
+    }
+  }
+
+  svg {
+    // height: 10px;
+    // width: 100%;
+  }
+
+  @include xl {
+    font-size: var(--text-lg);
+    line-height: 30px;
+
+    span {
+      font-size: var(--text-xxl);
+    }
+  }
+
+  @include sm {
+    font-size: var(--text-md);
+  }
+}
 .skillsContent {
   display: flex;
   flex-direction: column;
