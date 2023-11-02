@@ -24,7 +24,6 @@ function About() {
         color: `${color}`,
         backgroundColor: x.to([0, 1], ['var(--whiteColor400)', 'var(--blackColor300)'])
       }}>
-      <h1>ABOUT</h1>
       <div className={styles.aboutContainer}>
         <a.div className={styles.aboutContent}>
           <AboutScene
