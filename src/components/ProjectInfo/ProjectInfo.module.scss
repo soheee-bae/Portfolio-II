@@ -24,6 +24,11 @@
     line-height: 24px;
   }
 
+  .icon {
+    font-size: 100px;
+    margin: 0;
+  }
+
   @include sm {
     .name {
       font-size: var(--text-4xl);
