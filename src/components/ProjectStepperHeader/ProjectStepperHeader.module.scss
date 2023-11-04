@@ -5,26 +5,13 @@
   font-family: var(--font-roboto);
   ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    align-items: center;
-    padding: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
 
     li {
-      padding: 15px;
-      width: auto;
-    }
-  }
-
-  @include xl {
-    padding: 0px;
-    gap: 0;
-    ul {
-      justify-content: space-between;
-      li {
-        padding: 15px;
-      }
+      padding: 15px 5px;
+      width: 120px;
+      text-align: start;
     }
   }
 }

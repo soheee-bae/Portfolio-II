@@ -11,18 +11,4 @@
   width: 100%;
 
   margin: 0;
-  padding-bottom: 50px;
-
-  h1 {
-    padding-top: 50px;
-    font-family: var(--font-roboto);
-  }
-
-  @include xl {
-    padding-bottom: 100px;
-
-    h1 {
-      padding-top: 100px;
-    }
-  }
 }

@@ -9,15 +9,10 @@ import clsx from 'clsx';
 function ProjectStepperHeader({ activeStep, setActiveStep, handleNext, handleBack, projects }) {
   const { isLightMode } = useContext(ToggleContext);
 
-  const arrowSrc = isLightMode ? './image/curly-arrow.png' : './image/curly-arrowWhite.png';
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
 
   return (
     <div style={{ color: `${color}` }}>
-      <div className={styles.arrows}>
-        <p>Select one!</p>
-        <img className={styles.arrow} src={arrowSrc} alt="arrow" />
-      </div>
       <div className={styles.projectStepperHeader}>
         <ul>
           {projects.map((project, index) => (

@@ -3,7 +3,7 @@ import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import ToggleContext from '../../context/toggleContext';
 
 import styles from './ProjectStepper.module.scss';
-import ProjectInfo from '../ProjectInfo/ProjectInfo';
+// import ProjectInfo from '../ProjectInfo/ProjectInfo';
 import ProjectStepperHeader from '../ProjectStepperHeader/ProjectStepperHeader';
 
 import { collection, getDocs } from 'firebase/firestore';
@@ -21,6 +21,8 @@ function ProjectStepper() {
 
   const { isLightMode } = useContext(ToggleContext);
 
+  console.log(setImgDirection, setActiveStep);
+  console.log(images, isFetching);
   const handleNext = () => {
     setAnimation(true);
     setImgDirection('next');
@@ -86,12 +88,7 @@ function ProjectStepper() {
         data-direction={imgDirection}
         data-darkmode={!isLightMode}
         onAnimationEnd={() => setAnimation(false)}>
-        <ProjectCarousel
-          images={images[activeStep]?.imageLists || []}
-          isFetching={isFetching}
-          activeStep={activeStep}
-        />
-        <ProjectInfo project={projects[activeStep]} activeStep={activeStep} />
+        <ProjectCarousel projects={projects} isFetching={isFetching} activeStep={activeStep} />
       </div>
     </div>
   );

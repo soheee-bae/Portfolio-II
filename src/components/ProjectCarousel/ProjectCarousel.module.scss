@@ -8,21 +8,17 @@ $primary-color: #000000;
   gap: 0 !important;
   width: 100%;
   font-family: var(--font-roboto);
+  border: 1px solid red;
 }
 
-.carousel {
-  max-height: 400px;
-  max-width: 700px;
-  background-color: transparent;
+.projectContent {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
+}
 
-  figure {
-    border-radius: 8px;
-    object-fit: contain;
-
-    img {
-      object-fit: contain;
-    }
-  }
+.sliderContent {
+  border: 1px solid red;
 }
 
 .empty {

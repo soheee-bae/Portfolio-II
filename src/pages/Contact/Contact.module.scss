@@ -12,7 +12,6 @@
 }
 
 .titleContainer {
-  border: 1px solid red;
   max-width: 1400px;
   width: 100%;
   font-family: var(--font-roboto);
@@ -30,8 +29,6 @@
 }
 
 .titleContent {
-  // border: 1px solid red;
-
   p {
     font-size: var(--text-xs);
     color: var(--blackColor500);

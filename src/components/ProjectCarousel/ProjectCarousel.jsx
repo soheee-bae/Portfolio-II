@@ -1,14 +1,19 @@
-import Carousel from 'react-gallery-carousel';
-import 'react-gallery-carousel/dist/index.css';
-
 import styles from './ProjectCarousel.module.scss';
 import { Loader } from '../Loader/Loader';
-import { useEffect } from 'react';
 
-function ProjectCarousel({ images, isFetching, activeStep }) {
-  useEffect(() => {
-    console.log(images);
-  }, [activeStep]);
+import Slider from 'react-slick';
+import ProjectInfo from '../ProjectInfo/ProjectInfo';
+
+function ProjectCarousel({ projects, isFetching, activeStep }) {
+  console.log(activeStep, projects);
+
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
 
   return (
     <div className={styles.projectCarousel}>
@@ -17,18 +22,11 @@ function ProjectCarousel({ images, isFetching, activeStep }) {
           <Loader />
         </div>
       ) : (
-        <Carousel
-          images={images}
-          hasMediaButton={false}
-          hasSizeButton={false}
-          hasIndexBoard={false}
-          hasThumbnails={true}
-          hasLeftButton={false}
-          hasRightButton={false}
-          isAutoPlaying={true}
-          className={styles.carousel}
-          objectFit="contain"
-        />
+        <Slider {...settings} className={styles.projectContent}>
+          {projects.map((project) => {
+            return <ProjectInfo key={project.id} project={project} activeStep={activeStep} />;
+          })}
+        </Slider>
       )}
     </div>
   );
