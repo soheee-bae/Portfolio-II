@@ -1,14 +1,10 @@
 @import '../../styles/mixin';
 
 .project {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   min-height: 100vh;
   min-width: 100vw;
+  max-width: 100vw;
   height: auto;
   width: 100%;
-
   margin: 0;
 }

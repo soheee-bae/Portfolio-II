@@ -1,41 +1,61 @@
 import { useContext } from 'react';
 import ToggleContext from '../../context/toggleContext';
 
-import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import Tooltip from '@mui/material/Tooltip';
-import LaunchIcon from '@mui/icons-material/Launch';
+// import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+// import GitHubIcon from '@mui/icons-material/GitHub';
+// import Tooltip from '@mui/material/Tooltip';
+// import LaunchIcon from '@mui/icons-material/Launch';
 
 import styles from './ProjectInfo.module.scss';
 import clsx from 'clsx';
+import CursorContext from '../../context/cursorContext';
 
 function ProjectInfo({ project, activeStep }) {
   const { isLightMode } = useContext(ToggleContext);
+  const { textEnter, textLeave } = useContext(CursorContext);
+
+  console.log(activeStep);
 
   if (!project) return null;
 
-  const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
-  const description = project.description.replace(/\\n/g, '\n');
+  const description = project.shortDescription.replace(/\\n/g, '\n');
 
   return (
     <div className={clsx(styles.ProjectInfo, { [styles.projectInfoLight]: isLightMode })}>
-      <div className={styles.header}>
-        <div className={styles.headerContent}>
-          <p className={styles.activeStep}>0 {activeStep + 1} - 0 5</p>
-          <hr />
-          <p className={styles.type}>{project.type}</p>
-          <p className={styles.name}>{project.name.toUpperCase()}</p>
-        </div>
-      </div>
+      <h1
+        className={styles.name}
+        onPointerEnter={() => {
+          textEnter('click');
+        }}
+        onPointerLeave={() => {
+          textLeave();
+        }}>
+        {project.name.toUpperCase()}
+      </h1>
       <p className={styles.description}>{description}</p>
       <ul className={styles.skills}>
         {project.skills.map((skill, index) => (
           <li className={styles.skill} key={index}>
-            {skill}
+            {skill} |
           </li>
         ))}
+        <li className={styles.skill}>{project.type}</li>
       </ul>
-      <div className={styles.links}>
+    </div>
+  );
+}
+
+export default ProjectInfo;
+
+{
+  /* <p className={styles.activeStep}>0 {activeStep + 1} - 0 5</p>
+          <hr /> */
+}
+{
+  /* <p className={styles.type}>{project.type}</p> */
+}
+{
+  /* <div className={styles.links}>
         <Tooltip title="Github">
           <a target="_blank" rel="noreferrer" href={project.github}>
             <GitHubIcon sx={{ color: color }} />
@@ -51,9 +71,5 @@ function ProjectInfo({ project, activeStep }) {
             <DescriptionOutlinedIcon sx={{ color: color }} />
           </a>
         </Tooltip>
-      </div>
-    </div>
-  );
+      </div> */
 }
-
-export default ProjectInfo;

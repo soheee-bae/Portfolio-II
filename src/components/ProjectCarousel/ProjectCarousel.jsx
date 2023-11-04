@@ -4,15 +4,17 @@ import { Loader } from '../Loader/Loader';
 import Slider from 'react-slick';
 import ProjectInfo from '../ProjectInfo/ProjectInfo';
 
-function ProjectCarousel({ projects, isFetching, activeStep }) {
-  console.log(activeStep, projects);
+import EastIcon from '@mui/icons-material/East';
+import WestIcon from '@mui/icons-material/West';
 
+function ProjectCarousel({ projects, isFetching, activeStep }) {
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    arrows: false
   };
 
   return (
@@ -22,11 +24,20 @@ function ProjectCarousel({ projects, isFetching, activeStep }) {
           <Loader />
         </div>
       ) : (
-        <Slider {...settings} className={styles.projectContent}>
-          {projects.map((project) => {
-            return <ProjectInfo key={project.id} project={project} activeStep={activeStep} />;
-          })}
-        </Slider>
+        <div className={styles.sliderContent}>
+          <div className={styles.count}>
+            <p className={styles.activeStep}>0 {activeStep + 1} - 0 5</p>
+          </div>
+          <Slider {...settings}>
+            {projects.map((project) => {
+              return <ProjectInfo key={project.id} project={project} activeStep={activeStep} />;
+            })}
+          </Slider>
+          <div className={styles.arrows}>
+            <WestIcon />
+            <EastIcon />
+          </div>
+        </div>
       )}
     </div>
   );

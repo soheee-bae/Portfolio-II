@@ -1,65 +1,34 @@
 @import '../../styles/mixin';
+@import '../../styles/typography';
 
 .ProjectInfo {
   font-family: var(--font-roboto);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  gap: 20px;
-}
+  gap: 0px;
+  padding-right: 30px;
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.headerContent {
-  width: 100%;
-
-  .activeStep {
-    font-weight: var(--font-semibold);
-    color: var(--whiteColor500);
-  }
-  .type {
-    margin: 0;
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
-    color: var(--whiteColor500);
-  }
   .name {
-    margin: 0;
-    font-size: var(--text-xl);
+    width: auto;
+    font-size: var(--text-xxxl);
     font-weight: var(--font-bold);
-    letter-spacing: 1.2px;
+    margin: 0;
     color: var(--whiteColor100);
   }
-}
-
-.projectInfoLight {
-  .activeStep {
-    color: var(--blackColor400);
-  }
-  .type {
-    color: var(--blackColor500);
-  }
-  .name {
-    color: var(--blackColor100);
-  }
   .description {
-    color: var(--blackColor400);
+    margin-bottom: 8px;
+    color: var(--whiteColor400);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    line-height: 24px;
   }
-}
 
-.description {
-  font-size: var(--text-sm);
-  line-height: 22px;
-  margin: 0;
-  white-space: pre-wrap;
-  color: var(--whiteColor500);
+  @include sm {
+    .name {
+      font-size: var(--text-4xl);
+    }
+  }
 }
 
 .skills {
@@ -67,18 +36,15 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   padding: 0;
   margin: 0;
-
+  align-items: center;
   .skill {
     font-size: var(--text-xs);
-    padding: 6px 10px;
-    font-weight: var(--font-medium);
-    background-color: var(--whiteColor500);
-    color: var(--blackColor200);
+    font-weight: var(--font-semibold);
+    color: var(--whiteColor600);
     opacity: 0.8;
-    border-radius: 8px;
     transition: all 0.3s;
 
     &:hover {
@@ -88,26 +54,14 @@
   }
 }
 
-.links {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  svg {
-    height: 25px;
-    width: 25px;
+.projectInfoLight {
+  .name {
+    color: var(--blackColor100);
   }
-  a {
-    opacity: 0.8;
-
-    &:hover {
-      transition: all 0.4s;
-      transform: scale(1.1);
-      opacity: 1;
-    }
+  .description {
+    color: var(--blackColor300);
   }
-}
-
-hr {
-  width: 100%;
-  margin-bottom: 20px;
+  .skill {
+    color: var(--blackColor500);
+  }
 }

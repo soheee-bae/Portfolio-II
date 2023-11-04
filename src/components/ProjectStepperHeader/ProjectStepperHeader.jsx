@@ -30,7 +30,7 @@ function ProjectStepperHeader({ activeStep, setActiveStep, handleNext, handleBac
               className={clsx(styles.projectStepper, {
                 [styles.activeProjectStepper]: activeStep === index
               })}>
-              {project.iconName}
+              {project.name}
               <HandDrawnCircle color={color} />
             </li>
           ))}
