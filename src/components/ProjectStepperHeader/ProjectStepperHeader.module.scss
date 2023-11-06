@@ -5,11 +5,11 @@
   position: absolute;
   height: 100%;
   display: none;
-  align-items: center;
+  // padding-top: 30vh;
   z-index: 5;
   font-family: var(--font-roboto);
   font-size: var(--text-xs);
-  padding-left: 30px;
+  padding-left: 50px;
 
   ul {
     padding: 0;
@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-top: calc(30vh + 50px);
 
     li {
       padding: 15px;

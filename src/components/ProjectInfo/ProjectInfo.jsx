@@ -22,7 +22,6 @@ function ProjectInfo({ project, activeStep }) {
 
   return (
     <div className={clsx(styles.ProjectInfo, { [styles.projectInfoLight]: isLightMode })}>
-      <p className={styles.icon}>{project.iconName}</p>
       <h1
         className={styles.name}
         onPointerEnter={() => {

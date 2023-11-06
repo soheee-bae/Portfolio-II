@@ -12,12 +12,11 @@ $primary-color: #000000;
 .sliderContent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: 100%;
   min-height: 100vh;
   padding-left: 20px;
   @include md {
-    padding-left: 170px;
+    padding-left: 300px;
   }
 }
 
@@ -34,10 +33,16 @@ $primary-color: #000000;
 }
 
 .count {
+  padding-top: 30vh;
   text-align: end;
+  padding-bottom: 10px;
   padding-right: 30px;
+
   @include md {
     padding-right: 100px;
+  }
+  @include xxxl {
+    padding-right: 270px;
   }
 }
 
@@ -53,6 +58,9 @@ $primary-color: #000000;
   @include md {
     padding-top: 15px;
     padding-right: 100px;
+  }
+  @include xxxl {
+    padding-right: 270px;
   }
 }
 
