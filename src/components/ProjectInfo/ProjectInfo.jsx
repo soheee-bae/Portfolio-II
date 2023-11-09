@@ -1,11 +1,6 @@
 import { useContext } from 'react';
 import ToggleContext from '../../context/toggleContext';
 
-// import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
-// import GitHubIcon from '@mui/icons-material/GitHub';
-// import Tooltip from '@mui/material/Tooltip';
-// import LaunchIcon from '@mui/icons-material/Launch';
-
 import styles from './ProjectInfo.module.scss';
 import clsx from 'clsx';
 import CursorContext from '../../context/cursorContext';

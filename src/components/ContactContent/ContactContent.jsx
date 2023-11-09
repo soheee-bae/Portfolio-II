@@ -12,7 +12,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 function ContactContent() {
   const { isLightMode } = useContext(ToggleContext);
-  const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
+  const color = isLightMode ? 'var(--blackColor400)' : 'var(--whiteColor100)';
 
   const contacts = [
     {

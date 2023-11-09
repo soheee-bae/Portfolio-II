@@ -52,9 +52,19 @@ $primary-color: #000000;
   padding-top: 10px;
   padding-right: 30px;
 
-  svg {
-    color: var(--blackColor500);
+  button {
+    border: none;
+    background-color: transparent;
+    opacity: 0.8;
+    cursor: none;
+
+    &:hover {
+      transform: scale(1.3);
+      transition: transform 0.5s;
+      opacity: 1;
+    }
   }
+
   @include md {
     padding-top: 15px;
     padding-right: 100px;

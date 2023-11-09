@@ -1,13 +1,17 @@
-import styles from './ProjectCarousel.module.scss';
-import { Loader } from '../Loader/Loader';
-
+import { useContext } from 'react';
 import Slider from 'react-slick';
-import ProjectInfo from '../ProjectInfo/ProjectInfo';
-
 import EastIcon from '@mui/icons-material/East';
 import WestIcon from '@mui/icons-material/West';
 
+import styles from './ProjectCarousel.module.scss';
+import ProjectInfo from '../ProjectInfo/ProjectInfo';
+import { Loader } from '../Loader/Loader';
+import ToggleContext from '../../context/toggleContext';
+
 function ProjectCarousel({ projects, isFetching, activeStep, setActiveStep, sliderRef }) {
+  const { isLightMode } = useContext(ToggleContext);
+  const color = isLightMode ? 'var(--blackColor400)' : 'var(--whiteColor500)';
+
   const handleArrow = (ev, type) => {
     ev.preventDefault();
     ev.stopPropagation();
@@ -53,14 +57,14 @@ function ProjectCarousel({ projects, isFetching, activeStep, setActiveStep, slid
                 handleArrow(ev, 'prev');
               }}
               disabled={activeStep === 0}>
-              <WestIcon />
+              <WestIcon sx={{ color: color }} />
             </button>
             <button
               onClick={(ev) => {
                 handleArrow(ev, 'next');
               }}
               disabled={activeStep === 4}>
-              <EastIcon />
+              <EastIcon sx={{ color: color }} />
             </button>
           </div>
         </div>
