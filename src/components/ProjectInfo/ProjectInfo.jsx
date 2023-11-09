@@ -41,10 +41,6 @@ function ProjectInfo({ project }) {
 export default ProjectInfo;
 
 {
-  /* <p className={styles.activeStep}>0 {activeStep + 1} - 0 5</p>
-          <hr /> */
-}
-{
   /* <p className={styles.type}>{project.type}</p> */
 }
 {
