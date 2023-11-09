@@ -8,6 +8,15 @@ import EastIcon from '@mui/icons-material/East';
 import WestIcon from '@mui/icons-material/West';
 
 function ProjectCarousel({ projects, isFetching, activeStep, setActiveStep, sliderRef }) {
+  const handleArrow = (ev, type) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+
+    const stepNum = type === 'prev' ? activeStep - 1 : activeStep + 1;
+    sliderRef.current.slickGoTo(stepNum);
+    setActiveStep(stepNum);
+  };
+
   const handleBefore = (_blank, next) => {
     setActiveStep(next);
   };
@@ -39,8 +48,20 @@ function ProjectCarousel({ projects, isFetching, activeStep, setActiveStep, slid
             })}
           </Slider>
           <div className={styles.arrows}>
-            <WestIcon />
-            <EastIcon />
+            <button
+              onClick={(ev) => {
+                handleArrow(ev, 'prev');
+              }}
+              disabled={activeStep === 0}>
+              <WestIcon />
+            </button>
+            <button
+              onClick={(ev) => {
+                handleArrow(ev, 'next');
+              }}
+              disabled={activeStep === 4}>
+              <EastIcon />
+            </button>
           </div>
         </div>
       )}
