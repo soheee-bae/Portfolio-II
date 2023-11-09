@@ -6,7 +6,7 @@ import ToggleContext from '../../context/toggleContext';
 import styles from './ProjectStepperHeader.module.scss';
 import clsx from 'clsx';
 
-function ProjectStepperHeader({ activeStep, setActiveStep, handleNext, handleBack, projects }) {
+function ProjectStepperHeader({ activeStep, setActiveStep, projects, sliderRef }) {
   const { isLightMode } = useContext(ToggleContext);
 
   const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
@@ -19,12 +19,7 @@ function ProjectStepperHeader({ activeStep, setActiveStep, handleNext, handleBac
             <li
               key={index}
               onClick={() => {
-                if (index > activeStep) {
-                  handleNext();
-                } else if (index < activeStep) {
-                  handleBack();
-                }
-
+                sliderRef.current.slickGoTo(index);
                 setActiveStep(index);
               }}
               className={clsx(styles.projectStepper, {

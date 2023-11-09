@@ -10,11 +10,9 @@ import styles from './ProjectInfo.module.scss';
 import clsx from 'clsx';
 import CursorContext from '../../context/cursorContext';
 
-function ProjectInfo({ project, activeStep }) {
+function ProjectInfo({ project }) {
   const { isLightMode } = useContext(ToggleContext);
   const { textEnter, textLeave } = useContext(CursorContext);
-
-  console.log(activeStep);
 
   if (!project) return null;
 

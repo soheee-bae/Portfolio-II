@@ -12,14 +12,6 @@
   height: 100%;
   min-height: 100vh;
 
-  &[data-animation='true'] {
-    animation: fadeInPrev 1.5s;
-
-    &[data-direction='prev'] {
-      animation: fadeInNext 1.5s;
-    }
-  }
-
   &[data-darkmode='true'] {
     .type {
       color: var(--whiteColor600);
@@ -38,35 +30,5 @@
         opacity: 1;
       }
     }
-  }
-}
-
-@keyframes fadeInNext {
-  0% {
-    opacity: 0;
-  }
-  15% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes fadeInPrev {
-  0% {
-    opacity: 0;
-  }
-
-  15% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
   }
 }
