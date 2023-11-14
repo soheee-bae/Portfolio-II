@@ -32,7 +32,6 @@ function AboutOverlay({ aboutSection, animation, setAnimation }) {
       data-animation={animation}
       onAnimationEnd={() => setAnimation(false)}>
       <div className={styles.container}>
-        <h1>ABOUT</h1>
         <div className={styles.titleArea}>
           <p className={styles.title}>{aboutSection?.toUpperCase()}</p>
           {aboutSection === 'skill' && (

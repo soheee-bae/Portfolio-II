@@ -8,7 +8,6 @@ function Education() {
       <div className={styles.educationContent}>
         <div>
           <p className={styles.subtitle}>University of Alaska Anchorage</p>
-          <div className={styles.hr} />
           <ul>
             {school.map((sc) => (
               <li className={styles.educationList} key={sc.label}>
@@ -20,7 +19,6 @@ function Education() {
         </div>
         <div>
           <p className={clsx(styles.subtitle, styles.subtitleKor)}>컴퓨터공학 수강과목</p>
-          <div className={styles.hr} />
           <ul>
             {studies.map((sc) => (
               <li key={sc.label} className={styles.educationList}>
