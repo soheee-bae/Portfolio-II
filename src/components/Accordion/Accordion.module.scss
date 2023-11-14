@@ -1,0 +1,39 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.accordionTitle {
+}
+
+.expandIcon {
+  border: none;
+  background-color: transparent;
+  svg {
+  }
+}
+
+.expandIconClicked {
+  svg {
+    transform: rotateZ(180);
+  }
+}
+
+.accordionDetails {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transform: all 0.5s;
+}
+
+.accordionDetailsExpand {
+  max-height: none;
+}
