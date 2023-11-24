@@ -19,6 +19,7 @@ function Navbar({ scroll, navSection, setNavSection }) {
 
   return (
     <div className={styles.navbar} data-scroll={scroll} data-darkmode={!isLightMode}>
+      <p className={styles.logo}>SoHee.</p>
       <div className={styles.navbarContent}>
         {navItems.map((nav) => (
           <Link

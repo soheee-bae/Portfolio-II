@@ -18,22 +18,27 @@
   border: none;
   background-color: transparent;
   svg {
+    transform: rotate(0);
+    transition: transform 0.3s;
   }
 }
 
 .expandIconClicked {
   svg {
-    transform: rotateZ(180);
+    transform: rotate(180deg);
+    transition: transform 0.3s;
   }
 }
 
 .accordionDetails {
+  box-sizing: border-box;
   width: 100%;
-  max-height: 0;
   overflow: hidden;
-  transform: all 0.5s;
+  max-height: 0;
+  transition: all 0s ease-in-out;
 }
 
 .accordionDetailsExpand {
-  max-height: none;
+  max-height: 500px;
+  transition: all 0.5s ease-in-out;
 }

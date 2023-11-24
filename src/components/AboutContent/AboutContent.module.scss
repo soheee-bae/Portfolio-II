@@ -128,7 +128,6 @@
   display: flex;
   flex-direction: column;
   margin-top: 63px;
-
   &:first-child div {
     display: flex;
     align-items: center;
@@ -150,6 +149,7 @@
 }
 
 .careerAccordions {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }

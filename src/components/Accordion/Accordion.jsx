@@ -5,7 +5,6 @@ import clsx from 'clsx';
 function AccordionComp(props) {
   const { title, details, accordion, setAccordion, order } = props;
 
-  console.log(accordion);
   return (
     <div className={styles.accordion}>
       <div className={styles.accordionHeader}>

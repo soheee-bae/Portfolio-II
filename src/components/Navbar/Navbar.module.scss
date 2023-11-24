@@ -1,4 +1,6 @@
 @import '../../styles/color';
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+@import '../../styles/mixin';
 
 .navbar {
   width: 100%;
@@ -8,7 +10,7 @@
   top: 0;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   overflow: hidden;
   background: transparent;
@@ -60,8 +62,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 35px;
-  padding: 0 40px;
+  gap: 15px;
+
+  padding: 0 10px;
+  @include sm {
+    padding: 0 40px;
+    gap: 35px;
+  }
 }
 
 .nav {
@@ -75,4 +82,13 @@
 .selectedNavDark {
   transition: all 0.8s;
   border-bottom: 3px solid var(--whiteColor100);
+}
+
+.logo {
+  font-size: var(--text-lg);
+  padding-left: 10px;
+  font-family: 'IM Fell DW Pica', serif;
+  @include sm {
+    padding-left: 40px;
+  }
 }
