@@ -1,0 +1,69 @@
+@import '../../styles/mixin';
+
+.contactForm {
+  position: relative;
+  height: 50%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include xl {
+    height: 100%;
+    width: 50%;
+    max-width: 700px;
+  }
+}
+
+.form {
+  max-width: 700px;
+  padding: 50px 20px 0;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: var(--text-sm);
+  }
+
+  input,
+  textarea {
+    outline: none;
+    border: none;
+    height: 30px;
+    background-color: transparent;
+    border-bottom: 1.5px solid var(--blackColor500);
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: none;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  input[type='submit'] {
+    border: 1px solid var(--blackColor500);
+    border-radius: 4px;
+    height: 40px;
+
+    &:hover {
+      background-color: var(--whiteColor400);
+    }
+  }
+
+  @include xl {
+    max-width: 400px;
+    padding: 30px 30px 0;
+
+    textarea {
+      max-width: 400px;
+    }
+  }
+}

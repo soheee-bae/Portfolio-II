@@ -11,6 +11,7 @@
   margin: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .contactContainer {
@@ -21,7 +22,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
 
   @include xl {
     flex-direction: row;
@@ -31,18 +31,38 @@
 }
 
 .contactContent {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
 
-  h1 {
-    padding: 0;
-    margin: 0;
-    font-size: var(--text-xxxl);
-    font-family: var(--font-roboto);
+    h1 {
+      padding: 0;
+      margin: 0;
+      font-size: var(--text-xxxl);
+      font-family: var(--font-roboto);
+    }
   }
-  p {
-    font-size: var(--text-xs);
-    color: var(--blackColor400);
+
+  position: relative;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include xl {
+    height: 100%;
+    width: 50%;
+    max-width: 700px;
   }
+}
+
+.texts {
+  font-size: var(--text-xs);
+  color: var(--whiteColor500);
+}
+
+.darkTexts {
+  color: var(--blackColor400);
 }

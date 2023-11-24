@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import styles from './ContactForm.module.scss';
 
 const ContactForm = () => {
   const form = useRef();
@@ -23,20 +24,26 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>답변 받으실 이메일</label>
-        <input type="email" name="from_email" />
-        <label>문의 제목</label>
-        <input
-          type="text"
-          name="title"
-          placeholder="제목을 입력해주세요.(20자 이내)"
-          maxLength={20}
-          required
-        />
-        <label>문의 내용</label>
-        <textarea name="message" placeholder="내용을 입력해주세요." required />
+    <div className={styles.contactForm}>
+      <form ref={form} onSubmit={sendEmail} className={styles.form}>
+        <label>
+          답변 받으실 이메일 <input type="email" name="from_email" />
+        </label>
+
+        <label>
+          문의 제목
+          <input
+            type="text"
+            name="title"
+            placeholder="제목을 입력해주세요.(20자 이내)"
+            maxLength={20}
+            required
+          />
+        </label>
+
+        <label>
+          문의 내용 <textarea name="message" placeholder="내용을 입력해주세요." required />
+        </label>
         <input type="submit" value="문의하기" />
       </form>
       <ToastContainer
