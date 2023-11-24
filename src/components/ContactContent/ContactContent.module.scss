@@ -9,10 +9,8 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  width: 85%;
-  gap: 25px;
-  padding-left: 0;
-  padding-top: 10px;
+  gap: 20px;
+  padding: 0;
 
   @include xl {
     max-height: 150px;
@@ -42,8 +40,8 @@
   }
 
   &:hover {
-    transition: all 0.4s;
-    transform: scale(1.1);
+    transition: all 0.3s;
+    transform: scale(1.03);
     opacity: 1;
   }
 }

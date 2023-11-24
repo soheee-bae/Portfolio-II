@@ -31,6 +31,7 @@ function App() {
       <Project />
       <About />
       <Contact />
+      <p>Copyright 2023. SoHee Bae. All rights reserved.</p>
     </div>
   );
 }

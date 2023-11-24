@@ -9,16 +9,18 @@
   height: auto;
   width: 100%;
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .contactContainer {
   max-width: 1400px;
-  width: 100%;
+  min-width: 100%;
   font-family: var(--font-roboto);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 0;
 
   @include xl {
@@ -29,26 +31,18 @@
 }
 
 .contactContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+    font-size: var(--text-xxxl);
+    font-family: var(--font-roboto);
+  }
   p {
     font-size: var(--text-xs);
-    color: var(--blackColor500);
-  }
-
-  > :last-child {
-    padding-top: 10px;
-  }
-
-  border-bottom: 1px solid var(--whiteColor600);
-  border-right: none;
-
-  padding-bottom: 10px;
-  padding-right: 0;
-  width: 85%;
-
-  @include xl {
-    padding-right: 50px;
-    border-bottom: none;
-    border-right: 1px solid var(--whiteColor600);
-    width: auto;
+    color: var(--blackColor400);
   }
 }

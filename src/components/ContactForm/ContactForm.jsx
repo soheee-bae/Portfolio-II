@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const ContactForm = () => {
   const form = useRef();
 
@@ -9,7 +12,7 @@ const ContactForm = () => {
 
     emailjs.sendForm('service_i1j5g6t', 'template_i3bo7gv', form.current, 'RzFdYC78dJwKEr2lr').then(
       () => {
-        alert('성공적으로 이메일이 전송되었습니다.');
+        toast('성공적으로 이메일이 전송되었습니다!');
         form.current.reset();
       },
       (error) => {
@@ -36,6 +39,18 @@ const ContactForm = () => {
         <textarea name="message" placeholder="내용을 입력해주세요." required />
         <input type="submit" value="문의하기" />
       </form>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
