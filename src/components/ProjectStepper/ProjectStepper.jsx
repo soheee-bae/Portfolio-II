@@ -3,17 +3,15 @@ import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import ToggleContext from '../../context/toggleContext';
 
 import styles from './ProjectStepper.module.scss';
-// import ProjectInfo from '../ProjectInfo/ProjectInfo';
 import ProjectStepperHeader from '../ProjectStepperHeader/ProjectStepperHeader';
-
-import { getProjects } from '../../helpers/getProjects';
+import ProjectContext from '../../context/projectContext';
 
 function ProjectStepper() {
   const [activeStep, setActiveStep] = useState(0);
-  const { projects, isFetching } = getProjects();
 
   const sliderRef = useRef();
   const { isLightMode } = useContext(ToggleContext);
+  const { projects, isFetching } = useContext(ProjectContext);
 
   return (
     <div className={styles.projectStepper}>

@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import SubProject, { projectLoader } from './pages/Project/SubProject';
 
 import App from './App';
 import './styles/_globals.scss';
 import { ToggleContextProvider } from './context/toggleContext';
 import { CursorContextProvider } from './context/cursorContext';
+import { ProjectContextProvider } from './context/projectContext';
 
 const router = createBrowserRouter([
   {
@@ -14,7 +16,8 @@ const router = createBrowserRouter([
   },
   {
     path: `/project/:projectId`,
-    element: <div></div>
+    element: <SubProject />,
+    loader: projectLoader
   }
 ]);
 
@@ -23,8 +26,10 @@ root.render(
   <React.StrictMode>
     <ToggleContextProvider>
       <CursorContextProvider>
-        {/* <App /> */}
-        <RouterProvider router={router} />
+        <ProjectContextProvider>
+          {/* <App /> */}
+          <RouterProvider router={router} />
+        </ProjectContextProvider>
       </CursorContextProvider>
     </ToggleContextProvider>
   </React.StrictMode>

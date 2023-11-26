@@ -1,8 +1,13 @@
+import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../firebase';
-import { useState, useEffect } from 'react';
 
-export const getProjects = () => {
+export const ProjectContext = React.createContext({
+  projects: [],
+  isFetching: false
+});
+
+function ProjectContextProvider({ children }) {
   const [projects, setProjects] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 
@@ -20,5 +25,16 @@ export const getProjects = () => {
     fetchProject();
   }, []);
 
-  return { projects, isFetching };
-};
+  return (
+    <ProjectContext.Provider
+      value={{
+        projects,
+        isFetching
+      }}>
+      {children}
+    </ProjectContext.Provider>
+  );
+}
+
+export default ProjectContext;
+export { ProjectContextProvider };
