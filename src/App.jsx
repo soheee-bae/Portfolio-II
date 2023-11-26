@@ -13,6 +13,7 @@ import Project from './pages/Project/Project';
 
 import { useScroll } from './hooks/useScroll';
 import { useNav } from './hooks/useNav';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const { scrollTriggered, currentPosition } = useScroll();
@@ -31,7 +32,7 @@ function App() {
       <Project />
       <About />
       <Contact />
-      <p>Copyright 2023. SoHee Bae. All rights reserved.</p>
+      <Footer />
     </div>
   );
 }

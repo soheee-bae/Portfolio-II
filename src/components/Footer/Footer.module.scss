@@ -1,0 +1,15 @@
+@import '../../styles/typography';
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px 0;
+  height: 50px;
+
+  p {
+    font-family: var(--font-roboto);
+    font-size: var(--text-xs);
+  }
+}
