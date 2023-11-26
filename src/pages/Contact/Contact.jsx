@@ -32,7 +32,7 @@ function Contact() {
             <ContactContent />
           </div>
         </div>
-        <ContactForm />
+        <ContactForm isLightMode={isLightMode} />
       </div>
     </a.div>
   );

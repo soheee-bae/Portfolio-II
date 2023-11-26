@@ -4,8 +4,9 @@ import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './ContactForm.module.scss';
+import clsx from 'clsx';
 
-const ContactForm = () => {
+const ContactForm = ({ isLightMode }) => {
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -24,7 +25,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className={styles.contactForm}>
+    <div className={clsx(styles.contactForm, { [styles.contactFormDark]: !isLightMode })}>
       <form ref={form} onSubmit={sendEmail} className={styles.form}>
         <label>
           답변 받으실 이메일 <input type="email" name="from_email" />
