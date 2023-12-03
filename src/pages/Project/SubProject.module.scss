@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blackColor200);
+  min-height: 100vh;
+  font-family: var(--font-roboto);
+  padding: 0 30px 50px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100px;
+  color: var(--whiteColor400);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  color: var(--whiteColor100);
+
+  p {
+    font-size: var(--text-xxxl);
+    margin: 0;
+  }
+  h1 {
+    margin: 0;
+    font-size: var(--text-4xl);
+    font-weight: var(--font-medium);
+    letter-spacing: 3px;
+  }
+}
+
+.subProject {
+  border: 1px solid red;
+  .content {
+  }
+  .description {
+    color: var(--whiteColor100);
+  }
+  .type {
+    color: var(--whiteColor100);
+  }
+  .skills {
+    color: var(--whiteColor100);
+  }
+}
+
+.buttons {
+}

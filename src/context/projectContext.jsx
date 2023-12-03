@@ -22,6 +22,7 @@ function ProjectContextProvider({ children }) {
 
   useEffect(() => {
     setIsFetching(true);
+
     fetchProject();
   }, []);
 

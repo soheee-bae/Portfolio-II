@@ -7,21 +7,29 @@ function Cursor() {
   const { isLightMode } = useContext(ToggleContext);
   const { variant } = useContext(CursorContext);
 
+  const isDefaultCursor = variant === 'noEffect';
+
   return (
-    <div
-      className={styles.cursor}
-      style={{
-        transform: `translate(${variant.x}px, ${variant.y}px)`,
-        color: isLightMode ? '#000000' : '#ffffff'
-      }}>
-      <div
-        className={styles.cursorDot}
-        style={{
-          display: 'hidden',
-          backgroundColor: isLightMode ? '#000000' : '#ffffff'
-        }}
-      />
-      <p>{variant.text}</p>
+    <div>
+      {isDefaultCursor ? (
+        <div className={styles.defaultCursor}></div>
+      ) : (
+        <div
+          className={styles.cursor}
+          style={{
+            transform: `translate(${variant.x}px, ${variant.y}px)`,
+            color: isLightMode ? '#000000' : '#ffffff'
+          }}>
+          <div
+            className={styles.cursorDot}
+            style={{
+              display: 'hidden',
+              backgroundColor: isLightMode ? '#000000' : '#ffffff'
+            }}
+          />
+          <p>{variant.text}</p>
+        </div>
+      )}
     </div>
   );
 }

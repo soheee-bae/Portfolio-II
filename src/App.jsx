@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import styles from './App.module.scss';
 
@@ -14,17 +14,22 @@ import Project from './pages/Project/Project';
 import { useScroll } from './hooks/useScroll';
 import { useNav } from './hooks/useNav';
 import Footer from './components/Footer/Footer';
+import CursorContext from './context/cursorContext';
+import clsx from 'clsx';
 
 function App() {
   const { scrollTriggered, currentPosition } = useScroll();
   const { navSection, setNavSection } = useNav();
+  const { cursorVariant } = useContext(CursorContext);
 
   useEffect(() => {
     setNavSection(currentPosition);
   }, [currentPosition]);
 
   return (
-    <div className={styles.app} id="app">
+    <div
+      className={clsx(styles.app, { [styles.cursorApp]: cursorVariant === 'noEffect' })}
+      id="app">
       <Cursor />
       <Navbar scroll={scrollTriggered} setNavSection={setNavSection} navSection={navSection} />
       {/* <VerticalDotNav setNavSection={setNavSection} navSection={navSection} /> */}

@@ -39,7 +39,8 @@ function CursorContextProvider({ children }) {
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
       text: 'Click me!'
-    }
+    },
+    noEffect: { x: mousePosition.x, y: mousePosition.y, text: '' }
   };
 
   const variant = variants[cursorVariant];
