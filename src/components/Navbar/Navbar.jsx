@@ -1,21 +1,21 @@
 import { useContext } from 'react';
-import { Link } from 'react-scroll';
 import styles from './Navbar.module.scss';
 
 import ToggleContext from '../../context/toggleContext';
 import clsx from 'clsx';
+import { useLocation, Link } from 'react-router-dom';
 // import LanguageBtn from '../LanguageBtn/LanugageBtn';
 
 const navItems = [
-  { label: 'Home', value: 'home' },
-  { label: 'Project', value: 'project' },
-  { label: 'About', value: 'about' },
-  { label: 'Contact', value: 'contact' },
-  { label: 'Resume', value: 'resume' }
+  { label: 'Home', value: '/' },
+  { label: 'Project', value: '/project' },
+  { label: 'About', value: '/about' },
+  { label: 'Contact', value: '/contact' }
 ];
 
-function Navbar({ scroll, navSection, setNavSection }) {
+function Navbar({ scroll }) {
   const { isLightMode } = useContext(ToggleContext);
+  const { pathname } = useLocation();
 
   return (
     <div className={styles.navbar} data-scroll={scroll} data-darkmode={!isLightMode}>
@@ -24,28 +24,21 @@ function Navbar({ scroll, navSection, setNavSection }) {
         {navItems.map((nav) => (
           <Link
             key={nav.label}
-            activeClass="active"
             to={nav.value}
-            spy={true}
-            smooth={true}
-            duration={500}
             className={clsx(styles.nav, {
-              [styles.selectedNavDark]: nav.value === navSection && !isLightMode,
-              [styles.selectedNav]: nav.value === navSection
-            })}
-            onClick={() => {
-              if (nav.value === 'resume') {
-                window.open(
-                  'https://soheedev.notion.site/2ef5ab86c81a4609b932a19126f0146f',
-                  '_blank'
-                );
-              } else {
-                setNavSection(nav.value);
-              }
-            }}>
+              [styles.selectedNavDark]: nav.value === pathname && !isLightMode,
+              [styles.selectedNav]: nav.value === pathname
+            })}>
             {nav.label}
           </Link>
         ))}
+        <Link
+          to="https://soheedev.notion.site/2ef5ab86c81a4609b932a19126f0146f"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.nav}>
+          Resume
+        </Link>
         {/* <LanguageBtn /> */}
       </div>
     </div>
