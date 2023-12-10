@@ -1,26 +1,18 @@
 import React, { useContext } from 'react';
-import { a } from '@react-spring/web';
-import clsx from 'clsx';
 
 import ContactContent from '../../components/ContactContent/ContactContent';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import ToggleContext from '../../context/toggleContext';
+
 import styles from './Contact.module.scss';
+import clsx from 'clsx';
+import Layout from '../../components/Layout/Layout';
 
 function Contact() {
-  const { x } = useContext(ToggleContext);
   const { isLightMode } = useContext(ToggleContext);
 
-  const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
-
   return (
-    <a.div
-      id="contact"
-      className={styles.contact}
-      style={{
-        color: `${color}`,
-        backgroundColor: x.to([0, 1], ['var(--whiteColor350)', 'var(--blackColor350)'])
-      }}>
+    <Layout className={styles.contact}>
       <div className={styles.contactContainer}>
         <div className={styles.contactContent}>
           <div>
@@ -34,7 +26,7 @@ function Contact() {
         </div>
         <ContactForm isLightMode={isLightMode} />
       </div>
-    </a.div>
+    </Layout>
   );
 }
 

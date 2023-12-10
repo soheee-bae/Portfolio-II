@@ -1,29 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { a } from '@react-spring/web';
 
-import ToggleContext from '../../context/toggleContext';
 import AboutScene from '../../components/AboutScene/AboutScene';
 import AboutOverlay from '../../components/AboutOverlay/AboutOverlay';
 
 import styles from './About.module.scss';
+import Layout from '../../components/Layout/Layout';
 
 function About() {
-  const { x } = useContext(ToggleContext);
-  const { isLightMode } = useContext(ToggleContext);
-
-  const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
-
   const [aboutSection, setAboutSection] = useState(null);
   const [animation, setAnimation] = useState(true);
 
   return (
-    <a.div
-      id="about"
-      className={styles.about}
-      style={{
-        color: `${color}`,
-        backgroundColor: x.to([0, 1], ['var(--whiteColor400)', 'var(--blackColor300)'])
-      }}>
+    <Layout className={styles.about}>
       <div className={styles.aboutContainer}>
         <a.div className={styles.aboutContent}>
           <AboutScene
@@ -38,7 +27,7 @@ function About() {
           animation={animation}
         />
       </div>
-    </a.div>
+    </Layout>
   );
 }
 

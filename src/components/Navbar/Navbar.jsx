@@ -25,6 +25,7 @@ function Navbar({ scroll }) {
           <Link
             key={nav.label}
             to={nav.value}
+            state={{ prevPath: pathname }}
             className={clsx(styles.nav, {
               [styles.selectedNavDark]: nav.value === pathname && !isLightMode,
               [styles.selectedNav]: nav.value === pathname
