@@ -4,10 +4,13 @@ import ToggleContext from '../../context/toggleContext';
 import styles from './ProjectInfo.module.scss';
 import clsx from 'clsx';
 import CursorContext from '../../context/cursorContext';
+import { useNavigate } from 'react-router-dom';
 
 function ProjectInfo({ project }) {
   const { isLightMode } = useContext(ToggleContext);
   const { textEnter, textLeave } = useContext(CursorContext);
+  const navigate = useNavigate();
+  console.log(project);
 
   if (!project) return null;
 
@@ -22,6 +25,9 @@ function ProjectInfo({ project }) {
         }}
         onPointerLeave={() => {
           textLeave();
+        }}
+        onClick={() => {
+          navigate(`/project/${project.id}`);
         }}>
         {project.name.toUpperCase()}
       </h1>
