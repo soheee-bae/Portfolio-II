@@ -31,7 +31,8 @@ function Layout({ children, className }) {
           type: 'spring',
           duration: 0.8,
           delay: 0.2
-        }}>
+        }}
+        style={{ height: 'calc(100vh - 70px)' }}>
         {children}
       </motion.div>
     </a.div>
