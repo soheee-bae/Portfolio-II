@@ -30,8 +30,8 @@ function App() {
     <div
       className={clsx(styles.app, { [styles.cursorApp]: cursorVariant === 'noEffect' })}
       id="app">
-      <Cursor />
-      <Navbar scroll={scrollTriggered} />
+      {!isSubProjectPage && <Cursor />}
+      {!isSubProjectPage && <Navbar scroll={scrollTriggered} />}
       <LocationProvider>
         <RoutesWithAnimation />
       </LocationProvider>

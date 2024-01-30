@@ -35,9 +35,11 @@ function SubProject() {
 
   return (
     <div className={styles.container}>
-      <Link className={styles.navigation} to="/">
-        <ArrowBackIcon /> <p>Project</p>
-      </Link>
+      <div className={styles.header}>
+        <Link className={styles.navigation} to="/project">
+          <ArrowBackIcon /> <p>Project</p>
+        </Link>
+      </div>
       <div className={styles.title}>
         <p>{project?.iconName}</p>
         <h1>{project?.name}</h1>

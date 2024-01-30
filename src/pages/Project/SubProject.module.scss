@@ -7,12 +7,27 @@
   padding: 0 30px 50px;
 }
 
+.header {
+  border: 1px solid red;
+  height: 100px;
+}
 .navigation {
   display: flex;
   align-items: center;
   gap: 20px;
-  height: 100px;
+  border: 1px solid blue;
+  width: auto;
+
   color: var(--whiteColor400);
+
+  a {
+    text-decoration: none;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+    transition: transform 0.5s;
+  }
 }
 
 .title {
@@ -33,7 +48,6 @@
 }
 
 .subProject {
-  border: 1px solid red;
   .content {
   }
   .description {
