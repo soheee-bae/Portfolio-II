@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ProjectContext from '../../context/projectContext';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import styles from './SubProject.module.scss';
@@ -8,13 +8,8 @@ import { ref, getDownloadURL } from 'firebase/storage';
 import { projectImg } from '../../datas/ProjectImg';
 import CursorContext from '../../context/cursorContext';
 
-export async function projectLoader({ params }) {
-  const projectId = params.projectId;
-  return { projectId };
-}
-
 function SubProject() {
-  const { projectId } = useLoaderData();
+  const { projectId } = useParams();
   const { projects } = useContext(ProjectContext);
   const [image, setImage] = useState(null);
   const project = projects.find((project) => project.id === projectId);
