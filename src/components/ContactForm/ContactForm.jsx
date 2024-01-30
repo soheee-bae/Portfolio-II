@@ -30,7 +30,6 @@ const ContactForm = ({ isLightMode }) => {
         <label>
           답변 받으실 이메일 <input type="email" name="from_email" />
         </label>
-
         <label>
           문의 제목
           <input
@@ -41,7 +40,6 @@ const ContactForm = ({ isLightMode }) => {
             required
           />
         </label>
-
         <label>
           문의 내용 <textarea name="message" placeholder="내용을 입력해주세요." required />
         </label>

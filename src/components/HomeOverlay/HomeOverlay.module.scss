@@ -76,6 +76,7 @@
 
   a {
     opacity: 0.5;
+    cursor: none;
 
     &:hover {
       transition: all 0.4s;
@@ -103,7 +104,7 @@
   object-fit: cover;
   animation: morph 8s ease-in-out infinite;
   border: 3px solid var(--blackColor100);
-  cursor: pointer;
+  cursor: none;
   transition: transform 0.3s;
   &:hover {
     transform: scale(1.05);
