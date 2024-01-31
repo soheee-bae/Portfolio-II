@@ -12,6 +12,8 @@ import Layout from '../../components/Layout/Layout';
 
 import styles from './SubProject.module.scss';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
 function SubProject() {
   const { projectId } = useParams();
@@ -59,8 +61,14 @@ function SubProject() {
           </div>
           <div className={styles.hr} />
           <div className={styles.buttons}>
-            <button onClick={() => window.open(project?.demo)}>Demo</button>
-            <button onClick={() => window.open(project?.github)}>Github</button>
+            <button onClick={() => window.open(project?.demo)}>
+              <RemoveRedEyeIcon />
+              Project
+            </button>
+            <button onClick={() => window.open(project?.github)}>
+              <GitHubIcon />
+              Github
+            </button>
           </div>
         </div>
 
