@@ -44,7 +44,9 @@ function ProjectCarousel({ projects, isFetching, activeStep, setActiveStep, slid
       ) : (
         <div className={styles.sliderContent}>
           <div className={styles.count}>
-            <p className={styles.activeStep}>0 {activeStep + 1} - 0 5</p>
+            <p className={styles.activeStep} style={{ color: color }}>
+              0 {activeStep + 1} - 0 5
+            </p>
           </div>
           <Slider ref={sliderRef} {...settings}>
             {projects.map((project) => {

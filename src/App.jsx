@@ -22,20 +22,20 @@ import { AnimatePresence } from 'framer-motion';
 function App() {
   const { scrollTriggered } = useScroll();
   const { cursorVariant } = useContext(CursorContext);
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
 
-  const isSubProjectPage = pathname.includes('/project/');
+  // const isSubProjectPage = pathname.includes('/project/');
 
   return (
     <div
       className={clsx(styles.app, { [styles.cursorApp]: cursorVariant === 'noEffect' })}
       id="app">
-      {!isSubProjectPage && <Cursor />}
-      {!isSubProjectPage && <Navbar scroll={scrollTriggered} />}
+      <Cursor />
+      <Navbar scroll={scrollTriggered} />
       <LocationProvider>
         <RoutesWithAnimation />
       </LocationProvider>
-      {!isSubProjectPage && <Footer />}
+      <Footer />
     </div>
   );
 }

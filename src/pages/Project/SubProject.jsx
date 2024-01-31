@@ -7,6 +7,7 @@ import { storage } from '../../firebase';
 import { ref, getDownloadURL } from 'firebase/storage';
 import { projectImg } from '../../datas/ProjectImg';
 import CursorContext from '../../context/cursorContext';
+import Layout from '../../components/Layout/Layout';
 
 function SubProject() {
   const { projectId } = useParams();
@@ -25,6 +26,7 @@ function SubProject() {
     }
   };
   console.log(cursorVariant);
+  console.log(image);
 
   useEffect(() => {
     textEnter('noEffect');
@@ -34,33 +36,32 @@ function SubProject() {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
+    <Layout className={styles.subProject}>
+      <div className={styles.container}>
         <Link className={styles.navigation} to="/project">
           <ArrowBackIcon /> <p>Project</p>
         </Link>
-      </div>
-      <div className={styles.title}>
-        <p>{project?.iconName}</p>
-        <h1>{project?.name}</h1>
-      </div>
-      <div className={styles.subProject}>
         <div className={styles.content}>
-          <p className={styles.description}>{project?.description}</p>
           <p className={styles.type}>{project?.type}</p>
+          <div className={styles.title}>
+            <h1>{project?.name}</h1>
+          </div>
+          <p className={styles.description}>{project?.description}</p>
           <div className={styles.skills}>
             {project?.skills.map((skill) => (
               <p key={skill}>{skill}</p>
             ))}
           </div>
+          <div className={styles.hr} />
+          <div className={styles.buttons}>
+            <button onClick={() => window.open(project?.demo)}>Demo</button>
+            <button onClick={() => window.open(project?.github)}>Github</button>
+          </div>
         </div>
-        <div className={styles.buttons}>
-          <button onClick={() => window.open(project?.demo)}>Demo</button>
-          <button onClick={() => window.open(project?.github)}>Github</button>
-        </div>
+
+        {/* <img src={image} alt={projectId} /> */}
       </div>
-      <img src={image} alt={projectId} />
-    </div>
+    </Layout>
   );
 }
 
