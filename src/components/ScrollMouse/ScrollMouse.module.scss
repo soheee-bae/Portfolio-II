@@ -18,34 +18,36 @@
 .scrollDowns {
   padding-bottom: 50px;
   margin: auto;
-  width: 34px;
+  width: 26px;
   height: 55px;
 }
 
 .mouse {
-  width: 3px;
-  padding: 10px 14px;
-  height: 30px;
-  border: 2px solid var(--whiteColor100);
+  width: 1px;
+  padding: 10px 11px;
+  height: 20px;
+  border: 1px solid var(--whiteColor200);
   border-radius: 25px;
   opacity: 1;
   box-sizing: content-box;
   &[data-lightmode='true'] {
-    border: 2px solid var(--blackColor100);
+    border: 2px solid var(--blackColor500);
   }
 }
 
 .scroller {
+  margin-left: -1px;
+  margin-top: -2px;
   width: 2.5px;
-  height: 10px;
+  height: 8px;
   border-radius: 25%;
-  background-color: var(--whiteColor100);
+  background-color: var(--whiteColor200);
   animation-name: scroll;
   animation-duration: 2.5s;
   animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
   &[data-lightmode='true'] {
-    background-color: var(--blackColor100);
+    background-color: var(--blackColor400);
   }
 }
 @keyframes scroll {
@@ -55,6 +57,9 @@
   10% {
     transform: translateY(0);
     opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     transform: translateY(15px);

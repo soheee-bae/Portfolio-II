@@ -14,6 +14,7 @@ import styles from './SubProject.module.scss';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import ScrollMouse from '../../components/ScrollMouse/ScrollMouse';
 
 function SubProject() {
   const { projectId } = useParams();
@@ -71,7 +72,9 @@ function SubProject() {
             </button>
           </div>
         </div>
-
+        <div className={styles.scrollMouse}>
+          <ScrollMouse />
+        </div>
         {/* <img src={image} alt={projectId} /> */}
       </div>
     </Layout>

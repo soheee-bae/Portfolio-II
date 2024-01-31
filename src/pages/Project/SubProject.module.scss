@@ -115,3 +115,10 @@
     font-size: var(--text-sm);
   }
 }
+
+.scrollMouse {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  border: 1px solid red;
+}
