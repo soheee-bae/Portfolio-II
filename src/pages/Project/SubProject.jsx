@@ -1,13 +1,17 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import ProjectContext from '../../context/projectContext';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import styles from './SubProject.module.scss';
 import { storage } from '../../firebase';
 import { ref, getDownloadURL } from 'firebase/storage';
 import { projectImg } from '../../datas/ProjectImg';
+
 import CursorContext from '../../context/cursorContext';
+import ToggleContext from '../../context/toggleContext';
+import ProjectContext from '../../context/projectContext';
+
 import Layout from '../../components/Layout/Layout';
+
+import styles from './SubProject.module.scss';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function SubProject() {
   const { projectId } = useParams();
@@ -15,6 +19,7 @@ function SubProject() {
   const [image, setImage] = useState(null);
   const project = projects.find((project) => project.id === projectId);
   const { textEnter, cursorVariant } = useContext(CursorContext);
+  const { isLightMode } = useContext(ToggleContext);
 
   const fetchImage = async () => {
     if (projectId) {
@@ -37,7 +42,7 @@ function SubProject() {
 
   return (
     <Layout className={styles.subProject}>
-      <div className={styles.container}>
+      <div className={styles.container} data-darkmode={!isLightMode}>
         <Link className={styles.navigation} to="/project">
           <ArrowBackIcon /> <p>Back to projects</p>
         </Link>
