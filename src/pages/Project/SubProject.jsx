@@ -39,7 +39,7 @@ function SubProject() {
     <Layout className={styles.subProject}>
       <div className={styles.container}>
         <Link className={styles.navigation} to="/project">
-          <ArrowBackIcon /> <p>Project</p>
+          <ArrowBackIcon /> <p>Back to projects</p>
         </Link>
         <div className={styles.content}>
           <p className={styles.type}>{project?.type}</p>
