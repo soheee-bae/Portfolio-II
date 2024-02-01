@@ -1,8 +1,13 @@
+.subProjectContent {
+  height: 100%;
+}
+
 .content {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 70vh;
+
+  height: calc(100vh - 201px);
   gap: 16px;
   padding-left: 40px;
 }
@@ -68,6 +73,5 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: auto;
-  position: relative;
+  height: calc(30vh - 223px);
 }

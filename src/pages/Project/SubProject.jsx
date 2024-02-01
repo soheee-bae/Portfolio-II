@@ -43,9 +43,11 @@ function SubProject() {
   return (
     <Layout className={styles.subProject}>
       <div className={styles.subProjectContainer} data-darkmode={!isLightMode}>
-        <Link className={styles.navigation} to="/project">
-          <ArrowBackIcon /> <p>Back to projects</p>
-        </Link>
+        <div>
+          <Link className={styles.navigation} to="/project">
+            <ArrowBackIcon /> <p>Back to projects</p>
+          </Link>
+        </div>
         <SubProjectContent projects={projects} projectId={projectId} />
         {/* <img src={image} alt={projectId} /> */}
       </div>

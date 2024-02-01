@@ -7,7 +7,7 @@ function SubProjectContent({ projects, projectId }) {
   const project = projects.find((project) => project.id === projectId);
 
   return (
-    <div>
+    <div className={styles.subProjectContent}>
       <div className={styles.content}>
         <p className={styles.type}>{project?.type}</p>
         <div className={styles.title}>
@@ -30,9 +30,9 @@ function SubProjectContent({ projects, projectId }) {
             Github
           </button>
         </div>
-      </div>
-      <div className={styles.scrollMouse}>
-        <ScrollMouse />
+        <div className={styles.scrollMouse}>
+          <ScrollMouse />
+        </div>
       </div>
     </div>
   );
