@@ -49,7 +49,7 @@ function SubProject() {
           </Link>
         </div>
         <SubProjectContent projects={projects} projectId={projectId} />
-        {/* <img src={image} alt={projectId} /> */}
+        <img src={image} alt={projectId} />
       </div>
     </Layout>
   );
