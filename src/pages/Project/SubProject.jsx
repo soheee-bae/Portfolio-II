@@ -12,15 +12,12 @@ import Layout from '../../components/Layout/Layout';
 
 import styles from './SubProject.module.scss';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import ScrollMouse from '../../components/ScrollMouse/ScrollMouse';
+import SubProjectContent from '../../components/SubProjectContent/SubProjectContent';
 
 function SubProject() {
   const { projectId } = useParams();
   const { projects } = useContext(ProjectContext);
   const [image, setImage] = useState(null);
-  const project = projects.find((project) => project.id === projectId);
   const { textEnter, cursorVariant } = useContext(CursorContext);
   const { isLightMode } = useContext(ToggleContext);
 
@@ -45,36 +42,11 @@ function SubProject() {
 
   return (
     <Layout className={styles.subProject}>
-      <div className={styles.container} data-darkmode={!isLightMode}>
+      <div className={styles.subProjectContainer} data-darkmode={!isLightMode}>
         <Link className={styles.navigation} to="/project">
           <ArrowBackIcon /> <p>Back to projects</p>
         </Link>
-        <div className={styles.content}>
-          <p className={styles.type}>{project?.type}</p>
-          <div className={styles.title}>
-            <h1>{project?.name}</h1>
-          </div>
-          <p className={styles.description}>{project?.description}</p>
-          <div className={styles.skills}>
-            {project?.skills.map((skill) => (
-              <p key={skill}>{skill}</p>
-            ))}
-          </div>
-          <div className={styles.hr} />
-          <div className={styles.buttons}>
-            <button onClick={() => window.open(project?.demo)}>
-              <RemoveRedEyeIcon />
-              Project
-            </button>
-            <button onClick={() => window.open(project?.github)}>
-              <GitHubIcon />
-              Github
-            </button>
-          </div>
-        </div>
-        <div className={styles.scrollMouse}>
-          <ScrollMouse />
-        </div>
+        <SubProjectContent projects={projects} projectId={projectId} />
         {/* <img src={image} alt={projectId} /> */}
       </div>
     </Layout>
