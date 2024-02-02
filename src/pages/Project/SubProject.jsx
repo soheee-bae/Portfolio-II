@@ -21,22 +21,24 @@ function SubProject() {
   const { cursorVariant } = useContext(CursorContext);
   const { isLightMode } = useContext(ToggleContext);
 
-  const fetchImage = async () => {
+  async function fetchImage() {
     if (projectId) {
       const img = projectImg.find((img) => img.projectId === projectId);
       const imglink = `gs://soheebae-dev.appspot.com/${img.imgPath}`;
       const bglink = `gs://soheebae-dev.appspot.com/${img.backgroundPath}`;
 
       const imageRefs = [ref(storage, imglink), ref(storage, bglink)];
-      const image = await imageRefs.map(async (ref) => {
-        return await getDownloadURL(ref);
-      });
+      const image = await Promise.all(
+        imageRefs.map((ref) => {
+          return getImage(ref);
+        })
+      );
 
       console.log(image);
 
       setImage(image);
     }
-  };
+  }
   console.log(cursorVariant);
   console.log(image);
 
@@ -58,13 +60,22 @@ function SubProject() {
           </Link>
         </div>
         <SubProjectContent projects={projects} projectId={projectId} />
-
-        <div className={styles.image}>
-          <img src={image[0]} alt={projectId} />
-        </div>
+        {image && (
+          <div className={styles.image}>
+            <img src={image[0]} alt={projectId} />
+          </div>
+        )}
       </div>
     </Layout>
   );
 }
 
 export default SubProject;
+
+async function getImage(ref) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(getDownloadURL(ref));
+    }, 100);
+  });
+}
