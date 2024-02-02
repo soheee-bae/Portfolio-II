@@ -1,6 +1,7 @@
 export const projectImg = [
   {
     projectId: 'filmacorn',
-    imgpath: 'filmacorn/Filmacorn.png'
+    imgPath: 'filmacorn/Filmacorn.png',
+    backgroundPath: 'filmacorn/Filmacorn-background.png'
   }
 ];

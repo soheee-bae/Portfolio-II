@@ -14,7 +14,7 @@ const variants = {
   }
 };
 
-function Layout({ children, className }) {
+function Layout({ children, className, isFullScreen = true }) {
   const { x } = useContext(ToggleContext);
 
   return (
@@ -32,7 +32,7 @@ function Layout({ children, className }) {
           duration: 0.8,
           delay: 0.2
         }}
-        style={{ height: 'calc(100vh - 70px)' }}>
+        style={{ height: isFullScreen ? 'calc(100vh - 70px)' : 'auto' }}>
         {children}
       </motion.div>
     </a.div>

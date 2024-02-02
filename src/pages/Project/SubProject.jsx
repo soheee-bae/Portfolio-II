@@ -18,38 +18,50 @@ function SubProject() {
   const { projectId } = useParams();
   const { projects } = useContext(ProjectContext);
   const [image, setImage] = useState(null);
-  const { textEnter, cursorVariant } = useContext(CursorContext);
+  const { cursorVariant } = useContext(CursorContext);
   const { isLightMode } = useContext(ToggleContext);
 
   const fetchImage = async () => {
     if (projectId) {
-      const fullPath = projectImg.find((img) => img.projectId === projectId).imgpath;
-      const link = `gs://soheebae-dev.appspot.com/${fullPath}`;
-      const imageRef = ref(storage, link);
-      const image = await getDownloadURL(imageRef);
+      const img = projectImg.find((img) => img.projectId === projectId);
+      const imglink = `gs://soheebae-dev.appspot.com/${img.imgPath}`;
+      const bglink = `gs://soheebae-dev.appspot.com/${img.backgroundPath}`;
+
+      const imageRefs = [ref(storage, imglink), ref(storage, bglink)];
+      const image = await imageRefs.map(async (ref) => {
+        return await getDownloadURL(ref);
+      });
+
+      console.log(image);
+
       setImage(image);
     }
   };
   console.log(cursorVariant);
   console.log(image);
 
+  // console.log(image);
+
   useEffect(() => {
-    textEnter('noEffect');
     if (projectId) {
       fetchImage();
     }
   }, []);
 
   return (
-    <Layout className={styles.subProject}>
+    <Layout className={styles.subProject} isFullScreen={false}>
       <div className={styles.subProjectContainer} data-darkmode={!isLightMode}>
+        <div className={styles.background}></div>
         <div>
           <Link className={styles.navigation} to="/project">
             <ArrowBackIcon /> <p>Back to projects</p>
           </Link>
         </div>
         <SubProjectContent projects={projects} projectId={projectId} />
-        <img src={image} alt={projectId} />
+
+        <div className={styles.image}>
+          <img src={image[0]} alt={projectId} />
+        </div>
       </div>
     </Layout>
   );
