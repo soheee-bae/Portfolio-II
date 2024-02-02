@@ -52,8 +52,12 @@ function SubProject() {
 
   return (
     <Layout className={styles.subProject} isFullScreen={false}>
+      {image && (
+        <div className={styles.background}>
+          <img src={image[1]} alt={projectId} />
+        </div>
+      )}
       <div className={styles.subProjectContainer} data-darkmode={!isLightMode}>
-        <div className={styles.background}></div>
         <div>
           <Link className={styles.navigation} to="/project">
             <ArrowBackIcon /> <p>Back to projects</p>
