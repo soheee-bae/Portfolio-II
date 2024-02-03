@@ -22,8 +22,10 @@ function SubProject() {
   const { isLightMode } = useContext(ToggleContext);
 
   async function fetchImage() {
+    console.log(projectId);
+    console.log(projectImg);
     if (projectId) {
-      const img = projectImg.find((img) => img.projectId === projectId);
+      const img = projectImg.find((img) => img.projectId === projectId.replace(/\s/g, ''));
       const imglink = `gs://soheebae-dev.appspot.com/${img.imgPath}`;
       const bglink = `gs://soheebae-dev.appspot.com/${img.backgroundPath}`;
 
