@@ -68,7 +68,7 @@ function SubProject() {
             <img src={image[0]} alt={projectId} />
           </div>
         )}
-        <OtherProjects />
+        <OtherProjects projectId={updatedProjectId} />
       </div>
     </Layout>
   );
