@@ -13,6 +13,7 @@ import Layout from '../../components/Layout/Layout';
 import styles from './SubProject.module.scss';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SubProjectContent from '../../components/SubProjectContent/SubProjectContent';
+import OtherProjects from '../../components/OtherProjects/OtherProjects';
 
 function SubProject() {
   const { projectId } = useParams();
@@ -21,11 +22,13 @@ function SubProject() {
   const { cursorVariant } = useContext(CursorContext);
   const { isLightMode } = useContext(ToggleContext);
 
+  const updatedProjectId = projectId.replace(/\s/g, '');
+
   async function fetchImage() {
     console.log(projectId);
     console.log(projectImg);
     if (projectId) {
-      const img = projectImg.find((img) => img.projectId === projectId.replace(/\s/g, ''));
+      const img = projectImg.find((img) => img.projectId === updatedProjectId);
       const imglink = `gs://soheebae-dev.appspot.com/${img.imgPath}`;
       const bglink = `gs://soheebae-dev.appspot.com/${img.backgroundPath}`;
 
@@ -35,16 +38,10 @@ function SubProject() {
           return getImage(ref);
         })
       );
-
-      console.log(image);
-
       setImage(image);
     }
   }
   console.log(cursorVariant);
-  console.log(image);
-
-  // console.log(image);
 
   useEffect(() => {
     if (projectId) {
@@ -71,6 +68,7 @@ function SubProject() {
             <img src={image[0]} alt={projectId} />
           </div>
         )}
+        <OtherProjects />
       </div>
     </Layout>
   );
