@@ -25,11 +25,12 @@ function OtherProjects({ projectId }) {
                 </div>
               )}
               <div className={styles.details}>
-                <p className={styles.type}>{pro.type}</p>
+                <p className={styles.date}>{pro.date}</p>
                 <p className={styles.name}>
-                  {pro.iconName}
-                  {pro.name}
+                  <p>{pro.iconName}</p>
+                  <p>{pro.name}</p>
                 </p>
+                <p className={styles.type}>{pro.type}</p>
                 <p className={styles.description}>{pro.shortDescription}</p>
               </div>
             </div>
