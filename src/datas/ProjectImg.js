@@ -1,12 +1,12 @@
-export const projectImg = [
+export const projectInfo = [
   {
     projectId: 'filmacorn',
-    imgPath: 'filmacorn/Filmacorn.png',
+    imgPath: 'filmacorn/Filmacorn.jpg',
     backgroundPath: 'filmacorn/Filmacorn-background.png'
   },
   {
     projectId: 'tastingtable',
-    imgPath: 'tastingtable/TastingTable.png',
+    imgPath: 'tastingtable/TastingTable.jpg',
     backgroundPath: 'tastingtable/TastingTable-background.png'
   }
 ];

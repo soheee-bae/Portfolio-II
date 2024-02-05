@@ -2,10 +2,9 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { storage } from '../../firebase';
 import { ref, getDownloadURL } from 'firebase/storage';
-import { projectImg } from '../../datas/ProjectImg';
+import { projectInfo } from '../../datas/ProjectImg';
 
 import CursorContext from '../../context/cursorContext';
-import ToggleContext from '../../context/toggleContext';
 import ProjectContext from '../../context/projectContext';
 
 import Layout from '../../components/Layout/Layout';
@@ -20,17 +19,14 @@ function SubProject() {
   const { projects } = useContext(ProjectContext);
   const [image, setImage] = useState(null);
   const { cursorVariant } = useContext(CursorContext);
-  const { isLightMode } = useContext(ToggleContext);
 
   const updatedProjectId = projectId.replace(/\s/g, '');
+  const selectedProject = projectInfo.find((proj) => proj.projectId === updatedProjectId);
 
   async function fetchImage() {
-    console.log(projectId);
-    console.log(projectImg);
     if (projectId) {
-      const img = projectImg.find((img) => img.projectId === updatedProjectId);
-      const imglink = `gs://soheebae-dev.appspot.com/${img.imgPath}`;
-      const bglink = `gs://soheebae-dev.appspot.com/${img.backgroundPath}`;
+      const imglink = `gs://soheebae-dev.appspot.com/${selectedProject.imgPath}`;
+      const bglink = `gs://soheebae-dev.appspot.com/${selectedProject.backgroundPath}`;
 
       const imageRefs = [ref(storage, imglink), ref(storage, bglink)];
       const image = await Promise.all(
@@ -56,7 +52,7 @@ function SubProject() {
           <img src={image[1]} alt={projectId} />
         </div>
       )}
-      <div className={styles.subProjectContainer} data-darkmode={!isLightMode}>
+      <div className={styles.subProjectContainer}>
         <div>
           <Link className={styles.navigation} to="/project">
             <ArrowBackIcon /> <p>Back to projects</p>
