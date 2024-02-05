@@ -1,55 +1,27 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { storage } from '../../firebase';
-import { ref, getDownloadURL } from 'firebase/storage';
-import { projectInfo } from '../../datas/ProjectImg';
-
-import CursorContext from '../../context/cursorContext';
-import ProjectContext from '../../context/projectContext';
-
-import Layout from '../../components/Layout/Layout';
+import { projectImg } from '../../datas/ProjectImg';
 
 import styles from './SubProject.module.scss';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
+import ProjectContext from '../../context/projectContext';
 import SubProjectContent from '../../components/SubProjectContent/SubProjectContent';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
+import Layout from '../../components/Layout/Layout';
 
 function SubProject() {
   const { projectId } = useParams();
   const { projects } = useContext(ProjectContext);
-  const [image, setImage] = useState(null);
-  const { cursorVariant } = useContext(CursorContext);
 
   const updatedProjectId = projectId.replace(/\s/g, '');
-  const selectedProject = projectInfo.find((proj) => proj.projectId === updatedProjectId);
-
-  async function fetchImage() {
-    if (projectId) {
-      const imglink = `gs://soheebae-dev.appspot.com/${selectedProject.imgPath}`;
-      const bglink = `gs://soheebae-dev.appspot.com/${selectedProject.backgroundPath}`;
-
-      const imageRefs = [ref(storage, imglink), ref(storage, bglink)];
-      const image = await Promise.all(
-        imageRefs.map((ref) => {
-          return getImage(ref);
-        })
-      );
-      setImage(image);
-    }
-  }
-  console.log(cursorVariant);
-
-  useEffect(() => {
-    if (projectId) {
-      fetchImage();
-    }
-  }, []);
+  const selectedProject = projectImg.find((proj) => proj.projectId === updatedProjectId);
 
   return (
     <Layout className={styles.subProject} isFullScreen={false}>
-      {image && (
+      {selectedProject.backgroundPath && (
         <div className={styles.background}>
-          <img src={image[1]} alt={projectId} />
+          <img src={selectedProject.backgroundPath} alt={projectId} />
         </div>
       )}
       <div className={styles.subProjectContainer}>
@@ -59,9 +31,9 @@ function SubProject() {
           </Link>
         </div>
         <SubProjectContent projects={projects} projectId={projectId} />
-        {image && (
+        {selectedProject.imgPath && (
           <div className={styles.image}>
-            <img src={image[0]} alt={projectId} />
+            <img src={selectedProject.imgPath} alt={projectId} />
           </div>
         )}
         <OtherProjects projectId={updatedProjectId} />
@@ -71,11 +43,3 @@ function SubProject() {
 }
 
 export default SubProject;
-
-async function getImage(ref) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(getDownloadURL(ref));
-    }, 100);
-  });
-}
