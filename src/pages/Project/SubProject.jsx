@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { projectImg } from '../../datas/ProjectImg';
 
@@ -17,8 +17,12 @@ function SubProject() {
   const updatedProjectId = projectId.replace(/\s/g, '');
   const selectedProject = projectImg.find((proj) => proj.projectId === updatedProjectId);
 
+  useEffect(() => {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }, []);
+
   return (
-    <Layout className={styles.subProject} isFullScreen={false}>
+    <Layout className={styles.subProject} isFullScreen={false} animationType="default">
       {selectedProject.backgroundPath && (
         <div className={styles.background}>
           <img src={selectedProject.backgroundPath} alt={projectId} />

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import ToggleContext from '../../context/toggleContext';
 import { useContext } from 'react';
 
-const variants = {
+const scaleVariant = {
   initial: {
     opacity: 0,
     scale: 0.95
@@ -14,7 +14,16 @@ const variants = {
   }
 };
 
-function Layout({ children, className, isFullScreen = true }) {
+const defaultVariant = {
+  initial: {
+    opacity: 0
+  },
+  finally: {
+    opacity: 1
+  }
+};
+
+function Layout({ children, className, isFullScreen = true, animationType }) {
   const { x } = useContext(ToggleContext);
 
   return (
@@ -24,13 +33,13 @@ function Layout({ children, className, isFullScreen = true }) {
       }}>
       <motion.div
         className={className}
-        variants={variants}
+        variants={animationType === 'default' ? defaultVariant : scaleVariant}
         initial="initial"
         animate="finally"
         transition={{
           type: 'spring',
           duration: 0.8,
-          delay: 0.2
+          delay: 0.4
         }}
         style={{ height: isFullScreen ? 'calc(100vh - 70px)' : 'auto' }}>
         {children}

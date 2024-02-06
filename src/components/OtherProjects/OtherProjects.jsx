@@ -3,9 +3,10 @@ import styles from './OtherProjects.module.scss';
 import { useContext } from 'react';
 import ProjectContext from '../../context/projectContext';
 import { projectImg } from '../../datas/ProjectImg';
-
+import { useNavigate } from 'react-router-dom';
 function OtherProjects({ projectId }) {
   const { projects } = useContext(ProjectContext);
+  const navigate = useNavigate();
 
   const filteredProject = projects.filter((project) => project.id.replace(/\s/g, '') !== projectId);
 
@@ -18,7 +19,10 @@ function OtherProjects({ projectId }) {
             (proj) => proj.projectId === pro.id.replace(/\s/g, '')
           );
           return (
-            <div key={pro.id} className={styles.projectCard}>
+            <div
+              key={pro.id}
+              className={styles.projectCard}
+              onClick={() => navigate(`/project/${pro.id}`)}>
               {selectedProject?.imgPath && (
                 <div className={styles.img}>
                   <img src={selectedProject.backgroundPath} alt={projectId} />

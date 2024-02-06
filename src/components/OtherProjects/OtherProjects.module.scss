@@ -20,6 +20,11 @@
   padding: 30px 40px;
   border: 1px solid var(--blackColor500);
 
+  &:hover {
+    transform: scale(1.02);
+    transition: transform 0.5s;
+  }
+
   p {
     margin: 0;
   }
