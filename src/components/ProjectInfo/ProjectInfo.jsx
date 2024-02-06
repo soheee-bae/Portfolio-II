@@ -10,7 +10,6 @@ function ProjectInfo({ project }) {
   const { isLightMode } = useContext(ToggleContext);
   const { textEnter, textLeave } = useContext(CursorContext);
   const navigate = useNavigate();
-  console.log(project);
 
   if (!project) return null;
 
