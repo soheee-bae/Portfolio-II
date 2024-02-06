@@ -60,11 +60,23 @@
     width: 150px;
     border-radius: 4px;
 
+    cursor: pointer;
+
     display: flex;
-    gap: 10px;
+    gap: 13px;
     align-items: center;
     justify-content: center;
     font-size: var(--text-sm);
+
+    &:hover {
+      transform: scale(1.04);
+      transition: transform 0.5s;
+    }
+
+    svg {
+      max-width: 18px;
+      max-height: 18px;
+    }
   }
 }
 
