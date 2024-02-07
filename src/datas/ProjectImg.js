@@ -8,5 +8,10 @@ export const projectImg = [
     projectId: 'tastingtable',
     imgPath: '../image/Project/TastingTable.jpg',
     backgroundPath: '../image/Project/TastingTable-background.png'
+  },
+  {
+    projectId: 'moodie',
+    imgPath: '../image/Project/TastingTable.jpg',
+    backgroundPath: '../image/Project/Moodie-background.jpg'
   }
 ];
