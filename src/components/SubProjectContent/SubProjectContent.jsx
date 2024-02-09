@@ -21,10 +21,12 @@ function SubProjectContent({ projects, projectId }) {
         </div>
         <div className={styles.hr} />
         <div className={styles.buttons}>
-          <button onClick={() => window.open(project?.demo)}>
-            <RemoveRedEyeIcon />
-            Project
-          </button>
+          {project.demo !== '' && (
+            <button onClick={() => window.open(project?.demo)}>
+              <RemoveRedEyeIcon />
+              Project
+            </button>
+          )}
           <button onClick={() => window.open(project?.github)}>
             <GitHubIcon />
             Github
