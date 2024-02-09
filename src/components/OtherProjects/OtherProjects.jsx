@@ -14,7 +14,7 @@ function OtherProjects({ projectId }) {
     <div className={styles.otherProjects}>
       <p className={styles.title}>다른 프로젝트 살펴보기</p>
       <div className={styles.projectCards}>
-        {filteredProject.map((pro) => {
+        {filteredProject.slice(0, 2).map((pro) => {
           const selectedProject = projectImg.find(
             (proj) => proj.projectId === pro.id.replace(/\s/g, '')
           );
