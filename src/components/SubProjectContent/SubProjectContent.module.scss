@@ -1,5 +1,13 @@
+@import '../../styles/mixin';
+
 .subProjectContent {
   height: 100%;
+  padding: 0 50px;
+  transition: all 0.3s;
+
+  @include xxl {
+    padding: 0;
+  }
 }
 
 .content {
@@ -31,8 +39,14 @@
   font-size: var(--text-sm);
   color: var(--whiteColor500);
   line-height: 1.625;
-  max-width: 60%;
   margin: 0;
+
+  transition: all 0.3s;
+  max-width: 100%;
+
+  @include xxl {
+    max-width: 60%;
+  }
 }
 
 .skills {
