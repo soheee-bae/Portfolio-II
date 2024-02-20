@@ -1,12 +1,21 @@
+@import '../../styles/mixin';
+
 .otherProjects {
   padding: 0 0 100px;
 }
 
 .projectCards {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  transition: all 0.3s;
+
+  @include md {
+    flex-direction: row;
+    margin: 0 20px;
+  }
 }
 
 .projectCard {
@@ -15,7 +24,8 @@
   flex-direction: column;
   text-align: center;
 
-  max-width: 50%;
+  max-width: 70%;
+
   border-radius: 10px;
   padding: 30px 40px;
   border: 1px solid var(--blackColor500);
@@ -29,6 +39,10 @@
 
   p {
     margin: 0;
+  }
+
+  @include md {
+    max-width: 50%;
   }
 }
 
