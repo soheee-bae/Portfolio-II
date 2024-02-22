@@ -19,7 +19,7 @@ function Skill() {
                 }>
                 <div>
                   <p>{skill.label}</p>
-                  <p>{skill.description}</p>
+                  <p className={styles.description}>{skill.description}</p>
                 </div>
               </Tooltip>
             ))}
