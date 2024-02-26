@@ -34,7 +34,7 @@ export const FESkills = [
   {
     icon: <Sass />,
     label: 'SASS',
-    description: 'SASS'
+    description: 'CSS의 규모가 커지면서 유지보수에 대한 고민을 시작했을 때 사용하기 시작한 도구입니다. 여러가지 기능과 유용한 도구(Import, Nesting, Mixin, 등)들을 활용해서 가독성과 재사용성을 높여주는데에 집중했습니다.'
   },
   {
     icon: <Materialui />,
