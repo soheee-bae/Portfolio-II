@@ -19,7 +19,8 @@ function Cursor() {
           style={{
             transform: `translate(${variant.x}px, ${variant.y}px)`,
             color: isLightMode ? '#000000' : '#ffffff'
-          }}>
+          }}
+        >
           <div
             className={styles.cursorDot}
             style={{

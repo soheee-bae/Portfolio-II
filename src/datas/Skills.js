@@ -22,27 +22,31 @@ export const FESkills = [
   {
     icon: <Html />,
     label: 'HTML5',
-    description: ''
+    description: '',
+    disable: true
   },
   {
     icon: <Css />,
     label: 'CSS3',
-    description: ''
+    description: '',
+    disable: true
   },
   {
     icon: <Sass />,
     label: 'SASS',
-    description: ''
+    description: 'SASS'
   },
   {
     icon: <Materialui />,
     label: 'MUI',
-    description: ''
-  },
+    description:
+      'MUI를 통해 보다 빠르게 컴포넌트를 개발하며 개발 속도를 향상 시키는데에 집중하였습니다.'
+  }, 
   {
     icon: <Javascript />,
     label: 'JS(ES6)',
-    description: ''
+    description: '',
+    disable: true
   },
   {
     icon: <React />,
@@ -53,7 +57,8 @@ export const FESkills = [
   {
     icon: <Nextjs />,
     label: 'Next.js',
-    description: ''
+    description:
+      'React과 함께 사용하기 시작한 Framework입니다. SEO를 위한 SSR의 pre-reloading을 통해 미리 데이터가 렌더링된 페이지를 가져오게끔 하여 사용자에게 더 좋은 경험을 주는데에 집중하였습니다.'
   },
   {
     icon: <Typescript />,

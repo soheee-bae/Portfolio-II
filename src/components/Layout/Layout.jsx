@@ -30,7 +30,8 @@ function Layout({ children, className, isFullScreen = true, animationType }) {
     <a.div
       style={{
         backgroundColor: x.to([0, 1], ['var(--whiteColor350)', 'var(--blackColor350)'])
-      }}>
+      }}
+    >
       <motion.div
         className={className}
         variants={animationType === 'default' ? defaultVariant : scaleVariant}
@@ -41,7 +42,8 @@ function Layout({ children, className, isFullScreen = true, animationType }) {
           duration: 0.8,
           delay: 0.4
         }}
-        style={{ height: isFullScreen ? 'calc(100vh - 70px)' : 'auto' }}>
+        style={{ height: isFullScreen ? 'calc(100vh - 70px)' : 'auto' }}
+      >
         {children}
       </motion.div>
     </a.div>

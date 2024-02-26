@@ -25,7 +25,8 @@ function LanguageBtn() {
         sx={{ ml: 2 }}
         aria-controls={open ? 'account-menu' : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}>
+        aria-expanded={open ? 'true' : undefined}
+      >
         <LanguageIcon />
       </IconButton>
       <Menu
@@ -61,7 +62,8 @@ function LanguageBtn() {
         //   },
         // }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      >
         <MenuItem onClick={handleClose}>Eng</MenuItem>
         <MenuItem onClick={handleClose}>Kor</MenuItem>
       </Menu>

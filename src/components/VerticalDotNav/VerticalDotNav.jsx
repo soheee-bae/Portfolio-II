@@ -49,7 +49,8 @@ function VerticalDotNav({ navSection, setNavSection }) {
               }}
               onMouseLeave={() => {
                 setHover('');
-              }}>
+              }}
+            >
               <CircleIcon />
             </div>
           </Link>

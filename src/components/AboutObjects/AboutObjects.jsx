@@ -47,7 +47,8 @@ function AboutObjects({ aboutSection, setAboutSection, setAnimation }) {
       }}
       onPointerLeave={() => {
         textLeave();
-      }}>
+      }}
+    >
       <OrbitControls
         minAzimuthAngle={-0.6}
         maxAzimuthAngle={0.5}
@@ -156,7 +157,8 @@ function EducationKey({
         }
         setEducationClick(educationClick === 0 ? 1 : 0);
         setAnimation(true);
-      }}>
+      }}
+    >
       <a.mesh
         receiveShadow
         castShadow
@@ -212,7 +214,8 @@ function SkillsKey({
         }
         setSkillsClick(skillsClick === 0 ? 1 : 0);
         setAnimation(true);
-      }}>
+      }}
+    >
       <a.mesh
         receiveShadow
         castShadow
@@ -268,7 +271,8 @@ function CareersKey({
         }
         setCareersClick(careersClick === 0 ? 1 : 0);
         setAnimation(true);
-      }}>
+      }}
+    >
       <a.mesh
         receiveShadow
         castShadow

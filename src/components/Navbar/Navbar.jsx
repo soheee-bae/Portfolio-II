@@ -29,7 +29,8 @@ function Navbar({ scroll }) {
             className={clsx(styles.nav, {
               [styles.selectedNavDark]: nav.value === pathname && !isLightMode,
               [styles.selectedNav]: nav.value === pathname
-            })}>
+            })}
+          >
             {nav.label}
           </Link>
         ))}
@@ -37,7 +38,8 @@ function Navbar({ scroll }) {
           to="https://soheedev.notion.site/2ef5ab86c81a4609b932a19126f0146f"
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.nav}>
+          className={styles.nav}
+        >
           Resume
         </Link>
         {/* <LanguageBtn /> */}

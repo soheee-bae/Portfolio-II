@@ -28,7 +28,8 @@ function ToggleContextProvider({ children }) {
         setToggle,
         x,
         isLightMode
-      }}>
+      }}
+    >
       {children}
     </ToggleContext.Provider>
   );

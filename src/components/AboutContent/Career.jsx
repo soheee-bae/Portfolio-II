@@ -23,7 +23,8 @@ function Career() {
             className={styles.subtitle}
             onMouseEnter={() => textEnter('click')}
             onMouseLeave={() => textLeave()}
-            style={{ color: isLightMode ? '#000000' : '#ffffff' }}>
+            style={{ color: isLightMode ? '#000000' : '#ffffff' }}
+          >
             Sagetap.io
           </a>
         </div>

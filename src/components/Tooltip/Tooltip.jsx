@@ -14,7 +14,8 @@ function Tooltip({ trigger, children }) {
         }}
         onMouseLeave={() => {
           setHover(false);
-        }}>
+        }}
+      >
         {trigger}
       </div>
       {hover && (

@@ -27,7 +27,8 @@ function ProjectInfo({ project }) {
         }}
         onClick={() => {
           navigate(`/project/${project.id}`);
-        }}>
+        }}
+      >
         {project.name.toUpperCase()}
       </h1>
       <p className={styles.description}>{description}</p>
