@@ -24,8 +24,7 @@ function ProjectStepperHeader({ activeStep, setActiveStep, projects, sliderRef }
               }}
               className={clsx(styles.projectStepper, {
                 [styles.activeProjectStepper]: activeStep === index
-              })}
-            >
+              })}>
               {project.name}
               <HandDrawnCircle color={color} />
             </li>

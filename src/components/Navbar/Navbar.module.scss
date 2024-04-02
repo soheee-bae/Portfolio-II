@@ -89,7 +89,10 @@
 .logo {
   font-size: var(--text-lg);
   padding-left: 10px;
-  font-family: 'IM Fell DW Pica', serif;
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-weight: var(--font-bold);
+  letter-spacing: 4px;
+  // font-family: 'IM Fell DW Pica', serif;
   @include sm {
     padding-left: 40px;
   }

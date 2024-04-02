@@ -1,0 +1,130 @@
+@import '../../styles/mixin';
+@import '../../styles/typography';
+@import '../../styles/color';
+
+.skillsContainer {
+  position: relative;
+}
+
+.skillsContent {
+  //   border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillsSubtitle {
+  //   border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  svg {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.firstSubtitle {
+  justify-content: flex-end;
+
+  svg {
+    margin-right: 0px;
+    margin-top: 20px;
+    transform: rotate(-120deg);
+  }
+}
+
+.secondSubtitle {
+  justify-content: flex-start;
+
+  svg {
+    margin-bottom: 50px;
+    margin-left: -10px;
+    transform: rotate(50deg);
+  }
+}
+
+// .skillsTitle {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   border-radius: 50%;
+//   height: 100px;
+//   width: 160px;
+//   animation: morph 8s ease-in-out infinite;
+//   border: 3px solid var(--blackColor100);
+
+//   font-size: var(--text-lg);
+//   font-family: var(--font-roboto);
+//   font-weight: var(--font-bold);
+
+//   cursor: none;
+//   transition: transform 0.3s;
+
+//   &:hover {
+//     transform: scale(1.05);
+//   }
+// }
+
+.skillsTitle {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  font-family: var(--font-roboto);
+  font-weight: var(--font-bold);
+
+  //   padding: 0 20px;
+
+  //   p {
+  //     font-size: var(--text-xl);
+  //     font-weight: var(--font-bold);
+  //     // padding: 0 8px;
+  //     position: relative;
+  //   }
+
+  //   svg {
+  //     position: relative;
+  //     width: 50px;
+  //     // margin-top: 25px;
+  //     // margin-left: -65px;
+  //   }
+
+  @include xl {
+    p {
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      position: relative;
+      margin: 0;
+    }
+
+    svg {
+      position: relative;
+      width: 170px;
+      margin-left: 15px;
+      margin-top: -10px;
+    }
+  }
+
+  //   @include sm {
+  //     font-size: var(--text-md);
+  //   }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
