@@ -30,10 +30,18 @@ function VerticalDotNav({ navSection, setNavSection }) {
   ];
 
   return (
-    <div className={clsx(styles.verticalDotNav, { [styles.darkModeDotNav]: !isLightMode })}>
+    <div
+      className={clsx(styles.verticalDotNav, {
+        [styles.darkModeDotNav]: !isLightMode
+      })}
+    >
       {dotsInfo.map((info) => (
         <div key={info.id} className={styles.link}>
-          <p className={clsx(styles.tooltip, { [styles.selectedTooltip]: hover === info.id })}>
+          <p
+            className={clsx(styles.tooltip, {
+              [styles.selectedTooltip]: hover === info.id
+            })}
+          >
             {info.tooltip}
           </p>
           <Link activeClass="active" to={info.id} spy={true} smooth={true} duration={500}>

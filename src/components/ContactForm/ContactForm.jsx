@@ -25,7 +25,11 @@ const ContactForm = ({ isLightMode }) => {
   };
 
   return (
-    <div className={clsx(styles.contactForm, { [styles.contactFormDark]: !isLightMode })}>
+    <div
+      className={clsx(styles.contactForm, {
+        [styles.contactFormDark]: !isLightMode
+      })}
+    >
       <form ref={form} onSubmit={sendEmail} className={styles.form}>
         <label>
           답변 받으실 이메일 <input type="email" name="from_email" />

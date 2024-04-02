@@ -32,8 +32,7 @@ function AboutOverlay({ aboutSection, animation, setAnimation }) {
       className={clsx(styles.aboutOverlay)}
       style={{ color: `${color}` }}
       data-animation={animation}
-      onAnimationEnd={() => setAnimation(false)}
-    >
+      onAnimationEnd={() => setAnimation(false)}>
       <div className={styles.container} data-default={!aboutSection}>
         <div className={styles.titleArea}>
           <p className={styles.title}>{aboutSection?.toUpperCase()}</p>

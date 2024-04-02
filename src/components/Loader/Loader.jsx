@@ -9,12 +9,36 @@ export function Loader() {
 
   return (
     <div className={styles.skchase}>
-      <div className={clsx(styles.skchasedot, { [styles.skchasedotDarkMode]: !isLightMode })}></div>
-      <div className={clsx(styles.skchasedot, { [styles.skchasedotDarkMode]: !isLightMode })}></div>
-      <div className={clsx(styles.skchasedot, { [styles.skchasedotDarkMode]: !isLightMode })}></div>
-      <div className={clsx(styles.skchasedot, { [styles.skchasedotDarkMode]: !isLightMode })}></div>
-      <div className={clsx(styles.skchasedot, { [styles.skchasedotDarkMode]: !isLightMode })}></div>
-      <div className={clsx(styles.skchasedot, { [styles.skchasedotDarkMode]: !isLightMode })}></div>
+      <div
+        className={clsx(styles.skchasedot, {
+          [styles.skchasedotDarkMode]: !isLightMode
+        })}
+      ></div>
+      <div
+        className={clsx(styles.skchasedot, {
+          [styles.skchasedotDarkMode]: !isLightMode
+        })}
+      ></div>
+      <div
+        className={clsx(styles.skchasedot, {
+          [styles.skchasedotDarkMode]: !isLightMode
+        })}
+      ></div>
+      <div
+        className={clsx(styles.skchasedot, {
+          [styles.skchasedotDarkMode]: !isLightMode
+        })}
+      ></div>
+      <div
+        className={clsx(styles.skchasedot, {
+          [styles.skchasedotDarkMode]: !isLightMode
+        })}
+      ></div>
+      <div
+        className={clsx(styles.skchasedot, {
+          [styles.skchasedotDarkMode]: !isLightMode
+        })}
+      ></div>
     </div>
   );
 }

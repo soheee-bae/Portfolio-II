@@ -11,6 +11,7 @@ import About from './pages/About/About';
 import Home from './pages/Home/Home';
 import Contact from './pages/Contact/Contact';
 import Project from './pages/Project/Project';
+import Skills from './pages/Skills/Skills';
 
 import { useScroll } from './hooks/useScroll';
 import Footer from './components/Footer/Footer';
@@ -28,7 +29,9 @@ function App() {
 
   return (
     <div
-      className={clsx(styles.app, { [styles.cursorApp]: cursorVariant === 'noEffect' })}
+      className={clsx(styles.app, {
+        [styles.cursorApp]: cursorVariant === 'noEffect'
+      })}
       id="app"
     >
       {!isSubProjectPage && <Cursor />}
@@ -57,6 +60,7 @@ function RoutesWithAnimation() {
       <Route exact path="/" element={<Home />} />
       <Route path="/project" element={<Project />} />
       <Route path="/about" element={<About />} />
+      <Route path="/skills" element={<Skills />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/project/:projectId" element={<SubProject />} />
     </Routes>

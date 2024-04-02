@@ -16,7 +16,11 @@ function ProjectInfo({ project }) {
   const description = project.shortDescription.replace(/\\n/g, '\n');
 
   return (
-    <div className={clsx(styles.ProjectInfo, { [styles.projectInfoLight]: isLightMode })}>
+    <div
+      className={clsx(styles.ProjectInfo, {
+        [styles.projectInfoLight]: isLightMode
+      })}
+    >
       <h1
         className={styles.name}
         onPointerEnter={() => {

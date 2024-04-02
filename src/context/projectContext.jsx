@@ -13,7 +13,10 @@ function ProjectContextProvider({ children }) {
 
   const fetchProject = async () => {
     await getDocs(collection(firestore, 'Projects')).then(async (querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      const newData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id
+      }));
       const sortedData = newData.sort((a, b) => a.order - b.order);
       setProjects(sortedData);
       setIsFetching(false);
