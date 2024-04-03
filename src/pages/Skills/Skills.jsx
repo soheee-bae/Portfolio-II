@@ -2,7 +2,7 @@ import styles from './Skills.module.scss';
 import Layout from '../../components/Layout/Layout';
 import { useContext } from 'react';
 import ToggleContext from '../../context/toggleContext';
-import { Highlight, LeftCurveArrow } from '../../icons';
+import { LightBulb, LeftCurveArrow } from '../../icons';
 import clsx from 'clsx';
 
 function Skills() {
@@ -20,8 +20,8 @@ function Skills() {
           <LeftCurveArrow color={color} />
         </div>
         <div className={styles.skillsTitle}>
+          <LightBulb color={color} />
           <p>Skills</p>
-          <Highlight />
         </div>
         <div className={clsx(styles.skillsSubtitle, styles.secondSubtitle)}>
           <LeftCurveArrow color={color} />

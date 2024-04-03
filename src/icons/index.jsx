@@ -23,6 +23,7 @@ export { ReactComponent as Vscode } from './vscode.svg';
 export { ReactComponent as UAALogo } from './uaa_logo.svg';
 export { ReactComponent as Sagetap } from './sagetaplogo.svg';
 export { ReactComponent as HandDrawnCircle } from './handDrawnCircle.svg';
+export { ReactComponent as LightBulb } from './light-bulb.svg';
 
 export { ReactComponent as LeftCurveArrow } from './left-curve-arrow.svg';
 export { ReactComponent as RightCurveArrow } from './right-curve-arrow.svg';
