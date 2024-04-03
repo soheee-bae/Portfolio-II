@@ -2,8 +2,8 @@ import styles from './Skills.module.scss';
 import Layout from '../../components/Layout/Layout';
 import { useContext } from 'react';
 import ToggleContext from '../../context/toggleContext';
-import { LightBulb, LeftCurveArrow } from '../../icons';
-import clsx from 'clsx';
+import { LightBulb } from '../../icons';
+// import clsx from 'clsx';
 
 function Skills() {
   const { isLightMode } = useContext(ToggleContext);
@@ -16,16 +16,17 @@ function Skills() {
   return (
     <Layout className={styles.skillsContainer}>
       <div className={styles.skillsContent}>
-        <div className={clsx(styles.skillsSubtitle, styles.firstSubtitle)}>
+        {/* <div className={clsx(styles.skillsSubtitle, styles.firstSubtitle)}>
           <LeftCurveArrow color={color} />
-        </div>
+        </div> */}
         <div className={styles.skillsTitle}>
           <LightBulb color={color} />
+
           <p>Skills</p>
         </div>
-        <div className={clsx(styles.skillsSubtitle, styles.secondSubtitle)}>
+        {/* <div className={clsx(styles.skillsSubtitle, styles.secondSubtitle)}>
           <LeftCurveArrow color={color} />
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

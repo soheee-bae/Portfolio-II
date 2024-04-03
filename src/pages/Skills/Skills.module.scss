@@ -107,23 +107,23 @@
 
   @include xl {
     p {
-      font-size: 26px;
+      font-size: var(--text-lg);
       font-weight: var(--font-bold);
-      position: relative;
-      margin-left: 14px;
-      margin-top: 60px;
+
+      letter-spacing: 4px;
+
+      margin-top: 75px;
+      left: 0;
+      margin-left: 10px;
       position: absolute;
     }
 
     svg {
       position: relative;
-      width: 170px;
-      margin-left: 15px;
-      margin-top: -10px;
+      width: 130px;
 
       path {
         stroke-width: 0.5;
-        stroke-dasharray: 3, 1;
       }
     }
   }
