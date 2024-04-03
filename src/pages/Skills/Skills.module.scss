@@ -13,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--font-roboto);
 }
 
 .skillsSubtitle {
@@ -22,29 +23,65 @@
   align-items: center;
 
   svg {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 1s;
+
     position: absolute;
     height: 50px;
     width: 50px;
+  }
+
+  p {
+    position: absolute;
+    border-radius: 50%;
+    height: 80px;
+    width: 120px;
+    animation: morph 8s ease-in-out infinite;
+    border: 3px solid var(--blackColor100);
+
+    font-size: var(--text-md);
+    font-weight: var(--font-medium);
+
+    cursor: none;
+    transition: transform 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
 
 .firstSubtitle {
   justify-content: flex-end;
+  margin-right: 14px;
 
   svg {
     margin-right: 0px;
     margin-top: 20px;
     transform: rotate(-120deg);
   }
+
+  p {
+    margin-top: 190px;
+    margin-right: 20px;
+  }
 }
 
 .secondSubtitle {
   justify-content: flex-start;
+  margin-left: 18px;
 
   svg {
     margin-bottom: 50px;
     margin-left: -10px;
     transform: rotate(50deg);
+  }
+
+  p {
+    margin-top: -200px;
+    margin-left: 15px;
+    width: 180px;
   }
 }
 
@@ -78,7 +115,6 @@
   text-align: center;
   // border: 1px solid red;
 
-  font-family: var(--font-roboto);
   font-weight: var(--font-bold);
 
   position: relative;
@@ -142,5 +178,14 @@
   }
   100% {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
