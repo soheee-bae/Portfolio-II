@@ -1,4 +1,10 @@
+@import '../../styles/mixin';
+
 .canvas {
-  height: 100%;
-  width: 100%;
+  width: auto;
+  height: auto;
+  @include xl {
+    height: 100%;
+    width: 100%;
+  }
 }

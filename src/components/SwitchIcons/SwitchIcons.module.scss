@@ -1,3 +1,5 @@
+@import '../../styles/mixin';
+
 .icon {
   position: absolute;
   display: inline-block;
@@ -7,15 +9,33 @@
   transform: translate3d(-50%, -50%, 0) rotate3d(1, 0, 0, 55deg) rotate3d(0, 0, 1, 45deg);
 
   svg {
-    height: 45px;
-    width: 45px;
+    height: 12px;
+    width: 12px;
   }
 
-  margin-left: -170px;
-  margin-top: 13px;
+  margin-left: -43px;
+  margin-top: 4px;
+
+  @include xl {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate3d(1, 0, 0, 55deg) rotate3d(0, 0, 1, 45deg);
+
+    svg {
+      height: 45px;
+      width: 45px;
+    }
+
+    margin-left: -170px;
+    margin-top: 13px;
+  }
 }
 
 .dark {
-  margin-top: 105px;
-  margin-left: -20px;
+  margin-left: -6px;
+  margin-top: 25px;
+  @include xl {
+    margin-top: 105px;
+    margin-left: -20px;
+  }
 }
