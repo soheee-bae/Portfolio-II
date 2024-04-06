@@ -3,18 +3,18 @@
 
 .miniAbout {
   position: absolute;
-  top: -160%;
-  left: -35%;
+  top: 80%;
+  left: -50px;
   padding: 20px;
 
   background-color: var(--whiteColor300);
   color: var(--blackColor300);
   opacity: 0.9;
   z-index: 10;
-  min-width: 400px;
+  min-width: 350px;
   width: 100%;
   font-family: var(--font-notoSans);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
 
   animation: fadeInXl 1s;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -32,6 +32,9 @@
   }
 
   @include xl {
+    border: 1px solid blue;
+    font-size: var(--text-sm);
+
     top: -50px;
     left: 120%;
     min-width: 450px;
