@@ -7,7 +7,7 @@
   justify-content: space-between;
   gap: 0px;
   padding-right: 30px;
-  padding-bottom: 100px;
+  padding-bottom: 0;
 
   .name {
     width: min-content;
@@ -34,7 +34,9 @@
     margin: 0;
   }
 
-  @include sm {
+  @include md {
+    padding-bottom: 40px;
+
     .name {
       font-size: var(--text-4xl);
     }

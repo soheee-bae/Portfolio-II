@@ -4,11 +4,14 @@
 .projectStepperHeader {
   position: absolute;
   height: 100%;
-  display: none;
+  width: 0px;
+  overflow: hidden;
+
   z-index: 5;
   font-family: var(--font-roboto);
   font-size: var(--text-xs);
   padding-left: 50px;
+  transition: width 0.5s;
 
   ul {
     padding: 0;
@@ -16,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: calc(30vh + 50px);
+    padding-top: calc(30vh + 10px);
 
     li {
       padding: 15px;
@@ -26,7 +29,9 @@
   }
 
   @include md {
-    display: flex;
+    transition: width 0.5s;
+
+    width: auto;
   }
 }
 
