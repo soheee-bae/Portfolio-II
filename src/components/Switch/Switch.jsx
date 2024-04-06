@@ -4,6 +4,7 @@ import { useGLTF, useTexture, Shadow } from '@react-three/drei';
 
 import ToggleContext from '../../context/toggleContext';
 import CursorContext from '../../context/cursorContext';
+import useBreakpoint from '../../hooks/useBreakpoint';
 
 function Switch() {
   const { x, setToggle } = useContext(ToggleContext);
@@ -19,8 +20,12 @@ function Switch() {
   const color = x.to([0, 1], ['#212529', '#212529']);
   const ballColor = x.to([0, 1], ['#e9ecef', '#343a40']);
 
+  const brkPnt = useBreakpoint();
+  const isSmallerScale = brkPnt === 'sm' || brkPnt === 'md' || brkPnt === 'lg' || brkPnt === 'xl';
+  const scale = isSmallerScale ? [0.3, 0.3, 0.3] : [1.25, 1.25, 1.25];
+
   return (
-    <group scale={[1.25, 1.25, 1.25]} dispose={null}>
+    <group scale={scale} dispose={null}>
       <a.mesh
         receiveShadow
         castShadow
@@ -45,8 +50,7 @@ function Switch() {
           }}
           onPointerLeave={() => {
             textLeave();
-          }}
-        >
+          }}>
           <sphereGeometry args={[0.8, 64, 64]} />
           <a.meshStandardMaterial color={ballColor} map={texture} />
         </a.mesh>
