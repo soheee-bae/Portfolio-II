@@ -64,8 +64,8 @@
   align-items: center;
   gap: 15px;
 
-  padding: 0 10px;
-  @include sm {
+  padding: 0 20px;
+  @include xl {
     padding: 0 40px;
     gap: 35px;
   }
@@ -76,6 +76,12 @@
   padding: 5px;
   border-bottom: 3px solid transparent;
   cursor: none;
+  font-size: var(--text-xs_s);
+  transition: all 0.5s;
+
+  @include xl {
+    font-size: var(--text-sm);
+  }
 }
 .selectedNav {
   transition: all 0.8s;
@@ -87,13 +93,14 @@
 }
 
 .logo {
-  font-size: var(--text-lg);
-  padding-left: 10px;
+  font-size: var(--text-md);
+  padding-left: 20px;
   font-family: 'Annie Use Your Telescope', cursive;
   font-weight: var(--font-bold);
   letter-spacing: 4px;
-  // font-family: 'IM Fell DW Pica', serif;
-  @include sm {
+  transition: all 0.5s;
+  @include xl {
     padding-left: 40px;
+    font-size: var(--text-lg);
   }
 }
