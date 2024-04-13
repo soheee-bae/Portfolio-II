@@ -58,14 +58,16 @@ function ProjectCarousel({ projects, isFetching, activeStep, setActiveStep, slid
               onClick={(ev) => {
                 handleArrow(ev, 'prev');
               }}
-              disabled={activeStep === 0}>
+              disabled={activeStep === 0}
+            >
               <WestIcon sx={{ color: color }} />
             </button>
             <button
               onClick={(ev) => {
                 handleArrow(ev, 'next');
               }}
-              disabled={activeStep === 4}>
+              disabled={activeStep === 4}
+            >
               <EastIcon sx={{ color: color }} />
             </button>
           </div>
