@@ -57,8 +57,7 @@ function CursorContextProvider({ children }) {
         textLeave,
         variant,
         cursorVariant
-      }}
-    >
+      }}>
       {children}
     </CursorContext.Provider>
   );

@@ -19,8 +19,7 @@ function ProjectInfo({ project }) {
     <div
       className={clsx(styles.ProjectInfo, {
         [styles.projectInfoLight]: isLightMode
-      })}
-    >
+      })}>
       <h1
         className={styles.name}
         onPointerEnter={() => {
@@ -31,8 +30,7 @@ function ProjectInfo({ project }) {
         }}
         onClick={() => {
           navigate(`/project/${project.id}`);
-        }}
-      >
+        }}>
         {project.name.toUpperCase()}
       </h1>
       <p className={styles.description}>{description}</p>

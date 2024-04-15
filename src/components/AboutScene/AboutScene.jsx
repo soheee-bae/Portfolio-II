@@ -16,8 +16,7 @@ function AboutScene({ aboutSection, setAboutSection, setAnimation }) {
       orthographic
       shadows
       dpr={[1, 2]}
-      camera={{ zoom: 80, position: [-14, 25, 18], fov: 35 }}
-    >
+      camera={{ zoom: 80, position: [-14, 25, 18], fov: 35 }}>
       <ambientLight intensity={0.5} />
       <a.directionalLight position={[-10, 20, 10]} intensity={0.6} color={color} />
       <a.pointLight position={[1, 3, 5]} distance={5} intensity={5} color={color} />

@@ -56,8 +56,7 @@ function Overlay() {
           }}
           onMouseLeave={() => {
             setDisplay(false);
-          }}
-        >
+          }}>
           <img className={styles.profile} src="./image/profile.jpg" alt="profile" />
           {display && <MiniAbout />}
         </div>

@@ -12,33 +12,27 @@ export function Loader() {
       <div
         className={clsx(styles.skchasedot, {
           [styles.skchasedotDarkMode]: !isLightMode
-        })}
-      ></div>
+        })}></div>
       <div
         className={clsx(styles.skchasedot, {
           [styles.skchasedotDarkMode]: !isLightMode
-        })}
-      ></div>
+        })}></div>
       <div
         className={clsx(styles.skchasedot, {
           [styles.skchasedotDarkMode]: !isLightMode
-        })}
-      ></div>
+        })}></div>
       <div
         className={clsx(styles.skchasedot, {
           [styles.skchasedotDarkMode]: !isLightMode
-        })}
-      ></div>
+        })}></div>
       <div
         className={clsx(styles.skchasedot, {
           [styles.skchasedotDarkMode]: !isLightMode
-        })}
-      ></div>
+        })}></div>
       <div
         className={clsx(styles.skchasedot, {
           [styles.skchasedotDarkMode]: !isLightMode
-        })}
-      ></div>
+        })}></div>
     </div>
   );
 }

@@ -22,8 +22,7 @@ function OtherProjects({ projectId }) {
             <div
               key={pro.id}
               className={styles.projectCard}
-              onClick={() => navigate(`/project/${pro.id}`)}
-            >
+              onClick={() => navigate(`/project/${pro.id}`)}>
               {selectedProject?.imgPath && (
                 <div className={styles.img}>
                   <img src={selectedProject.backgroundPath} alt={projectId} />

@@ -16,8 +16,7 @@ function Skill() {
                   <li className={styles.skill} data-skill={skill.label}>
                     {skill.icon}
                   </li>
-                }
-              >
+                }>
                 <div>
                   <p>{skill.label}</p>
                   <p className={styles.description}>{skill.description}</p>
@@ -36,8 +35,7 @@ function Skill() {
                   <li key={skill.label} className={styles.skill} data-skill={skill.label}>
                     {skill.icon}
                   </li>
-                }
-              >
+                }>
                 <div>
                   <p>{skill.label}</p>
                   <p>{skill.description}</p>

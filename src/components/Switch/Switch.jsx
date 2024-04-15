@@ -50,8 +50,7 @@ function Switch() {
           }}
           onPointerLeave={() => {
             textLeave();
-          }}
-        >
+          }}>
           <sphereGeometry args={[0.8, 64, 64]} />
           <a.meshStandardMaterial color={ballColor} map={texture} />
         </a.mesh>

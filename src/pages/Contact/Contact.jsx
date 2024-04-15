@@ -20,8 +20,7 @@ function Contact() {
             <div
               className={clsx(styles.texts, {
                 [styles.darkTexts]: isLightMode
-              })}
-            >
+              })}>
               <p>모든 조언과 의견은 제게 소중합니다.</p>
               <p>항상 감사히 받아들이며 꾸준히 배우겠습니다.</p>
             </div>

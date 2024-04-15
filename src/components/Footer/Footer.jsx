@@ -19,8 +19,7 @@ function Footer() {
       style={{
         color: `${color}`,
         backgroundColor: x.to([0, 1], ['var(--whiteColor350)', 'var(--blackColor350)'])
-      }}
-    >
+      }}>
       <p>Copyright 2023. SoHee Bae. All rights reserved.</p>
     </a.div>
   );

@@ -18,8 +18,7 @@ function Scene() {
       orthographic
       shadows
       dpr={[1, 2]}
-      camera={{ zoom: 60, position: [-10, 10, 10], fov: 35 }}
-    >
+      camera={{ zoom: 60, position: [-10, 10, 10], fov: 35 }}>
       <ambientLight intensity={0.1} />
       <directionalLight position={[-20, 20, 20]} intensity={1} />
       <a.directionalLight position={[-20, -20, -20]} intensity={0.5} color={color} />

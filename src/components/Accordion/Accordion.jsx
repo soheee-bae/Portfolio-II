@@ -19,16 +19,14 @@ function AccordionComp(props) {
             } else {
               setAccordion(order);
             }
-          }}
-        >
+          }}>
           <ExpandMoreIcon />
         </button>
       </div>
       <div
         className={clsx(styles.accordionDetails, {
           [styles.accordionDetailsExpand]: order === accordion
-        })}
-      >
+        })}>
         {details}
       </div>
     </div>

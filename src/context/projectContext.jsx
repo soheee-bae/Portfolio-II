@@ -34,8 +34,7 @@ function ProjectContextProvider({ children }) {
       value={{
         projects,
         isFetching
-      }}
-    >
+      }}>
       {children}
     </ProjectContext.Provider>
   );
