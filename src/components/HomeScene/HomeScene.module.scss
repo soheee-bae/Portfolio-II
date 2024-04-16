@@ -3,8 +3,27 @@
 .canvas {
   width: auto;
   height: auto;
+
+  animation: fadeIn 1s ease-in-out;
+
   @include xl {
     height: 100%;
     width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0px, -100px);
+    // transform: scale(0.97);
+  }
+  // 50% {
+  //   transform: scale(1.03);
+  // }
+  100% {
+    opacity: 1;
+    // transform: scale(1);
+    transform: translate3d(0, 0, 0);
   }
 }
