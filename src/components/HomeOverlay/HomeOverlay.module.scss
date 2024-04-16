@@ -120,6 +120,9 @@
   padding: 10px 30px;
   position: relative;
   animation: upAndDown 3s ease-in-out infinite;
+  // transition: fadeIn 0.1s;
+  // transition-delay: 1s;
+  opacity: 0;
   p {
     position: absolute;
     left: 30px;
@@ -127,6 +130,7 @@
     font-size: var(--text-lg);
     transform: rotate(-70deg);
     font-family: 'Annie Use Your Telescope', cursive;
+    animation: fadeIn 0.5s 1s;
   }
 
   .arrow {
@@ -158,5 +162,14 @@
   }
   100% {
     transform: translateX(0px) translateY(0px) rotate(60deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

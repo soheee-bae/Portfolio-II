@@ -33,7 +33,13 @@ function Layout({ children, className, isFullScreen = true, animationType }) {
       }}>
       <motion.div
         className={className}
-        variants={animationType === 'default' ? defaultVariant : scaleVariant}
+        variants={
+          animationType === 'default'
+            ? defaultVariant
+            : animationType === 'scale'
+            ? scaleVariant
+            : null
+        }
         initial="initial"
         animate="finally"
         transition={{
