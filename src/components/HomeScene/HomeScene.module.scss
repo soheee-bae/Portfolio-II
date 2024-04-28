@@ -16,14 +16,10 @@
   0% {
     opacity: 0;
     transform: translate3d(0, 0px, -100px);
-    // transform: scale(0.97);
   }
-  // 50% {
-  //   transform: scale(1.03);
-  // }
+
   100% {
     opacity: 1;
-    // transform: scale(1);
     transform: translate3d(0, 0, 0);
   }
 }
