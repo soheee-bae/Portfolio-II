@@ -10,13 +10,14 @@ import Layout from '../../components/Layout/Layout';
 
 function Contact() {
   const { isLightMode } = useContext(ToggleContext);
+  const color = isLightMode ? 'var(--blackColor200)' : 'var(--whiteColor300)';
 
   return (
-    <Layout className={styles.contact}>
+    <Layout className={styles.contact} animationType="scale">
       <div className={styles.contactContainer}>
         <div className={styles.contactContent}>
           <div>
-            <h1>CONTACT</h1>
+            <h1 style={{ color: color }}>CONTACT</h1>
             <div
               className={clsx(styles.texts, {
                 [styles.darkTexts]: isLightMode

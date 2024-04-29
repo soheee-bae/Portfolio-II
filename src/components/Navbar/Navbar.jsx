@@ -16,10 +16,13 @@ const navItems = [
 function Navbar({ scroll }) {
   const { isLightMode } = useContext(ToggleContext);
   const { pathname } = useLocation();
+  const color = isLightMode ? 'var(--blackColor400)' : 'var(--whiteColor100)';
 
   return (
     <div className={styles.navbar} data-scroll={scroll} data-darkmode={!isLightMode}>
-      <p className={styles.logo}>SoHee.</p>
+      <p className={styles.logo} style={{ color: color }}>
+        SoHee.
+      </p>
       <div className={styles.navbarContent}>
         {navItems.map((nav) => (
           <Link
