@@ -47,26 +47,3 @@ function ProjectInfo({ project }) {
 }
 
 export default ProjectInfo;
-
-{
-  /* <p className={styles.type}>{project.type}</p> */
-}
-{
-  /* <div className={styles.links}>
-        <Tooltip title="Github">
-          <a target="_blank" rel="noreferrer" href={project.github}>
-            <GitHubIcon sx={{ color: color }} />
-          </a>
-        </Tooltip>
-        <Tooltip title="사이트 바로가기">
-          <a target="_blank" rel="noreferrer" href={project.demo}>
-            <LaunchIcon sx={{ color: color }} />
-          </a>
-        </Tooltip>
-        <Tooltip title="자세한 프로젝트 설명보기">
-          <a target="_blank" rel="noreferrer" href={project.demo}>
-            <DescriptionOutlinedIcon sx={{ color: color }} />
-          </a>
-        </Tooltip>
-      </div> */
-}
