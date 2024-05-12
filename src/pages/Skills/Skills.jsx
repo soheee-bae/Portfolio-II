@@ -14,7 +14,7 @@ function Skills() {
 
   return (
     <Layout className={styles.skillsContainer}>
-      <div className={styles.skillsContent}></div>
+      <div className={styles.skillsContent} style={{ color: color }}></div>
     </Layout>
   );
 }
