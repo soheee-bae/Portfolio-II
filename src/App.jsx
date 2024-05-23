@@ -7,7 +7,6 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Cursor from './components/Cursor/Cursor';
 
-import About from './pages/About/About';
 import Home from './pages/Home/Home';
 import Contact from './pages/Contact/Contact';
 import Project from './pages/Project/Project';
@@ -58,7 +57,6 @@ function RoutesWithAnimation() {
     <Routes location={location} key={location.key}>
       <Route exact path="/" element={<Home />} />
       <Route path="/project" element={<Project />} />
-      <Route path="/about" element={<About />} />
       <Route path="/skills" element={<Skills />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/project/:projectId" element={<SubProject />} />
