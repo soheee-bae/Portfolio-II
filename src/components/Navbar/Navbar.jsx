@@ -9,7 +9,7 @@ import { useLocation, Link } from 'react-router-dom';
 const navItems = [
   { label: 'Home', value: '/' },
   { label: 'Project', value: '/project' },
-  { label: 'Skills', value: '/skills' },
+  // { label: 'Skills', value: '/skills' },
   { label: 'Contact', value: '/contact' }
 ];
 
