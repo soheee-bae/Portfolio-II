@@ -8,7 +8,7 @@ function MiniAbout() {
   return (
     <div className={styles.miniAbout} data-darkMode={!isLightMode}>
       <ul>
-        <li>안녕하세요! 2년 차 프론트엔드 개발자 배소희입니다.</li>
+        <li>안녕하세요! 4년 차 웹 개발자 배소희입니다.</li>
         <br />
         <li>
           오랜 유학생활을 통해 쌓아올린 경험을 토대로 남다른 도전정신을 가지고 새로운 환경이나

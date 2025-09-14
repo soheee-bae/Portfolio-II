@@ -27,12 +27,12 @@ function Overlay() {
     },
     {
       icon: <EmailIcon sx={{ color: color }} />,
-      href: 'baesoheee@gmail.com',
+      href: 'mailto:baesoheee@gmail.com',
       label: 'Email'
     },
     {
       icon: <LinkedInIcon sx={{ color: color }} />,
-      href: 'https://www.linkedin.com/in/sohee-bae-b37a9a166/',
+      href: 'https://www.linkedin.com/in/bae-sohee-b37a9a166/',
       label: 'Linkedin'
     },
     {

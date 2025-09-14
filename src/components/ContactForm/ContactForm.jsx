@@ -12,7 +12,7 @@ const ContactForm = ({ isLightMode }) => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_i1j5g6t', 'template_i3bo7gv', form.current, 'RzFdYC78dJwKEr2lr').then(
+    emailjs.sendForm('service_n7uwbkj', 'template_i3bo7gv', form.current, 'RzFdYC78dJwKEr2lr').then(
       () => {
         toast('성공적으로 이메일이 전송되었습니다!');
         form.current.reset();

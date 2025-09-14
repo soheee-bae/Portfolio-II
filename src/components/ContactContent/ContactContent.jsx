@@ -22,7 +22,7 @@ function ContactContent() {
     },
     {
       label: 'Email',
-      href: 'baesoheee@gmail.com',
+      href: 'mailto:baesoheee@gmail.com',
       icon: <EmailIcon sx={{ color: color }} />
     },
     {
