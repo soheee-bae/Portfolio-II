@@ -30,8 +30,7 @@ function ProjectInfo({ project }) {
           textLeave();
         }}
         onClick={() => {
-          if (project.id !== 'blog starter' && project.id !== 'portfolio')
-            navigate(`/project/${project.id}`);
+          if (project.id !== 'blog starter') navigate(`/project/${project.id}`);
         }}>
         {project.name.toUpperCase()}
       </h1>
