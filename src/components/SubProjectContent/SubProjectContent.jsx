@@ -21,7 +21,7 @@ function SubProjectContent({ projects, projectId }) {
         </div>
         <div className={styles.hr} />
         <div className={styles.buttons}>
-          {project.demo !== '' && (
+          {project?.demo && (
             <button onClick={() => window.open(project?.demo)}>
               <RemoveRedEyeIcon />
               Project

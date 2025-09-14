@@ -17,8 +17,6 @@ function SubProject() {
   const updatedProjectId = projectId.replace(/\s/g, '');
   const selectedProject = projectImg.find((proj) => proj.projectId === updatedProjectId);
 
-  console.log(projectImg);
-  console.log(selectedProject);
   useEffect(() => {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }, []);
