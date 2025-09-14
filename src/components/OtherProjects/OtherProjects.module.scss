@@ -7,8 +7,8 @@
 .projectCards {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   gap: 30px;
   transition: all 0.3s;
 
@@ -20,11 +20,8 @@
 
 .projectCard {
   display: flex;
-  gap: 20px;
-  flex-direction: column;
   text-align: center;
-
-  max-width: 70%;
+  flex-direction: column;
 
   border-radius: 10px;
   padding: 30px 40px;
@@ -73,11 +70,6 @@
   color: var(--whiteColor100);
 }
 
-.date {
-  font-size: var(--text-xs);
-  color: var(--whiteColor500);
-}
-
 .type {
   font-size: var(--text-xs);
   color: var(--whiteColor600);
@@ -88,11 +80,15 @@
   font-size: var(--text-sm);
   line-height: 1.5;
   color: var(--whiteColor500);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
 }
 
 .img {
   img {
-    width: 100%;
+    width: 300px;
     border-radius: 10px;
   }
 }
