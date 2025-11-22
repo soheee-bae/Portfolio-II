@@ -9,13 +9,15 @@
 }
 
 .appContent {
-  // max-height: calc(100vh - 70px);
   padding-top: 70px;
 
   @include xl {
     padding-top: 80px;
-    // max-height: calc(100vh - 80px);
   }
+}
+
+.appContentWithoutPadding {
+  padding: 0;
 }
 
 .cursorApp {

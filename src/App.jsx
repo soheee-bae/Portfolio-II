@@ -24,7 +24,6 @@ function App() {
   const { cursorVariant } = useContext(CursorContext);
   const { pathname } = useLocation();
 
-  // console.log(scrollTriggered);
   const isSubProjectPage = pathname.includes('/project/');
 
   return (
@@ -35,7 +34,7 @@ function App() {
       {!isSubProjectPage && <Cursor />}
       {!isSubProjectPage && <Navbar scroll={scrollTriggered} />}
       <LocationProvider>
-        <RoutesWithAnimation />
+        <RoutesWithAnimation isSubProjectPage={isSubProjectPage} />
       </LocationProvider>
       {!isSubProjectPage && <Footer />}
     </div>
@@ -47,11 +46,13 @@ export default App;
 function LocationProvider({ children }) {
   return <AnimatePresence>{children}</AnimatePresence>;
 }
-function RoutesWithAnimation() {
+function RoutesWithAnimation({ isSubProjectPage }) {
   const location = useLocation();
 
   return (
-    <div className={styles.appContent} id="appContent">
+    <div
+      className={clsx(styles.appContent, { [styles.appContentWithoutPadding]: isSubProjectPage })}
+      id="appContent">
       <Routes location={location} key={location.key}>
         <Route exact path="/" element={<Home />} />
         <Route path="/project" element={<Project />} />
