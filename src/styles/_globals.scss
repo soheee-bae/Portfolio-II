@@ -15,12 +15,11 @@ body,
   font-family: 'Noto Sans KR', sans-serif;
   font-family: 'Roboto', sans-serif;
   font-family: 'Annie Use Your Telescope', cursive;
-  // overflow-x: hidden;
 }
 
 body {
+  overflow: auto;
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 /* Custom Scrollbar */

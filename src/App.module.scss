@@ -6,17 +6,15 @@
   margin: 0;
   padding: 0;
   cursor: none;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .appContent {
+  // max-height: calc(100vh - 70px);
   padding-top: 70px;
 
   @include xl {
     padding-top: 80px;
+    // max-height: calc(100vh - 80px);
   }
 }
 

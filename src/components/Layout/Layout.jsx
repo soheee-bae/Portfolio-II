@@ -23,13 +23,13 @@ const defaultVariant = {
   }
 };
 
-function Layout({ children, className, isFullScreen = true, animationType }) {
+function Layout({ children, className, animationType }) {
   const { x } = useContext(ToggleContext);
 
   return (
     <a.div
       style={{
-        backgroundColor: x.to([0, 1], ['var(=--whiteColor350)', 'var(--blackColor350)'])
+        backgroundColor: x.to([0, 1], ['var(--whiteColor350)', 'var(--blackColor350)'])
       }}>
       <motion.div
         className={className}
@@ -46,8 +46,7 @@ function Layout({ children, className, isFullScreen = true, animationType }) {
           type: 'spring',
           duration: 0.8,
           delay: 0.4
-        }}
-        style={{ height: isFullScreen ? 'calc(100vh - 70px)' : 'auto' }}>
+        }}>
         {children}
       </motion.div>
     </a.div>
