@@ -11,6 +11,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 150px;
+
+  @include xl {
+    padding-top: 0;
+  }
 }
 
 .contactContainer {
@@ -21,15 +26,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 50px;
 
   @include xl {
     flex-direction: row;
-    padding: 0px;
   }
 }
 
 .contactContent {
   > div {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -40,6 +46,9 @@
       margin: 0;
       font-size: var(--text-xxxl);
       font-family: var(--font-roboto);
+    }
+    @include xl {
+      width: auto;
     }
   }
 

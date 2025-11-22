@@ -29,7 +29,7 @@ function Layout({ children, className, isFullScreen = true, animationType }) {
   return (
     <a.div
       style={{
-        backgroundColor: x.to([0, 1], ['var(--whiteColor350)', 'var(--blackColor350)'])
+        backgroundColor: x.to([0, 1], ['var(=--whiteColor350)', 'var(--blackColor350)'])
       }}>
       <motion.div
         className={className}

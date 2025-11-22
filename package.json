@@ -46,9 +46,6 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json,scss}' --config ./.prettierrc"
   },
   "eslintConfig": {
-    "rules": {
-      "no-unused-vars": "off"
-    },
     "extends": [
       "react-app",
       "react-app/jest"
@@ -70,5 +67,8 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.8"
+  },
+  "rules": {
+    "no-unused-vars": "off"
   }
 }

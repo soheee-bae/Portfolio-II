@@ -9,17 +9,23 @@ import { useLocation, Link } from 'react-router-dom';
 const navItems = [
   { label: 'Home', value: '/' },
   { label: 'Project', value: '/project' },
-  // { label: 'Skills', value: '/skills' },
   { label: 'Contact', value: '/contact' }
 ];
 
-function Navbar({ scroll }) {
+function Navbar() {
   const { isLightMode } = useContext(ToggleContext);
+
   const { pathname } = useLocation();
   const color = isLightMode ? 'var(--blackColor400)' : 'var(--whiteColor100)';
 
   return (
-    <div className={styles.navbar} data-scroll={scroll} data-darkmode={!isLightMode}>
+    <div
+      className={styles.navbar}
+      data-scroll={scroll}
+      data-darkmode={!isLightMode}
+      style={{
+        backgroundColor: isLightMode ? 'var(--whiteColor350)' : 'var(--blackColor350)'
+      }}>
       <p className={styles.logo} style={{ color: color }}>
         SoHee.
       </p>

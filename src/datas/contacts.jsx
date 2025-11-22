@@ -6,12 +6,12 @@ export const contacts = [
   },
   {
     label: 'Email',
-    href: 'mailto:baesoheee@gmail.com',
+    href: 'mailto:baesohee28@gmail.com',
     icon: <></>
   },
   {
     label: 'Linkedin',
-    href: 'https://www.linkedin.com/in/bae-sohee-b37a9a166/',
+    href: 'https://www.linkedin.com/in/bae-sohee/',
     icon: <></>
   },
   {

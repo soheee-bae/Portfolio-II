@@ -27,12 +27,12 @@ function Overlay() {
     },
     {
       icon: <EmailIcon sx={{ color: color }} />,
-      href: 'mailto:baesoheee@gmail.com',
+      href: 'mailto:baesohee28@gmail.com',
       label: 'Email'
     },
     {
       icon: <LinkedInIcon sx={{ color: color }} />,
-      href: 'https://www.linkedin.com/in/bae-sohee-b37a9a166/',
+      href: 'https://www.linkedin.com/in/bae-sohee/',
       label: 'Linkedin'
     },
     {
@@ -71,7 +71,7 @@ function Overlay() {
           입니다.
         </p>
         <p>
-          새로운 환경이나 영역에 긍정적으로 도전하는 것을 즐기며 <br /> 꾸준히 성장하는 습관을
+          새로운 환경이나 변화에 긍정적으로 도전하는 것을 즐기며 <br /> 꾸준히 성장하는 습관을
           만들어 가고 있습니다.
         </p>
       </div>

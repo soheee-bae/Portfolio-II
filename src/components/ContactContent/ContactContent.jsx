@@ -22,12 +22,12 @@ function ContactContent() {
     },
     {
       label: 'Email',
-      href: 'mailto:baesoheee@gmail.com',
+      href: 'mailto:baesohee28@gmail.com',
       icon: <EmailIcon sx={{ color: color }} />
     },
     {
       label: 'Linkedin',
-      href: 'https://www.linkedin.com/in/sohee-bae-b37a9a166/',
+      href: 'https://www.linkedin.com/in/bae-sohee/',
       icon: <LinkedInIcon sx={{ color: color }} />
     },
     {

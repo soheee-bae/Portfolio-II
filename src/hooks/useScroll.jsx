@@ -27,7 +27,7 @@ export const useScroll = () => {
 
 function scrollHandler() {
   return new Promise((res) => {
-    const app = document.getElementById('app');
+    const app = document.getElementById('appContent');
     const appPosition = window.pageYOffset + app?.offsetHeight;
     let components = ids.map((id) => {
       let component = document.getElementById(id);

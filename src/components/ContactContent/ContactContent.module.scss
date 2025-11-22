@@ -25,25 +25,37 @@
 
 .contactList {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   align-items: center;
   opacity: 0.6;
 
   a {
     color: var(--blackColor300);
     text-decoration: none;
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     cursor: none;
   }
 
   svg {
-    width: 23px;
-    height: 23px;
+    width: 20px;
+    height: 20px;
   }
 
   &:hover {
     transition: all 0.3s;
     transform: scale(1.03);
     opacity: 1;
+  }
+
+  @include xl {
+    gap: 15px;
+
+    a {
+      font-size: var(--text-sm);
+    }
+    svg {
+      width: 23px;
+      height: 23px;
+    }
   }
 }

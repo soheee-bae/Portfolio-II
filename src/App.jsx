@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import styles from './App.module.scss';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 // import VerticalDotNav from './components/VerticalDotNav/VerticalDotNav';
 import Navbar from './components/Navbar/Navbar';
@@ -24,14 +24,14 @@ function App() {
   const { cursorVariant } = useContext(CursorContext);
   const { pathname } = useLocation();
 
+  // console.log(scrollTriggered);
   const isSubProjectPage = pathname.includes('/project/');
 
   return (
     <div
       className={clsx(styles.app, {
         [styles.cursorApp]: cursorVariant === 'noEffect'
-      })}
-      id="app">
+      })}>
       {!isSubProjectPage && <Cursor />}
       {!isSubProjectPage && <Navbar scroll={scrollTriggered} />}
       <LocationProvider>
@@ -43,9 +43,6 @@ function App() {
 }
 
 export default App;
-{
-  /* <VerticalDotNav setNavSection={setNavSection} navSection={navSection} /> */
-}
 
 function LocationProvider({ children }) {
   return <AnimatePresence>{children}</AnimatePresence>;
@@ -54,12 +51,14 @@ function RoutesWithAnimation() {
   const location = useLocation();
 
   return (
-    <Routes location={location} key={location.key}>
-      <Route exact path="/" element={<Home />} />
-      <Route path="/project" element={<Project />} />
-      <Route path="/skills" element={<Skills />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/project/:projectId" element={<SubProject />} />
-    </Routes>
+    <div className={styles.appContent} id="appContent">
+      <Routes location={location} key={location.key}>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/project/:projectId" element={<SubProject />} />
+      </Routes>
+    </div>
   );
 }
