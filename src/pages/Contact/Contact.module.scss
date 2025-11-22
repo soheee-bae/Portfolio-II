@@ -2,33 +2,26 @@
 @import '../../styles/typography';
 @import '../../styles/color';
 
-.contact {
+.content {
+  position: relative;
   min-width: 100vw;
-  max-width: 100vw;
-  height: auto;
+  height: 100%;
   width: 100%;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 150px;
-
-  @include xl {
-    padding-top: 0;
-  }
+  padding: 0;
 }
 
 .contactContainer {
+  width: 100%;
+  min-height: calc(100vh - 120px);
   max-width: 1400px;
-  min-width: 100%;
   font-family: var(--font-roboto);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px;
-
   @include xl {
+    min-height: calc(100vh - 130px);
     flex-direction: row;
   }
 }
@@ -38,6 +31,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     padding-left: 20px;
 
@@ -49,12 +44,15 @@
     }
     @include xl {
       width: auto;
+      justify-content: center;
+      align-items: flex-start;
     }
   }
 
   position: relative;
   height: 50%;
   width: 100%;
+  max-width: none;
   display: flex;
   justify-content: center;
 
@@ -68,6 +66,12 @@
 .texts {
   font-size: var(--text-xs);
   color: var(--whiteColor500);
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  @include xl {
+    display: block;
+  }
 }
 
 .darkTexts {
