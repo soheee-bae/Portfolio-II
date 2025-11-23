@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import styles from './Navbar.module.scss';
+import { a } from '@react-spring/web';
 
 import ToggleContext from '../../context/toggleContext';
 import clsx from 'clsx';
@@ -13,18 +14,18 @@ const navItems = [
 ];
 
 function Navbar() {
-  const { isLightMode } = useContext(ToggleContext);
+  const { isLightMode, x } = useContext(ToggleContext);
 
   const { pathname } = useLocation();
   const color = isLightMode ? 'var(--blackColor400)' : 'var(--whiteColor100)';
 
   return (
-    <div
+    <a.div
       className={styles.navbar}
       data-scroll={scroll}
       data-darkmode={!isLightMode}
       style={{
-        backgroundColor: isLightMode ? 'var(--whiteColor350)' : 'var(--blackColor350)'
+        backgroundColor: x.to([0, 1], ['var(--whiteColor350)', 'var(--blackColor350)'])
       }}>
       <p className={styles.logo} style={{ color: color }}>
         SoHee.
@@ -51,7 +52,7 @@ function Navbar() {
         </Link>
         {/* <LanguageBtn /> */}
       </div>
-    </div>
+    </a.div>
   );
 }
 
