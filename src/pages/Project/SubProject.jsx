@@ -4,10 +4,9 @@ import { projectImg } from '../../datas/ProjectImg';
 
 import styles from './SubProject.module.scss';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-
 import ProjectContext from '../../context/projectContext';
 import SubProjectContent from '../../components/SubProjectContent/SubProjectContent';
-import OtherProjects from '../../components/OtherProjects/OtherProjects';
+// import OtherProjects from '../../components/OtherProjects/OtherProjects';
 import Layout from '../../components/Layout/Layout';
 
 function SubProject() {
@@ -20,9 +19,16 @@ function SubProject() {
   useEffect(() => {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }, []);
+  console.log(selectedProject);
 
   return (
-    <Layout className={styles.subProject} isFullScreen={false} animationType="default">
+    <Layout
+      className={styles.subProject}
+      isFullScreen={false}
+      animationType="default"
+      style={{
+        backgroundColor: selectedProject?.backgroundColor || 'var(--blackColor500)'
+      }}>
       {selectedProject.backgroundPath && (
         <div className={styles.background}>
           <img src={selectedProject.backgroundPath} alt={projectId} />
@@ -30,17 +36,21 @@ function SubProject() {
       )}
       <div className={styles.subProjectContainer}>
         <div>
-          <Link className={styles.navigation} to="/project">
+          <Link className={styles.navigation} data-color={selectedProject.textColor} to="/project">
             <ArrowBackIcon /> <p>Back to projects</p>
           </Link>
         </div>
-        <SubProjectContent projects={projects} projectId={projectId} />
+        <SubProjectContent
+          projects={projects}
+          projectId={projectId}
+          selectedProject={selectedProject}
+        />
         {selectedProject.imgPath && (
           <div className={styles.image}>
             <img src={selectedProject.imgPath} alt={projectId} />
           </div>
         )}
-        <OtherProjects projectId={updatedProjectId} />
+        {/* <OtherProjects projectId={updatedProjectId} /> */}
       </div>
     </Layout>
   );

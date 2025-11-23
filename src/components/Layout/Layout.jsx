@@ -23,7 +23,7 @@ const defaultVariant = {
   }
 };
 
-function Layout({ children, className, animationType }) {
+function Layout({ children, className, animationType, style }) {
   const { x } = useContext(ToggleContext);
 
   return (
@@ -33,6 +33,7 @@ function Layout({ children, className, animationType }) {
       }}>
       <motion.div
         className={className}
+        style={style}
         variants={
           animationType === 'default'
             ? defaultVariant

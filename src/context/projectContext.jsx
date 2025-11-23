@@ -23,6 +23,7 @@ function ProjectContextProvider({ children }) {
     });
   };
 
+  console.log(projects);
   useEffect(() => {
     setIsFetching(true);
 

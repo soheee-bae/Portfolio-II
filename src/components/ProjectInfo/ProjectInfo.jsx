@@ -15,7 +15,6 @@ function ProjectInfo({ project }) {
 
   const description = project.shortDescription.replace(/\\n/g, '\n');
 
-  console.log(project);
   return (
     <div
       className={clsx(styles.ProjectInfo, {
@@ -30,7 +29,7 @@ function ProjectInfo({ project }) {
           textLeave();
         }}
         onClick={() => {
-          if (project.id !== 'blog starter') navigate(`/project/${project.id}`);
+          navigate(`/project/${project.id}`);
         }}>
         {project.name.toUpperCase()}
       </h1>

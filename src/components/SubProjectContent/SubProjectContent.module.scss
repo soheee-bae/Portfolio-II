@@ -8,6 +8,24 @@
   @include xxl {
     padding: 0;
   }
+
+  .type,
+  .navigation,
+  .skills,
+  .title,
+  .description {
+    color: var(--whiteColor500);
+  }
+
+  &[data-color='dark'] {
+    .type,
+    .navigation,
+    .skills,
+    .title,
+    .description {
+      color: var(--blackColor100);
+    }
+  }
 }
 
 .content {
@@ -21,14 +39,12 @@
 
 .type {
   font-size: var(--text-xs);
-  color: var(--whiteColor500);
   margin: 0;
 }
 
 .title {
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
-  color: var(--whiteColor100);
 
   h1 {
     margin: 0;
@@ -37,7 +53,6 @@
 
 .description {
   font-size: var(--text-sm);
-  color: var(--whiteColor500);
   line-height: 1.625;
   margin: 0;
 
@@ -53,14 +68,19 @@
   display: flex;
   gap: 10px;
   font-size: var(--text-xs);
-  color: var(--whiteColor500);
   margin: 10px 0 -10px;
 }
 
 .hr {
   width: 90%;
   height: 1px;
-  background: linear-gradient(to right, var(--whiteColor500), transparent 90%);
+  background: linear-gradient(to right, var(--blackColor100), transparent 90%);
+
+  &[data-color='light'] {
+    .hr {
+      background: linear-gradient(to right, var(--whiteColor500), transparent 90%);
+    }
+  }
 }
 
 .buttons {
@@ -69,7 +89,7 @@
   margin-top: 15px;
 
   button {
-    border: none;
+    border: 1px solid var(--whiteColor500);
     height: 40px;
     width: 150px;
     border-radius: 4px;
