@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import styles from './ResumeBtn.module.scss';
+import ToggleContext from '../../context/toggleContext';
+import clsx from 'clsx';
 
 function ResumeBtn() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const { isLightMode } = useContext(ToggleContext);
 
   const open = Boolean(anchorEl);
 
@@ -18,7 +21,11 @@ function ResumeBtn() {
 
   return (
     <>
-      <div onClick={handleClick} className={styles.nav}>
+      <div
+        onClick={handleClick}
+        className={clsx(styles.nav, {
+          [styles.navDark]: !isLightMode
+        })}>
         Resume
       </div>
       <Menu

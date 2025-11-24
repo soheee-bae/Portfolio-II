@@ -8,10 +8,15 @@
   cursor: none;
   font-size: var(--text-xs_s);
   transition: all 0.5s;
+  color: var(--blackColor100);
 
   @include xl {
     font-size: var(--text-sm);
   }
+}
+
+.navDark {
+  color: var(--whiteColor100);
 }
 
 .resumeLink {
