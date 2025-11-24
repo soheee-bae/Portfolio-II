@@ -27,7 +27,7 @@ function Switch() {
   return (
     <group scale={scale} dispose={null}>
       <ambientLight intensity={1} />
-      <directionalLight position={[-20, 20, 20]} intensity={1} />
+      <directionalLight position={[-20, 20, 20]} intensity={3} />
       <a.mesh
         receiveShadow
         castShadow

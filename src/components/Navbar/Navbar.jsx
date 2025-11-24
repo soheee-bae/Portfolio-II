@@ -5,6 +5,7 @@ import { a } from '@react-spring/web';
 import ToggleContext from '../../context/toggleContext';
 import clsx from 'clsx';
 import { useLocation, Link } from 'react-router-dom';
+import ResumeBtn from '../ResumeBtn/ResumeBtn';
 // import LanguageBtn from '../LanguageBtn/LanugageBtn';
 
 const navItems = [
@@ -43,13 +44,7 @@ function Navbar() {
             {nav.label}
           </Link>
         ))}
-        <Link
-          to="https://soheedev.notion.site/2ef5ab86c81a4609b932a19126f0146f"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.nav}>
-          Resume
-        </Link>
+        <ResumeBtn />
         {/* <LanguageBtn /> */}
       </div>
     </a.div>

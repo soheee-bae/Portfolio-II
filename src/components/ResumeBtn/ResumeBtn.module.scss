@@ -1,0 +1,20 @@
+@import '../../styles/color';
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+@import '../../styles/mixin';
+.nav {
+  text-decoration: none;
+  padding: 5px;
+  border-bottom: 3px solid transparent;
+  cursor: none;
+  font-size: var(--text-xs_s);
+  transition: all 0.5s;
+
+  @include xl {
+    font-size: var(--text-sm);
+  }
+}
+
+.resumeLink {
+  color: var(--blackColor100);
+  text-decoration: none;
+}
